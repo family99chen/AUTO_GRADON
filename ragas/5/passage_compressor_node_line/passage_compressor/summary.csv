@@ -1,0 +1,5 @@
+filename,module_name,module_params,execution_time,passage_compressor_retrieval_token_recall,passage_compressor_retrieval_token_precision,passage_compressor_retrieval_token_f1,is_best
+0.parquet,PassCompressor,{},0.00013824701309204102,0.9707240551042033,0.9690304942093073,0.9683584250875426,True
+1.parquet,TreeSummarize,"{'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'is_chat_model': True, 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3'}",0.17486603260040284,0.10193622038455112,0.638064371742402,0.13976390814340828,False
+2.parquet,Refine,"{'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'is_chat_model': True, 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3'}",0.203337664604187,0.11248214300411898,0.6451011941007395,0.14753022404947982,False
+3.parquet,LongLLMLingua,"{'model_name': 'NousResearch/Llama-2-7b-hf', 'target_token': 300}",0.6618044304847718,0.4079455686017666,0.7752049578014666,0.5044157540906713,False

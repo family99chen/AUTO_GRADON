@@ -1,0 +1,23 @@
+Requirement already satisfied: pydantic in /home/xwh/.conda/envs/vllm_torch25/lib/python3.10/site-packages (1.10.21)
+Collecting pydantic
+  Downloading pydantic-2.11.3-py3-none-any.whl.metadata (65 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/xwh/.conda/envs/vllm_torch25/lib/python3.10/site-packages (from pydantic) (0.7.0)
+Collecting pydantic-core==2.33.1 (from pydantic)
+  Downloading pydantic_core-2.33.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Requirement already satisfied: typing-extensions>=4.12.2 in /home/xwh/.conda/envs/vllm_torch25/lib/python3.10/site-packages (from pydantic) (4.12.2)
+Collecting typing-inspection>=0.4.0 (from pydantic)
+  Downloading typing_inspection-0.4.0-py3-none-any.whl.metadata (2.6 kB)
+Downloading pydantic-2.11.3-py3-none-any.whl (443 kB)
+Downloading pydantic_core-2.33.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 8.1 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.0-py3-none-any.whl (14 kB)
+Installing collected packages: typing-inspection, pydantic-core, pydantic
+  Attempting uninstall: pydantic-core
+    Found existing installation: pydantic_core 2.23.4
+    Uninstalling pydantic_core-2.23.4:
+      Successfully uninstalled pydantic_core-2.23.4
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 1.10.21
+    Uninstalling pydantic-1.10.21:
+      Successfully uninstalled pydantic-1.10.21
+Successfully installed pydantic-2.11.3 pydantic-core-2.33.1 typing-inspection-0.4.0

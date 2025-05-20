@@ -1,0 +1,9 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+pre_retrieve_node_line,query_expansion,3.parquet,PassQueryExpansion,"{'batch': 2, 'generator_module_type': 'LlamaIndexLLM', 'is_chat_model': True, 'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'temperature': 0.1, 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3', 'timeout': 1200.0}",0.0001498746871948
+retrieve_node_line,retrieval,3.parquet,HybridRRF,"{'top_k': 5, 'target_modules': ('VectorDB', 'BM25'), 'rrf_k': 3, 'weight': 4.0, 'target_module_params': ({'top_k': 5, 'embedding_batch': 256, 'vectordb': 'default_vectordb'}, {'top_k': 5, 'bm25_tokenizer': 'porter_stemmer'})}",0.0480705165863037
+passage_aug_node_line,passage_augmenter,0.parquet,PassPassageAugmenter,{'top_k': 5},0.2177256488800049
+passage_reranker_node_line,passage_reranker,0.parquet,PassReranker,{'top_k': 5},8.96310806274414e-05
+passage_filter_node_line,passage_filter,3.parquet,ThresholdCutoff,{'threshold': 0.5},0.0001024460792541
+prompt_maker_node_line,prompt_maker,0.parquet,Fstring,{'prompt': 'Tell me something about the question: {query} \n {retrieved_contents}'},8.903264999389649e-05
+passage_compressor_node_line,passage_compressor,0.parquet,PassCompressor,{},0.000151183605194
+generator_node_line,generator,0.parquet,LlamaIndexLLM,"{'batch': 2, 'max_token': 512, 'temperature': 0.1, 'is_chat_model': True, 'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3', 'timeout': 1200.0}",1.21995685338974

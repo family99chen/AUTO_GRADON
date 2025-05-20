@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,passage_augmenter_retrieval_f1,passage_augmenter_retrieval_recall,passage_augmenter_retrieval_precision,is_best
+0.parquet,PassPassageAugmenter,{'top_k': 5},0.2002038526535034,0.49702380952380953,1.0,0.3440000000000001,True

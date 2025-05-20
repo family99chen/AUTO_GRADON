@@ -1,0 +1,2 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+prompt_maker,0.parquet,Fstring,{'prompt': 'Tell me something about the question: {query} \n {retrieved_contents}'},9.274959564208984e-05

@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,average_output_token,meteor,rouge,bert_score,is_best
+0.parquet,LlamaIndexLLM,"{'batch': 2, 'max_token': 512, 'temperature': 0.1, 'is_chat_model': True, 'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3', 'timeout': 1200.0}",1.1753362131118774,135.1,0.12602242182109824,0.052768201369414,0.7959439307451248,True

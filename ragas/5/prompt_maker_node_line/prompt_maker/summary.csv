@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,average_prompt_token,is_best
+0.parquet,Fstring,{'prompt': 'Tell me something about the question: {query} \n {retrieved_contents}'},9.274959564208984e-05,591.05,True

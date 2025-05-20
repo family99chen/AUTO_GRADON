@@ -1,0 +1,182 @@
+# define shared variables
+shared_embedding_model: &embedding_model [huggingface_all_mpnet_base_v2] # available embedding models
+shared_llm_model: &llm_model [qwen2.5-7b-instruct-1m] # available llm models
+shared_llm_batch: &llm_batch 2 # available llm batch size
+
+vectordb:
+  method: [chroma]
+#  method: [chroma, couchbase, milvus, pinecone, qdrant, weaviate]
+  collection_name: [huggingface_all_mpnet_base_v2]
+  embedding_model: *embedding_model
+  embedding_batch: 200
+  similarity_metric: [cosine]
+  couchbase:
+    ingest_batch: 200
+  pinecone:
+    ingest_batch: 200
+  milvus:
+    ingest_batch: 200
+    index_type: [IVF_FLAT, ScaNN, IVF_SQ8, SCANN, GPU_CAGRA, GPU_IVF_FLAT] # https://milvus.io/docs/index.md?tab=floating
+
+query_expansion:
+  method: [pass_query_expansion, QueryDecompose, HyDE, multi_query_expansion] # pass_query_expansion, QueryDecompose, HyDE, multi_query_expansion
+  # generator params
+  generator_module_type: LlamaIndexLLM
+  temperature: 0.1
+  llm: openailike
+  model: *llm_model
+  batch: *llm_batch
+  is_chat_model: True
+  # specific params for each method
+  QueryDecompose:
+    prompt: ["Decompose a question in self-contained sub-questions. Use \"The question needs no decomposition\" when no decomposition is needed.
+
+    Example 1:
+
+    Question: Is Hamlet more common on IMDB than Comedy of Errors?
+    Decompositions:
+    1: How many listings of Hamlet are there on IMDB?
+    2: How many listing of Comedy of Errors is there on IMDB?
+
+    Example 2:
+
+    Question: Are birds important to badminton?
+
+    Decompositions:
+    The question needs no decomposition
+
+    Example 3:
+
+    Question: Is it legal for a licensed child driving Mercedes-Benz to be employed in US?
+
+    Decompositions:
+    1: What is the minimum driving age in the US?
+    2: What is the minimum age for someone to be employed in the US?
+
+    Example 4:
+
+    Question: Are all cucumbers the same texture?
+
+    Decompositions:
+    The question needs no decomposition
+
+    Example 5:
+
+    Question: Hydrogen's atomic number squared exceeds number of Spice Girls?
+
+    Decompositions:
+    1: What is the atomic number of hydrogen?
+    2: How many Spice Girls are there?
+
+    Example 6:
+
+    Question: {question}
+
+    Decompositions:
+    "]
+  HyDE:
+    prompt: ["Please write a passage to answer the question"]
+  multi_query_expansion:
+    prompt: [ "You are an AI language model assistant.
+    Your task is to generate 3 different versions of the given user
+    question to retrieve relevant documents from a vector  database.
+    By generating multiple perspectives on the user question,
+    your goal is to help the user overcome some of the limitations
+    of distance-based similarity search. Provide these alternative
+    questions separated by newlines. Original question: {query}" ]
+
+
+retrieval:
+  method: [hybrid_rrf, bm25, vectordb, hybrid_cc] # hybrid_rrf bm25 vectordb hybrid_cc
+  top_k: [5] # top ‘k’ results to be retrieved from corpus.
+  bm25:
+    # Korean: ko_kiwi | ko_kkma | ko_okt, Japanese: sudachipy, English: space | porter_stemmer
+    bm25_tokenizer: [ porter_stemmer]
+  vectordb:
+    embedding_batch: [256] # The number of queries to be processed in parallel.
+  hybrid_cc:
+    normalize_method: [tmm] # The normalization method that you want to use.
+    weight: (0.0, 1.0) # If the weight is 1.0, it means the weight to the semantic module will be 1.0 and weight to the lexical module will be 0.0.
+    lexical_theoretical_min_value: 0  # This value used by tmm normalization method.
+    semantic_theoretical_min_value: -1 # This value used by tmm normalization method.
+  hybrid_rrf:
+    weight: (4, 80) # It was originally rrf_k value.
+
+passage_augmenter:
+  method: [pass_passage_augmenter]
+  top_k: [5] # top ‘k’ results to be retrieved from corpus. (less or equal "top_k" in retrival)
+  prev_next_augmenter:
+    mode: [prev, next, both] # prev: add passages before the retrieved passage; next: add passages after the retrieved passage; both: add passages before and after the retrieved passage.
+    num_passages: [1, 2, 3] # The number of passages to be added before or after the retrieved passage.
+    embedding_model: *embedding_model # inherit from vectordb
+
+
+passage_reranker:
+  # koreranker: korean language,
+  # cohere_reranker/jina_reranker/voyageai_reranker/mixedbreadai_reranker: needs api key,
+  # run the command with api key, for example: export VOYAGE_API_KEY=your_voyageai_api_key
+  method: [pass_reranker, upr, tart, colbert_reranker]
+  top_k: [5] # define the top ‘k’ results to be result passage size.
+#  batch: 64
+  monot5:
+    model_name: [castorini/monot5-base-msmarco, castorini/monot5-large-msmarco, castorini/monot5-base-msmarco-10k, castorini/monot5-large-msmarco-10k, castorini/monot5-base-med-msmarco, castorini/monot5-3b-med-msmarco, castorini/monot5-3b-msmarco-10k, unicamp-dl/mt5-base-en-msmarco, unicamp-dl/ptt5-base-pt-msmarco-10k-v2, unicamp-dl/ptt5-base-pt-msmarco-100k-v2, unicamp-dl/ptt5-base-en-pt-msmarco-100k-v2, unicamp-dl/mt5-base-en-pt-msmarco-v2, unicamp-dl/mt5-base-mmarco-v2, unicamp-dl/mt5-base-en-pt-msmarco-v1, unicamp-dl/mt5-base-mmarco-v1, unicamp-dl/ptt5-base-pt-msmarco-10k-v1, unicamp-dl/ptt5-base-pt-msmarco-100k-v1, unicamp-dl/ptt5-base-en-pt-msmarco-10k-v1, unicamp-dl/mt5-3B-mmarco-en-pt, unicamp-dl/mt5-13b-mmarco-100k]
+  rankgpt: # LlamaIndexLLM generator
+    llm: openailike
+    model: *llm_model
+    temperature: 0.5
+    batch: *llm_batch
+    is_chat_model: True
+
+passage_filter:
+  method: [pass_passage_filter, similarity_threshold_cutoff, similarity_percentile_cutoff, threshold_cutoff]
+  similarity_threshold_cutoff:
+    threshold: 0.5 # The threshold value for the similarity score.
+    embedding_model: *embedding_model # inherit from vectordb
+    batch: 64
+  similarity_percentile_cutoff:
+    percentile: 0.5 # The percentile value for the similarity score.
+    embedding_model: *embedding_model # inherit from vectordb
+    batch: 64
+  recency_filter:
+    threshold_datetime: 2015-01-01
+  threshold_cutoff:
+    threshold: 0.5 # The threshold value for the similarity score.
+  percentile_cutoff:
+    percentile: 0.5 # The percentile value for the similarity score.
+
+passage_compressor:
+    method: [pass_compressor, tree_summarize, refine, longllmlingua]
+    tree_summarize:
+      llm: openailike
+      model: *llm_model
+      is_chat_model: True
+    refine:
+      llm: openailike
+      model: *llm_model
+      is_chat_model: True
+    longllmlingua:
+      model_name: "NousResearch/Llama-2-7b-hf"
+      target_token: 300
+
+prompt_maker:
+  method: [fstring]
+  prompt: ["Tell me something about the question: {query} \n {retrieved_contents}"]
+
+
+generator: # api_base, api_key
+  method: [LlamaIndexLLM,] # LlamaIndexLLM OpenAILLM, Vllm, VllmAPI
+  temperature: [0.1] # The temperature of the sampling. Higher temperature means more randomness.
+  batch: *llm_batch
+  max_token: 512 # The maximum number of tokens to generate (control the cost).
+  LlamaIndexLLM:
+    llm: [openailike] # [openai, openailike, mock, bedrock, huggingfacellm, ollama]
+    model: *llm_model #deepseek-r1:7b
+    is_chat_model: True
+#    torch_dtype: "float16"
+  OpenAILLM: # static params: truncate, api_key
+    llm: *llm_model # A model name for openai. gpt-3.5-turbo
+  Vllm:
+    llm: [mistralai/Mistral-7B-Instruct-v0.2, facebook/opt-125m]
+    top_p: (0, 1.0) # Float that controls the cumulative probability of the top tokens to consider. Must be in (0, 1]. Set to 1 to consider all tokens.
+  VllmAPI: # static params: uri
+    llm: [Qwen/Qwen2.5-14B-Instruct-AWQ]

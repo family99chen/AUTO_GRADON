@@ -1,0 +1,119 @@
+qid,query,retrieval_gt,generation_gt
+2WikiMultihopQA_Q0,Who is the mother of the director of film Polish-Russian War (Film)?,"[array(['2WikiMultihopQA_C0_0', '2WikiMultihopQA_C0_1'], dtype=object)]",Małgorzata Braunek
+2WikiMultihopQA_Q1,"Which film came out first, Blind Shaft or The Mask Of Fu Manchu?","[array(['2WikiMultihopQA_C1_0', '2WikiMultihopQA_C1_1',
+        '2WikiMultihopQA_C1_2'], dtype=object)         ]",The Mask Of Fu Manchu
+2WikiMultihopQA_Q2,"When did John V, Prince Of Anhalt-Zerbst's father die?","[array(['2WikiMultihopQA_C2_0', '2WikiMultihopQA_C2_1'], dtype=object)]",12 June 1516
+2WikiMultihopQA_Q3,What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?,"[array(['2WikiMultihopQA_C3_0', '2WikiMultihopQA_C3_1'], dtype=object)]",Myanmar Motion Picture Academy Awards
+2WikiMultihopQA_Q4,Where was the director of film Ronnie Rocket born?,"[array(['2WikiMultihopQA_C4_0', '2WikiMultihopQA_C4_1'], dtype=object)]","Missoula, Montana"
+2WikiMultihopQA_Q5,Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?,"[array(['2WikiMultihopQA_C5_0', '2WikiMultihopQA_C5_1',
+        '2WikiMultihopQA_C5_2'], dtype=object)         ]",Charles Armand René de La Trémoille
+2WikiMultihopQA_Q6,Where was the father of Ștefan I. Nenițescu born?,"[array(['2WikiMultihopQA_C6_0', '2WikiMultihopQA_C6_1',
+        '2WikiMultihopQA_C6_2'], dtype=object)         ]",Galați
+2WikiMultihopQA_Q7,Are North Marion High School (Oregon) and Seoul High School both located in the same country?,"[array(['2WikiMultihopQA_C7_0', '2WikiMultihopQA_C7_1'], dtype=object)]",no
+2WikiMultihopQA_Q8,"Which film has the director who was born later, El Extraño Viaje or Love In Pawn?","[array(['2WikiMultihopQA_C8_0', '2WikiMultihopQA_C8_1'], dtype=object)]",El Extraño Viaje
+2WikiMultihopQA_Q9,Who is the maternal grandfather of Antiochus X Eusebes?,"[array(['2WikiMultihopQA_C9_0', '2WikiMultihopQA_C9_1'], dtype=object)]",Ptolemy IX Lathyros
+2WikiMultihopQA_Q10,"Which film has the director died first, Crimen A Las Tres or The Working Class Goes To Heaven?","[array(['2WikiMultihopQA_C10_0', '2WikiMultihopQA_C10_1'], dtype=object)]",The Working Class Goes To Heaven
+2WikiMultihopQA_Q11,"Which film has the director born first, Once A Gentleman or The Girl In White?","[array(['2WikiMultihopQA_C11_0'], dtype=object)]",Once A Gentleman
+2WikiMultihopQA_Q12,"Which film has the director who died earlier, Il Seduttore or The Trial Of Joan Of Arc?","[array(['2WikiMultihopQA_C12_0', '2WikiMultihopQA_C12_1'], dtype=object)]",The Trial Of Joan Of Arc
+2WikiMultihopQA_Q13,Where was the director of film Thomas Jefferson (Film) born?,"[array(['2WikiMultihopQA_C13_0', '2WikiMultihopQA_C13_1'], dtype=object)]",Brooklyn
+2WikiMultihopQA_Q14,Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?,"[array(['2WikiMultihopQA_C14_0', '2WikiMultihopQA_C14_1',
+        '2WikiMultihopQA_C14_2'], dtype=object)          ]",stroke
+2WikiMultihopQA_Q15,Where was the place of death of the director of film Beat Girl?,"[array(['2WikiMultihopQA_C15_0', '2WikiMultihopQA_C15_1'], dtype=object)]",Nice
+2WikiMultihopQA_Q16,"Who died first, Fleetwood Sheppard or George William Whitaker?","[array(['2WikiMultihopQA_C16_0', '2WikiMultihopQA_C16_1'], dtype=object)]",Fleetwood Sheppard
+2WikiMultihopQA_Q17,"Which film has the director born first, The Raven'S Dance or Keïta! L'Héritage Du Griot?","[array(['2WikiMultihopQA_C17_0', '2WikiMultihopQA_C17_1'], dtype=object)]",The Raven'S Dance
+2WikiMultihopQA_Q18,When did Jean Martin (Singer)'s husband die?,"[array(['2WikiMultihopQA_C18_0', '2WikiMultihopQA_C18_1'], dtype=object)]",1983
+2WikiMultihopQA_Q19,"Which film has the director who died earlier, Tangled Destinies or The Daltons' Women?","[array(['2WikiMultihopQA_C19_0', '2WikiMultihopQA_C19_1'], dtype=object)]",Tangled Destinies
+2WikiMultihopQA_Q20,"Which film was released earlier, Moment Of Danger or The Ballad Of Josie?","[array(['2WikiMultihopQA_C20_0', '2WikiMultihopQA_C20_1'], dtype=object)]",Moment Of Danger
+2WikiMultihopQA_Q21,What nationality is the director of film World And Time Enough?,"[array(['2WikiMultihopQA_C21_0', '2WikiMultihopQA_C21_1'], dtype=object)]",United States
+2WikiMultihopQA_Q22,"Which film has the director died earlier, Poker In Bed or The Machine To Kill Bad People?","[array(['2WikiMultihopQA_C22_0', '2WikiMultihopQA_C22_1'], dtype=object)]",The Machine To Kill Bad People
+2WikiMultihopQA_Q23,"Which film whose director is younger, Heads I Win, Tails You Lose or The Incredible Sarah?","[array(['2WikiMultihopQA_C23_0', '2WikiMultihopQA_C23_1'], dtype=object)]","Heads I Win, Tails You Lose"
+2WikiMultihopQA_Q24,"Who is Catherine Of Pomerania, Countess Palatine Of Neumarkt's father-in-law?","[array(['2WikiMultihopQA_C24_0', '2WikiMultihopQA_C24_1'], dtype=object)]",Rupert
+2WikiMultihopQA_Q25,Who is Marie Zéphyrine Of France's paternal grandmother?,"[array(['2WikiMultihopQA_C25_0', '2WikiMultihopQA_C25_1'], dtype=object)]",Marie Leszczyńska
+2WikiMultihopQA_Q26,"Which film has the director died earlier, Condemned Women or Faces In The Dark?","[array(['2WikiMultihopQA_C26_0', '2WikiMultihopQA_C26_1'], dtype=object)]",Condemned Women
+2WikiMultihopQA_Q27,Who is the spouse of the director of film Eden And After?,"[array(['2WikiMultihopQA_C27_0', '2WikiMultihopQA_C27_1'], dtype=object)]",Catherine Robbe-Grillet
+2WikiMultihopQA_Q28,Where was the place of death of Anastasia Of Serbia's husband?,"[array(['2WikiMultihopQA_C28_0', '2WikiMultihopQA_C28_1',
+        '2WikiMultihopQA_C28_2'], dtype=object)          ]",Hilandar
+2WikiMultihopQA_Q29,Are Fire In Hell and The Tiger: An Old Hunter'S Tale from the same country?,"[array(['2WikiMultihopQA_C29_0'], dtype=object)]",yes
+2WikiMultihopQA_Q30,"Which film was released more recently, Lo Zappatore or Placer Sangriento?","[array(['2WikiMultihopQA_C30_0'], dtype=object)]",Placer Sangriento
+2WikiMultihopQA_Q31,Was Şemsettin Baş or Gwenc'Hlan Le Scouëzec born first?,"[array(['2WikiMultihopQA_C31_0', '2WikiMultihopQA_C31_1'], dtype=object)]",Gwenc'Hlan Le Scouëzec
+2WikiMultihopQA_Q32,"Which film has the director born later, Bhoomiyude Avakashikal or The Majesty Of The Law?","[array(['2WikiMultihopQA_C32_0', '2WikiMultihopQA_C32_1',
+        '2WikiMultihopQA_C32_2'], dtype=object)          ]",Bhoomiyude Avakashikal
+2WikiMultihopQA_Q33,Who is Cornelia (Wife Of Caesar)'s child-in-law?,"[array(['2WikiMultihopQA_C33_0', '2WikiMultihopQA_C33_1'], dtype=object)]",Pompey
+2WikiMultihopQA_Q34,Why did John Middleton Murry's wife die?,"[array(['2WikiMultihopQA_C34_0', '2WikiMultihopQA_C34_1'], dtype=object)]",tuberculosis
+2WikiMultihopQA_Q35,Who is the paternal grandfather of Taj Al-Dawla?,"[array(['2WikiMultihopQA_C35_0', '2WikiMultihopQA_C35_1',
+        '2WikiMultihopQA_C35_2'], dtype=object)          ]",Rukn al-Dawla
+2WikiMultihopQA_Q36,Do both films Payment On Demand and My Cousin From Warsaw have the directors from the same country?,"[array(['2WikiMultihopQA_C36_0', '2WikiMultihopQA_C36_1'], dtype=object)]",yes
+2WikiMultihopQA_Q37,What is the place of birth of the director of film And The Spring Comes?,"[array(['2WikiMultihopQA_C37_0'], dtype=object)]",Xi'an
+2WikiMultihopQA_Q38,"Who died first, Madame Pasca or James A. Donohoe?","[array(['2WikiMultihopQA_C38_0'], dtype=object)]",Madame Pasca
+2WikiMultihopQA_Q39,"Who was born later, D'Arcy Coulson or Thomas William Adams?","[array(['2WikiMultihopQA_C39_0', '2WikiMultihopQA_C39_1'], dtype=object)]",D'Arcy Coulson
+2WikiMultihopQA_Q40,Are Simonds Catholic College and Saginaw High School (Texas) both located in the same country?,"[array(['2WikiMultihopQA_C40_0', '2WikiMultihopQA_C40_1'], dtype=object)]",no
+2WikiMultihopQA_Q41,Which country Prince Nikolaus Wilhelm Of Nassau's mother is from?,"[array(['2WikiMultihopQA_C41_0', '2WikiMultihopQA_C41_1'], dtype=object)]",German
+2WikiMultihopQA_Q42,"Which film whose director was born first, 45 Fathers or The Intended?","[array(['2WikiMultihopQA_C42_0', '2WikiMultihopQA_C42_1'], dtype=object)]",45 Fathers
+2WikiMultihopQA_Q43,"Who is the paternal grandfather of Alexandre Berthier, 3Rd Prince Of Wagram?","[array(['2WikiMultihopQA_C43_0', '2WikiMultihopQA_C43_1'], dtype=object)]",Louis-Alexandre Berthier
+2WikiMultihopQA_Q44,Where was the husband of Caterina Visconti born?,"[array(['2WikiMultihopQA_C44_0'], dtype=object)]",Pavia
+2WikiMultihopQA_Q45,"Which film has the director who was born later, A Quiet Place In The Country or When Were You Born?","[array(['2WikiMultihopQA_C45_0', '2WikiMultihopQA_C45_1'], dtype=object)]",A Quiet Place In The Country
+2WikiMultihopQA_Q46,"Who was born first, John Beach or Gordon Persons?","[array(['2WikiMultihopQA_C46_0', '2WikiMultihopQA_C46_1'], dtype=object)]",John Beach
+2WikiMultihopQA_Q47,"Which film has the director born earlier, The House By The Cemetery or Charlie Chan In Honolulu?","[array(['2WikiMultihopQA_C47_0', '2WikiMultihopQA_C47_1'], dtype=object)]",Charlie Chan In Honolulu
+2WikiMultihopQA_Q48,Who is the child of the director of film La Leona (Film)?,"[array(['2WikiMultihopQA_C48_0'], dtype=object)]",Víctor Bó
+2WikiMultihopQA_Q49,Who is Blanche Of Portugal (1259–1321)'s paternal grandmother?,"[array(['2WikiMultihopQA_C49_0', '2WikiMultihopQA_C49_1'], dtype=object)]",Urraca of Castile
+2WikiMultihopQA_Q50,"Who lived longer, Giuseppe Cesari or Nicos Poulantzas?","[array(['2WikiMultihopQA_C50_0', '2WikiMultihopQA_C50_1'], dtype=object)]",Giuseppe Cesari
+2WikiMultihopQA_Q51,Are director of film Nights On The Road and director of film Swann In Love (Film) from the same country?,"[array(['2WikiMultihopQA_C51_0', '2WikiMultihopQA_C51_1'], dtype=object)]",yes
+2WikiMultihopQA_Q52,"Who is older, Aryeh Ben-Eliezer or Jason Pociask?","[array(['2WikiMultihopQA_C52_0', '2WikiMultihopQA_C52_1'], dtype=object)]",Aryeh Ben-Eliezer
+2WikiMultihopQA_Q53,Where does the director of film Man At Bath work at?,"[array(['2WikiMultihopQA_C53_0', '2WikiMultihopQA_C53_1'], dtype=object)]",Cahiers du cinéma
+2WikiMultihopQA_Q54,"Who is Arthur Gore, 2Nd Earl Of Arran's paternal grandfather?","[array(['2WikiMultihopQA_C54_0', '2WikiMultihopQA_C54_1',
+        '2WikiMultihopQA_C54_2'], dtype=object)          ]","Sir Arthur Gore, 2nd Baronet"
+2WikiMultihopQA_Q55,Are both Kaufland and Otrag located in the same country?,"[array(['2WikiMultihopQA_C55_0', '2WikiMultihopQA_C55_1'], dtype=object)]",yes
+2WikiMultihopQA_Q56,"Which film came out earlier, Aanaval Mothiram or Heroes Of The Street?","[array(['2WikiMultihopQA_C56_0'], dtype=object)]",Heroes Of The Street
+2WikiMultihopQA_Q57,Where was the father of Lord Patrick Crichton-Stuart born?,"[array(['2WikiMultihopQA_C57_0', '2WikiMultihopQA_C57_1'], dtype=object)]",London
+2WikiMultihopQA_Q58,Which country the director of film Daadagiri is from?,"[array(['2WikiMultihopQA_C58_0', '2WikiMultihopQA_C58_1'], dtype=object)]",Pakistan
+2WikiMultihopQA_Q59,Where was the wife of Douglas Leiterman born?,"[array(['2WikiMultihopQA_C59_0', '2WikiMultihopQA_C59_1'], dtype=object)]","Winnipeg, Manitoba"
+2WikiMultihopQA_Q60,What is the place of birth of the performer of song Who...?,"[array(['2WikiMultihopQA_C60_0', '2WikiMultihopQA_C60_1'], dtype=object)]",Fukuoka
+2WikiMultihopQA_Q61,Where was the place of death of the director of film Mole Men Against The Son Of Hercules?,"[array(['2WikiMultihopQA_C61_0'], dtype=object)]",Roma
+2WikiMultihopQA_Q62,Where was the father of Alexandre Gaydamak born?,"[array(['2WikiMultihopQA_C62_0', '2WikiMultihopQA_C62_1'], dtype=object)]","Moscow, USSR"
+2WikiMultihopQA_Q63,"Which film has the director who died earlier, Toen 'T Licht Verdween or Boum Sur Paris?","[array(['2WikiMultihopQA_C63_0', '2WikiMultihopQA_C63_1'], dtype=object)]",Toen 'T Licht Verdween
+2WikiMultihopQA_Q64,"Who is Gaston, Duke Of Orléans's paternal grandmother?","[array(['2WikiMultihopQA_C64_0', '2WikiMultihopQA_C64_1',
+        '2WikiMultihopQA_C64_2'], dtype=object)          ]",Jeanne d'Albret
+2WikiMultihopQA_Q65,Where was the director of film The Half-Way Girl born?,"[array(['2WikiMultihopQA_C65_0', '2WikiMultihopQA_C65_1'], dtype=object)]",New York
+2WikiMultihopQA_Q66,Who is the father-in-law of Sophia Of Wittelsbach?,"[array(['2WikiMultihopQA_C66_0', '2WikiMultihopQA_C66_1'], dtype=object)]",Louis II
+2WikiMultihopQA_Q67,"Where was the place of death of Lambert I, Count Of Louvain's father?","[array(['2WikiMultihopQA_C67_0', '2WikiMultihopQA_C67_1',
+        '2WikiMultihopQA_C67_2'], dtype=object)          ]",Bohemia
+2WikiMultihopQA_Q68,Where was the director of film Highway Dragnet born?,"[array(['2WikiMultihopQA_C68_0', '2WikiMultihopQA_C68_1'], dtype=object)]",Gura Humorului
+2WikiMultihopQA_Q69,Where did Prince Gustav Of Thurn And Taxis (1848–1914)'s mother die?,"[array(['2WikiMultihopQA_C69_0', '2WikiMultihopQA_C69_1',
+        '2WikiMultihopQA_C69_2'], dtype=object)          ]",Meran
+2WikiMultihopQA_Q70,What is the award that the performer of song Sunday Papers earned?,"[array(['2WikiMultihopQA_C70_0', '2WikiMultihopQA_C70_1'], dtype=object)]",Grammy
+2WikiMultihopQA_Q71,"Which film has the director born first, Antonieta or Dodging The Dole?","[array(['2WikiMultihopQA_C71_0', '2WikiMultihopQA_C71_1'], dtype=object)]",Dodging The Dole
+2WikiMultihopQA_Q72,Are both Nikolsk Airport and Svobodny Airport located in the same country?,"[array(['2WikiMultihopQA_C72_0'], dtype=object)]",yes
+2WikiMultihopQA_Q73,"Who is the maternal grandfather of Amadeus Vii, Count Of Savoy?","[array(['2WikiMultihopQA_C73_0', '2WikiMultihopQA_C73_1'], dtype=object)]",Peter I
+2WikiMultihopQA_Q74,"Are both businesses, Telus and Ztr Control Systems, located in the same country?","[array(['2WikiMultihopQA_C74_0', '2WikiMultihopQA_C74_1'], dtype=object)]",yes
+2WikiMultihopQA_Q75,"Do both films, Dial M For Murder and Marius (1931 Film), have the directors who are from the same country?","[array(['2WikiMultihopQA_C75_0', '2WikiMultihopQA_C75_1',
+        '2WikiMultihopQA_C75_2'], dtype=object)          ]",yes
+2WikiMultihopQA_Q76,"Who is older, Dyson Parody or Gene Watson?","[array(['2WikiMultihopQA_C76_0', '2WikiMultihopQA_C76_1'], dtype=object)]",Gene Watson
+2WikiMultihopQA_Q77,Are both directors of films The Princess Bride (Film) and I Never Sang For My Father from the same country?,"[array(['2WikiMultihopQA_C77_0', '2WikiMultihopQA_C77_1',
+        '2WikiMultihopQA_C77_2'], dtype=object)          ]",yes
+2WikiMultihopQA_Q78,When did Prince John Konstantinovich Of Russia's mother die?,"[array(['2WikiMultihopQA_C78_0', '2WikiMultihopQA_C78_1',
+        '2WikiMultihopQA_C78_2'], dtype=object)          ]",24 March 1927
+2WikiMultihopQA_Q79,Which country Audofleda's husband is from?,"[array(['2WikiMultihopQA_C79_0', '2WikiMultihopQA_C79_1',
+        '2WikiMultihopQA_C79_2'], dtype=object)          ]",Ostrogothic Kingdom
+2WikiMultihopQA_Q80,What is the place of birth of the director of film Letter To The King?,"[array(['2WikiMultihopQA_C80_0'], dtype=object)]",Kurdish
+2WikiMultihopQA_Q81,"Are both bands, Snowman (Band) and Jessamine (Band), from the same country?","[array(['2WikiMultihopQA_C81_0'], dtype=object)]",no
+2WikiMultihopQA_Q82,Where was the performer of song God (John Lennon Song) born?,"[array(['2WikiMultihopQA_C82_0', '2WikiMultihopQA_C82_1'], dtype=object)]",Liverpool
+2WikiMultihopQA_Q83,"Which film has the director who died earlier, Captain Kidd And The Slave Girl or Relax Freddie?","[array(['2WikiMultihopQA_C83_0', '2WikiMultihopQA_C83_1'], dtype=object)]",Captain Kidd And The Slave Girl
+2WikiMultihopQA_Q84,"Which song was released more recently, Go Ahead And Break My Heart or Knee Deep In My Heart?","[array(['2WikiMultihopQA_C84_0', '2WikiMultihopQA_C84_1',
+        '2WikiMultihopQA_C84_2'], dtype=object)          ]",Go Ahead And Break My Heart
+2WikiMultihopQA_Q85,"Which film has the director who died later, The Fatal Mistake or The Devil'S Hairpin?","[array(['2WikiMultihopQA_C85_0', '2WikiMultihopQA_C85_1'], dtype=object)]",The Devil'S Hairpin
+2WikiMultihopQA_Q86,Who is Maria Luisa Of Savoy's father-in-law?,"[array(['2WikiMultihopQA_C86_0', '2WikiMultihopQA_C86_1'], dtype=object)]","Louis, Grand Dauphin"
+2WikiMultihopQA_Q87,Who is the paternal grandfather of Kujō Yoritsugu?,"[array(['2WikiMultihopQA_C87_0', '2WikiMultihopQA_C87_1'], dtype=object)]",Kujō Michiie
+2WikiMultihopQA_Q88,What is the place of birth of the director of film Marianela (1940 Film)?,"[array(['2WikiMultihopQA_C88_0', '2WikiMultihopQA_C88_1'], dtype=object)]",Madrid
+2WikiMultihopQA_Q89,"Which film came out first, Repeated Absences or She Wore A Yellow Ribbon?","[array(['2WikiMultihopQA_C89_0', '2WikiMultihopQA_C89_1',
+        '2WikiMultihopQA_C89_2'], dtype=object)          ]",She Wore A Yellow Ribbon
+2WikiMultihopQA_Q90,"Who lived longer, Edward Dearle or Michael Doeberl?","[array(['2WikiMultihopQA_C90_0'], dtype=object)]",Edward Dearle
+2WikiMultihopQA_Q91,Where does Karin Stoltenberg's husband work at?,"[array(['2WikiMultihopQA_C91_0', '2WikiMultihopQA_C91_1'], dtype=object)]",United Nations
+2WikiMultihopQA_Q92,Where was the director of film Lettre Ouverte born?,"[array(['2WikiMultihopQA_C92_0', '2WikiMultihopQA_C92_1'], dtype=object)]",Paris
+2WikiMultihopQA_Q93,"Who is William Ii, Count Of Flanders's paternal grandmother?","[array(['2WikiMultihopQA_C93_0', '2WikiMultihopQA_C93_1'], dtype=object)]",Mathilde of Bourbon
+2WikiMultihopQA_Q94,What is the place of birth of Clara Novello's father?,"[array(['2WikiMultihopQA_C94_0'], dtype=object)]",London
+2WikiMultihopQA_Q95,"Which film came out earlier, Emmy Of Stork'S Nest or Indira Vizha?","[array(['2WikiMultihopQA_C95_0', '2WikiMultihopQA_C95_1'], dtype=object)]",Emmy Of Stork'S Nest
+2WikiMultihopQA_Q96,"Which film came out first, Celine: Through The Eyes Of The World or Dilan 1991?","[array(['2WikiMultihopQA_C96_0', '2WikiMultihopQA_C96_1'], dtype=object)]",Celine: Through The Eyes Of The World
+2WikiMultihopQA_Q97,"Who was born earlier, Silas Hardy or Lee Mantle?","[array(['2WikiMultihopQA_C97_0', '2WikiMultihopQA_C97_1'], dtype=object)]",Lee Mantle
+2WikiMultihopQA_Q98,"Where was the place of burial of Albert Frederick, Duke Of Prussia's mother?","[array(['2WikiMultihopQA_C98_0'], dtype=object)]",Königsberg
+2WikiMultihopQA_Q99,Where was the place of death of Juan Carlos Gumucio's wife?,"[array(['2WikiMultihopQA_C99_0', '2WikiMultihopQA_C99_1',
+        '2WikiMultihopQA_C99_2'], dtype=object)          ]",Homs

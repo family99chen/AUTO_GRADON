@@ -1,0 +1,16 @@
+vectordb:
+- api_key: null
+  client_type: persistent
+  collection_name: huggingface_all_mpnet_base_v2
+  database: default_database
+  db_type: chroma
+  embedding_batch: 200
+  embedding_model: huggingface_all_mpnet_base_v2
+  headers: null
+  host: localhost
+  name: default_vectordb
+  path: ../experiments/db_resources/db_20250501-v3
+  port: 8000
+  similarity_metric: cosine
+  ssl: false
+  tenant: default_tenant

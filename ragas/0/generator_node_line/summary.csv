@@ -1,0 +1,2 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+generator,0.parquet,LlamaIndexLLM,"{'batch': 2, 'max_token': 512, 'temperature': 0.1, 'is_chat_model': True, 'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3', 'timeout': 1200.0}",1.240988051891327

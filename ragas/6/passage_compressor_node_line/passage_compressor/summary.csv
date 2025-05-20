@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,passage_compressor_retrieval_token_recall,passage_compressor_retrieval_token_precision,passage_compressor_retrieval_token_f1,is_best
+0.parquet,TreeSummarize,"{'is_chat_model': True, 'llm': 'openailike', 'model': 'qwen2.5-7b-instruct-1m', 'api_base': 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1', 'api_key': 'sk-e46fb251c74d4c64a4c2835333e994a3', 'timeout': 1200.0}",0.29967517852783204,0.11132590654667159,0.6790057399547669,0.1498997081098952,True

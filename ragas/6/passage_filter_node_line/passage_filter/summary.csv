@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,passage_filter_retrieval_f1,passage_filter_retrieval_recall,passage_filter_retrieval_precision,is_best
+0.parquet,PassPassageFilter,{},8.641719818115234e-05,0.8640476190476192,1.0,0.8073333333333332,True

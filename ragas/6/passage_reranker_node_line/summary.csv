@@ -1,0 +1,2 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+passage_reranker,0.parquet,Upr,"{'top_k': 5, 'use_bf16': False, 'prefix_prompt': 'Passage: ', 'suffix_prompt': 'Please write a question based on this passage.'}",0.1725739407539367

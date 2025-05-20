@@ -1,0 +1,2 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieval,2.parquet,HybridRRF,"{'top_k': 5, 'target_modules': ('VectorDB', 'BM25'), 'rrf_k': 10, 'weight': 4.0, 'target_module_params': ({'top_k': 5, 'embedding_batch': 256, 'vectordb': 'default_vectordb'}, {'top_k': 5, 'bm25_tokenizer': 'porter_stemmer'})}",0.0466451954841613

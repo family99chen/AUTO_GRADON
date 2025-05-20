@@ -1,0 +1,6 @@
+filename,module_name,module_params,execution_time,passage_filter_retrieval_f1,passage_filter_retrieval_recall,passage_filter_retrieval_precision,is_best
+0.parquet,PassPassageFilter,{},8.175373077392578e-05,0.49702380952380953,1.0,0.3440000000000001,False
+1.parquet,SimilarityThresholdCutoff,"{'threshold': 0.5, 'embedding_model': 'huggingface_all_mpnet_base_v2', 'batch': 64}",0.13233843803405762,0.8211904761904762,0.9,0.7814999999999999,False
+2.parquet,SimilarityPercentileCutoff,"{'percentile': 0.5, 'embedding_model': 'huggingface_all_mpnet_base_v2', 'batch': 64}",0.13501709461212158,0.0,0.0,0.0,False
+3.parquet,ThresholdCutoff,{'threshold': 0.5},0.000108642578125,0.96,0.96,0.96,True
+4.parquet,RecencyFilter,"{'threshold_datetime': datetime.date(2015, 1, 1)}",0.0044426417350769045,0.49702380952380953,1.0,0.3440000000000001,False

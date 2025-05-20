@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,retrieval_f1,retrieval_recall,retrieval_precision
+1.parquet,BM25,"{'top_k': 5, 'bm25_tokenizer': 'porter_stemmer'}",0.017091405391693116,0.49130952380952386,0.99,0.34000000000000014
