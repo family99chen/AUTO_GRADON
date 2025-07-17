@@ -131,7 +131,7 @@ class Evaluator:
 				"`skip_validation` at the start_trial function."
 			)
 			from autorag.validator import Validator  # resolve circular import
-
+			print(f'yaml文件夹path:{yaml_path}')
 			validator = Validator(
 				qa_data_path=self.qa_data_path, corpus_data_path=self.corpus_data_path
 			)

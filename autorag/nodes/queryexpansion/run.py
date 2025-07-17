@@ -118,15 +118,54 @@ def run_query_expansion_node(
 			os.path.join(project_dir, "data", "qa.parquet"), engine="pyarrow"
 		)["retrieval_gt"].tolist()
 
+		# 添加详细的调试信息
+		print(f"🔍 Debug - metric_inputs构造过程:")
+		print(f"   project_dir: {project_dir}")
+		print(f"   qa.parquet路径: {os.path.join(project_dir, 'data', 'qa.parquet')}")
+		print(f"   retrieval_gt长度: {len(retrieval_gt)}")
+		print(f"   previous_result shape: {previous_result.shape}")
+		print(f"   previous_result['query']长度: {len(previous_result['query'].tolist())}")
+		print(f"   previous_result['generation_gt']长度: {len(previous_result['generation_gt'].tolist())}")
+		
+		# 检查previous_result的列
+		print(f"   previous_result列名: {previous_result.columns.tolist()}")
+		
+		# 检查retrieval_gt的前几个元素类型和内容
+		print(f"   retrieval_gt前3个元素类型: {[type(x) for x in retrieval_gt[:3]]}")
+		print(f"   retrieval_gt前3个元素内容: {retrieval_gt[:3]}")
+		
+		# 检查previous_result的前几行
+		print(f"   previous_result前3行query: {previous_result['query'].head(3).tolist()}")
+		print(f"   previous_result前3行generation_gt: {previous_result['generation_gt'].head(3).tolist()}")
+
 		# make rows to metric_inputs
+		query_list = previous_result["query"].tolist()
+		generation_gt_list = previous_result["generation_gt"].tolist()
+		
+		print(f"🔍 Debug - 准备zip的三个列表长度:")
+		print(f"   retrieval_gt: {len(retrieval_gt)}")
+		print(f"   query_list: {len(query_list)}")
+		print(f"   generation_gt_list: {len(generation_gt_list)}")
+		
+		# 计算zip后的预期长度
+		expected_zip_length = min(len(retrieval_gt), len(query_list), len(generation_gt_list))
+		print(f"   zip后预期长度: {expected_zip_length}")
+		
 		metric_inputs = [
 			MetricInput(retrieval_gt=ret_gt, query=query, generation_gt=gen_gt)
 			for ret_gt, query, gen_gt in zip(
 				retrieval_gt,
-				previous_result["query"].tolist(),
-				previous_result["generation_gt"].tolist(),
+				query_list,
+				generation_gt_list,
 			)
 		]
+		
+		print(f"🔍 Debug - metric_inputs构造完成:")
+		print(f"   实际生成的metric_inputs长度: {len(metric_inputs)}")
+		
+		# 检查前几个metric_inputs的内容
+		for i, mi in enumerate(metric_inputs[:3]):
+			print(f"   metric_inputs[{i}] - retrieval_gt类型: {type(mi.retrieval_gt)}, query: {mi.query[:50]}...")
 
 		# run evaluation
 		evaluation_results = list(

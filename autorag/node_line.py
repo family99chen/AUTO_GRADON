@@ -56,6 +56,7 @@ def run_node_line(
 	summary_lst = []
 	for node in nodes:
 		# print(f"Running node {node.node_type}...")
+		print(f'node line 文件夹:{node_line_dir}')
 		previous_result = node.run(previous_result, node_line_dir)
 		node_summary_df = load_summary_file(
 			os.path.join(node_line_dir, node.node_type, "summary.csv")

@@ -1,20 +1,20 @@
 import pandas as pd
 
 # 文件路径
-qa_path = "/home/xwh/AutoRAG/data/5dataset_100/qa100.parquet"
-corpus_path = "/home/xwh/AutoRAG/data/5dataset_100/corpus_relate.parquet"
+qa_path = "/home/cz/data/qa.parquet"
+corpus_path = "/home/cz/data/corpus.parquet"
 
 # 转换QA数据
 qa_df = pd.read_parquet(qa_path)
-qa_csv_path = "qa_data.csv"
-qa_df.to_csv(qa_csv_path, index=False)
+qa_csv_path = "qa_data3.csv"
+qa_df.to_csv(qa_csv_path, index=False, escapechar='\\', quoting=1)
 print(f"已将QA数据转换为CSV并保存到: {qa_csv_path}")
 print(f"QA数据共有{len(qa_df)}行, {qa_df.shape[1]}列")
 
 # 转换语料库数据
 corpus_df = pd.read_parquet(corpus_path)
-corpus_csv_path = "corpus_data.csv"
-corpus_df.to_csv(corpus_csv_path, index=False)
+corpus_csv_path = "corpus_data3.csv"
+corpus_df.to_csv(corpus_csv_path, index=False, escapechar='\\', quoting=1, encoding='utf-8')
 print(f"已将语料库数据转换为CSV并保存到: {corpus_csv_path}")
 print(f"语料库数据共有{len(corpus_df)}行, {corpus_df.shape[1]}列")
 

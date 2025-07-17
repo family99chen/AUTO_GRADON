@@ -1,119 +1,486 @@
-qid,query,retrieval_gt,generation_gt
-2WikiMultihopQA_Q0,Who is the mother of the director of film Polish-Russian War (Film)?,"[array(['2WikiMultihopQA_C0_0', '2WikiMultihopQA_C0_1'], dtype=object)]",Małgorzata Braunek
-2WikiMultihopQA_Q1,"Which film came out first, Blind Shaft or The Mask Of Fu Manchu?","[array(['2WikiMultihopQA_C1_0', '2WikiMultihopQA_C1_1',
-        '2WikiMultihopQA_C1_2'], dtype=object)         ]",The Mask Of Fu Manchu
-2WikiMultihopQA_Q2,"When did John V, Prince Of Anhalt-Zerbst's father die?","[array(['2WikiMultihopQA_C2_0', '2WikiMultihopQA_C2_1'], dtype=object)]",12 June 1516
-2WikiMultihopQA_Q3,What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?,"[array(['2WikiMultihopQA_C3_0', '2WikiMultihopQA_C3_1'], dtype=object)]",Myanmar Motion Picture Academy Awards
-2WikiMultihopQA_Q4,Where was the director of film Ronnie Rocket born?,"[array(['2WikiMultihopQA_C4_0', '2WikiMultihopQA_C4_1'], dtype=object)]","Missoula, Montana"
-2WikiMultihopQA_Q5,Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?,"[array(['2WikiMultihopQA_C5_0', '2WikiMultihopQA_C5_1',
-        '2WikiMultihopQA_C5_2'], dtype=object)         ]",Charles Armand René de La Trémoille
-2WikiMultihopQA_Q6,Where was the father of Ștefan I. Nenițescu born?,"[array(['2WikiMultihopQA_C6_0', '2WikiMultihopQA_C6_1',
-        '2WikiMultihopQA_C6_2'], dtype=object)         ]",Galați
-2WikiMultihopQA_Q7,Are North Marion High School (Oregon) and Seoul High School both located in the same country?,"[array(['2WikiMultihopQA_C7_0', '2WikiMultihopQA_C7_1'], dtype=object)]",no
-2WikiMultihopQA_Q8,"Which film has the director who was born later, El Extraño Viaje or Love In Pawn?","[array(['2WikiMultihopQA_C8_0', '2WikiMultihopQA_C8_1'], dtype=object)]",El Extraño Viaje
-2WikiMultihopQA_Q9,Who is the maternal grandfather of Antiochus X Eusebes?,"[array(['2WikiMultihopQA_C9_0', '2WikiMultihopQA_C9_1'], dtype=object)]",Ptolemy IX Lathyros
-2WikiMultihopQA_Q10,"Which film has the director died first, Crimen A Las Tres or The Working Class Goes To Heaven?","[array(['2WikiMultihopQA_C10_0', '2WikiMultihopQA_C10_1'], dtype=object)]",The Working Class Goes To Heaven
-2WikiMultihopQA_Q11,"Which film has the director born first, Once A Gentleman or The Girl In White?","[array(['2WikiMultihopQA_C11_0'], dtype=object)]",Once A Gentleman
-2WikiMultihopQA_Q12,"Which film has the director who died earlier, Il Seduttore or The Trial Of Joan Of Arc?","[array(['2WikiMultihopQA_C12_0', '2WikiMultihopQA_C12_1'], dtype=object)]",The Trial Of Joan Of Arc
-2WikiMultihopQA_Q13,Where was the director of film Thomas Jefferson (Film) born?,"[array(['2WikiMultihopQA_C13_0', '2WikiMultihopQA_C13_1'], dtype=object)]",Brooklyn
-2WikiMultihopQA_Q14,Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?,"[array(['2WikiMultihopQA_C14_0', '2WikiMultihopQA_C14_1',
-        '2WikiMultihopQA_C14_2'], dtype=object)          ]",stroke
-2WikiMultihopQA_Q15,Where was the place of death of the director of film Beat Girl?,"[array(['2WikiMultihopQA_C15_0', '2WikiMultihopQA_C15_1'], dtype=object)]",Nice
-2WikiMultihopQA_Q16,"Who died first, Fleetwood Sheppard or George William Whitaker?","[array(['2WikiMultihopQA_C16_0', '2WikiMultihopQA_C16_1'], dtype=object)]",Fleetwood Sheppard
-2WikiMultihopQA_Q17,"Which film has the director born first, The Raven'S Dance or Keïta! L'Héritage Du Griot?","[array(['2WikiMultihopQA_C17_0', '2WikiMultihopQA_C17_1'], dtype=object)]",The Raven'S Dance
-2WikiMultihopQA_Q18,When did Jean Martin (Singer)'s husband die?,"[array(['2WikiMultihopQA_C18_0', '2WikiMultihopQA_C18_1'], dtype=object)]",1983
-2WikiMultihopQA_Q19,"Which film has the director who died earlier, Tangled Destinies or The Daltons' Women?","[array(['2WikiMultihopQA_C19_0', '2WikiMultihopQA_C19_1'], dtype=object)]",Tangled Destinies
-2WikiMultihopQA_Q20,"Which film was released earlier, Moment Of Danger or The Ballad Of Josie?","[array(['2WikiMultihopQA_C20_0', '2WikiMultihopQA_C20_1'], dtype=object)]",Moment Of Danger
-2WikiMultihopQA_Q21,What nationality is the director of film World And Time Enough?,"[array(['2WikiMultihopQA_C21_0', '2WikiMultihopQA_C21_1'], dtype=object)]",United States
-2WikiMultihopQA_Q22,"Which film has the director died earlier, Poker In Bed or The Machine To Kill Bad People?","[array(['2WikiMultihopQA_C22_0', '2WikiMultihopQA_C22_1'], dtype=object)]",The Machine To Kill Bad People
-2WikiMultihopQA_Q23,"Which film whose director is younger, Heads I Win, Tails You Lose or The Incredible Sarah?","[array(['2WikiMultihopQA_C23_0', '2WikiMultihopQA_C23_1'], dtype=object)]","Heads I Win, Tails You Lose"
-2WikiMultihopQA_Q24,"Who is Catherine Of Pomerania, Countess Palatine Of Neumarkt's father-in-law?","[array(['2WikiMultihopQA_C24_0', '2WikiMultihopQA_C24_1'], dtype=object)]",Rupert
-2WikiMultihopQA_Q25,Who is Marie Zéphyrine Of France's paternal grandmother?,"[array(['2WikiMultihopQA_C25_0', '2WikiMultihopQA_C25_1'], dtype=object)]",Marie Leszczyńska
-2WikiMultihopQA_Q26,"Which film has the director died earlier, Condemned Women or Faces In The Dark?","[array(['2WikiMultihopQA_C26_0', '2WikiMultihopQA_C26_1'], dtype=object)]",Condemned Women
-2WikiMultihopQA_Q27,Who is the spouse of the director of film Eden And After?,"[array(['2WikiMultihopQA_C27_0', '2WikiMultihopQA_C27_1'], dtype=object)]",Catherine Robbe-Grillet
-2WikiMultihopQA_Q28,Where was the place of death of Anastasia Of Serbia's husband?,"[array(['2WikiMultihopQA_C28_0', '2WikiMultihopQA_C28_1',
-        '2WikiMultihopQA_C28_2'], dtype=object)          ]",Hilandar
-2WikiMultihopQA_Q29,Are Fire In Hell and The Tiger: An Old Hunter'S Tale from the same country?,"[array(['2WikiMultihopQA_C29_0'], dtype=object)]",yes
-2WikiMultihopQA_Q30,"Which film was released more recently, Lo Zappatore or Placer Sangriento?","[array(['2WikiMultihopQA_C30_0'], dtype=object)]",Placer Sangriento
-2WikiMultihopQA_Q31,Was Şemsettin Baş or Gwenc'Hlan Le Scouëzec born first?,"[array(['2WikiMultihopQA_C31_0', '2WikiMultihopQA_C31_1'], dtype=object)]",Gwenc'Hlan Le Scouëzec
-2WikiMultihopQA_Q32,"Which film has the director born later, Bhoomiyude Avakashikal or The Majesty Of The Law?","[array(['2WikiMultihopQA_C32_0', '2WikiMultihopQA_C32_1',
-        '2WikiMultihopQA_C32_2'], dtype=object)          ]",Bhoomiyude Avakashikal
-2WikiMultihopQA_Q33,Who is Cornelia (Wife Of Caesar)'s child-in-law?,"[array(['2WikiMultihopQA_C33_0', '2WikiMultihopQA_C33_1'], dtype=object)]",Pompey
-2WikiMultihopQA_Q34,Why did John Middleton Murry's wife die?,"[array(['2WikiMultihopQA_C34_0', '2WikiMultihopQA_C34_1'], dtype=object)]",tuberculosis
-2WikiMultihopQA_Q35,Who is the paternal grandfather of Taj Al-Dawla?,"[array(['2WikiMultihopQA_C35_0', '2WikiMultihopQA_C35_1',
-        '2WikiMultihopQA_C35_2'], dtype=object)          ]",Rukn al-Dawla
-2WikiMultihopQA_Q36,Do both films Payment On Demand and My Cousin From Warsaw have the directors from the same country?,"[array(['2WikiMultihopQA_C36_0', '2WikiMultihopQA_C36_1'], dtype=object)]",yes
-2WikiMultihopQA_Q37,What is the place of birth of the director of film And The Spring Comes?,"[array(['2WikiMultihopQA_C37_0'], dtype=object)]",Xi'an
-2WikiMultihopQA_Q38,"Who died first, Madame Pasca or James A. Donohoe?","[array(['2WikiMultihopQA_C38_0'], dtype=object)]",Madame Pasca
-2WikiMultihopQA_Q39,"Who was born later, D'Arcy Coulson or Thomas William Adams?","[array(['2WikiMultihopQA_C39_0', '2WikiMultihopQA_C39_1'], dtype=object)]",D'Arcy Coulson
-2WikiMultihopQA_Q40,Are Simonds Catholic College and Saginaw High School (Texas) both located in the same country?,"[array(['2WikiMultihopQA_C40_0', '2WikiMultihopQA_C40_1'], dtype=object)]",no
-2WikiMultihopQA_Q41,Which country Prince Nikolaus Wilhelm Of Nassau's mother is from?,"[array(['2WikiMultihopQA_C41_0', '2WikiMultihopQA_C41_1'], dtype=object)]",German
-2WikiMultihopQA_Q42,"Which film whose director was born first, 45 Fathers or The Intended?","[array(['2WikiMultihopQA_C42_0', '2WikiMultihopQA_C42_1'], dtype=object)]",45 Fathers
-2WikiMultihopQA_Q43,"Who is the paternal grandfather of Alexandre Berthier, 3Rd Prince Of Wagram?","[array(['2WikiMultihopQA_C43_0', '2WikiMultihopQA_C43_1'], dtype=object)]",Louis-Alexandre Berthier
-2WikiMultihopQA_Q44,Where was the husband of Caterina Visconti born?,"[array(['2WikiMultihopQA_C44_0'], dtype=object)]",Pavia
-2WikiMultihopQA_Q45,"Which film has the director who was born later, A Quiet Place In The Country or When Were You Born?","[array(['2WikiMultihopQA_C45_0', '2WikiMultihopQA_C45_1'], dtype=object)]",A Quiet Place In The Country
-2WikiMultihopQA_Q46,"Who was born first, John Beach or Gordon Persons?","[array(['2WikiMultihopQA_C46_0', '2WikiMultihopQA_C46_1'], dtype=object)]",John Beach
-2WikiMultihopQA_Q47,"Which film has the director born earlier, The House By The Cemetery or Charlie Chan In Honolulu?","[array(['2WikiMultihopQA_C47_0', '2WikiMultihopQA_C47_1'], dtype=object)]",Charlie Chan In Honolulu
-2WikiMultihopQA_Q48,Who is the child of the director of film La Leona (Film)?,"[array(['2WikiMultihopQA_C48_0'], dtype=object)]",Víctor Bó
-2WikiMultihopQA_Q49,Who is Blanche Of Portugal (1259–1321)'s paternal grandmother?,"[array(['2WikiMultihopQA_C49_0', '2WikiMultihopQA_C49_1'], dtype=object)]",Urraca of Castile
-2WikiMultihopQA_Q50,"Who lived longer, Giuseppe Cesari or Nicos Poulantzas?","[array(['2WikiMultihopQA_C50_0', '2WikiMultihopQA_C50_1'], dtype=object)]",Giuseppe Cesari
-2WikiMultihopQA_Q51,Are director of film Nights On The Road and director of film Swann In Love (Film) from the same country?,"[array(['2WikiMultihopQA_C51_0', '2WikiMultihopQA_C51_1'], dtype=object)]",yes
-2WikiMultihopQA_Q52,"Who is older, Aryeh Ben-Eliezer or Jason Pociask?","[array(['2WikiMultihopQA_C52_0', '2WikiMultihopQA_C52_1'], dtype=object)]",Aryeh Ben-Eliezer
-2WikiMultihopQA_Q53,Where does the director of film Man At Bath work at?,"[array(['2WikiMultihopQA_C53_0', '2WikiMultihopQA_C53_1'], dtype=object)]",Cahiers du cinéma
-2WikiMultihopQA_Q54,"Who is Arthur Gore, 2Nd Earl Of Arran's paternal grandfather?","[array(['2WikiMultihopQA_C54_0', '2WikiMultihopQA_C54_1',
-        '2WikiMultihopQA_C54_2'], dtype=object)          ]","Sir Arthur Gore, 2nd Baronet"
-2WikiMultihopQA_Q55,Are both Kaufland and Otrag located in the same country?,"[array(['2WikiMultihopQA_C55_0', '2WikiMultihopQA_C55_1'], dtype=object)]",yes
-2WikiMultihopQA_Q56,"Which film came out earlier, Aanaval Mothiram or Heroes Of The Street?","[array(['2WikiMultihopQA_C56_0'], dtype=object)]",Heroes Of The Street
-2WikiMultihopQA_Q57,Where was the father of Lord Patrick Crichton-Stuart born?,"[array(['2WikiMultihopQA_C57_0', '2WikiMultihopQA_C57_1'], dtype=object)]",London
-2WikiMultihopQA_Q58,Which country the director of film Daadagiri is from?,"[array(['2WikiMultihopQA_C58_0', '2WikiMultihopQA_C58_1'], dtype=object)]",Pakistan
-2WikiMultihopQA_Q59,Where was the wife of Douglas Leiterman born?,"[array(['2WikiMultihopQA_C59_0', '2WikiMultihopQA_C59_1'], dtype=object)]","Winnipeg, Manitoba"
-2WikiMultihopQA_Q60,What is the place of birth of the performer of song Who...?,"[array(['2WikiMultihopQA_C60_0', '2WikiMultihopQA_C60_1'], dtype=object)]",Fukuoka
-2WikiMultihopQA_Q61,Where was the place of death of the director of film Mole Men Against The Son Of Hercules?,"[array(['2WikiMultihopQA_C61_0'], dtype=object)]",Roma
-2WikiMultihopQA_Q62,Where was the father of Alexandre Gaydamak born?,"[array(['2WikiMultihopQA_C62_0', '2WikiMultihopQA_C62_1'], dtype=object)]","Moscow, USSR"
-2WikiMultihopQA_Q63,"Which film has the director who died earlier, Toen 'T Licht Verdween or Boum Sur Paris?","[array(['2WikiMultihopQA_C63_0', '2WikiMultihopQA_C63_1'], dtype=object)]",Toen 'T Licht Verdween
-2WikiMultihopQA_Q64,"Who is Gaston, Duke Of Orléans's paternal grandmother?","[array(['2WikiMultihopQA_C64_0', '2WikiMultihopQA_C64_1',
-        '2WikiMultihopQA_C64_2'], dtype=object)          ]",Jeanne d'Albret
-2WikiMultihopQA_Q65,Where was the director of film The Half-Way Girl born?,"[array(['2WikiMultihopQA_C65_0', '2WikiMultihopQA_C65_1'], dtype=object)]",New York
-2WikiMultihopQA_Q66,Who is the father-in-law of Sophia Of Wittelsbach?,"[array(['2WikiMultihopQA_C66_0', '2WikiMultihopQA_C66_1'], dtype=object)]",Louis II
-2WikiMultihopQA_Q67,"Where was the place of death of Lambert I, Count Of Louvain's father?","[array(['2WikiMultihopQA_C67_0', '2WikiMultihopQA_C67_1',
-        '2WikiMultihopQA_C67_2'], dtype=object)          ]",Bohemia
-2WikiMultihopQA_Q68,Where was the director of film Highway Dragnet born?,"[array(['2WikiMultihopQA_C68_0', '2WikiMultihopQA_C68_1'], dtype=object)]",Gura Humorului
-2WikiMultihopQA_Q69,Where did Prince Gustav Of Thurn And Taxis (1848–1914)'s mother die?,"[array(['2WikiMultihopQA_C69_0', '2WikiMultihopQA_C69_1',
-        '2WikiMultihopQA_C69_2'], dtype=object)          ]",Meran
-2WikiMultihopQA_Q70,What is the award that the performer of song Sunday Papers earned?,"[array(['2WikiMultihopQA_C70_0', '2WikiMultihopQA_C70_1'], dtype=object)]",Grammy
-2WikiMultihopQA_Q71,"Which film has the director born first, Antonieta or Dodging The Dole?","[array(['2WikiMultihopQA_C71_0', '2WikiMultihopQA_C71_1'], dtype=object)]",Dodging The Dole
-2WikiMultihopQA_Q72,Are both Nikolsk Airport and Svobodny Airport located in the same country?,"[array(['2WikiMultihopQA_C72_0'], dtype=object)]",yes
-2WikiMultihopQA_Q73,"Who is the maternal grandfather of Amadeus Vii, Count Of Savoy?","[array(['2WikiMultihopQA_C73_0', '2WikiMultihopQA_C73_1'], dtype=object)]",Peter I
-2WikiMultihopQA_Q74,"Are both businesses, Telus and Ztr Control Systems, located in the same country?","[array(['2WikiMultihopQA_C74_0', '2WikiMultihopQA_C74_1'], dtype=object)]",yes
-2WikiMultihopQA_Q75,"Do both films, Dial M For Murder and Marius (1931 Film), have the directors who are from the same country?","[array(['2WikiMultihopQA_C75_0', '2WikiMultihopQA_C75_1',
-        '2WikiMultihopQA_C75_2'], dtype=object)          ]",yes
-2WikiMultihopQA_Q76,"Who is older, Dyson Parody or Gene Watson?","[array(['2WikiMultihopQA_C76_0', '2WikiMultihopQA_C76_1'], dtype=object)]",Gene Watson
-2WikiMultihopQA_Q77,Are both directors of films The Princess Bride (Film) and I Never Sang For My Father from the same country?,"[array(['2WikiMultihopQA_C77_0', '2WikiMultihopQA_C77_1',
-        '2WikiMultihopQA_C77_2'], dtype=object)          ]",yes
-2WikiMultihopQA_Q78,When did Prince John Konstantinovich Of Russia's mother die?,"[array(['2WikiMultihopQA_C78_0', '2WikiMultihopQA_C78_1',
-        '2WikiMultihopQA_C78_2'], dtype=object)          ]",24 March 1927
-2WikiMultihopQA_Q79,Which country Audofleda's husband is from?,"[array(['2WikiMultihopQA_C79_0', '2WikiMultihopQA_C79_1',
-        '2WikiMultihopQA_C79_2'], dtype=object)          ]",Ostrogothic Kingdom
-2WikiMultihopQA_Q80,What is the place of birth of the director of film Letter To The King?,"[array(['2WikiMultihopQA_C80_0'], dtype=object)]",Kurdish
-2WikiMultihopQA_Q81,"Are both bands, Snowman (Band) and Jessamine (Band), from the same country?","[array(['2WikiMultihopQA_C81_0'], dtype=object)]",no
-2WikiMultihopQA_Q82,Where was the performer of song God (John Lennon Song) born?,"[array(['2WikiMultihopQA_C82_0', '2WikiMultihopQA_C82_1'], dtype=object)]",Liverpool
-2WikiMultihopQA_Q83,"Which film has the director who died earlier, Captain Kidd And The Slave Girl or Relax Freddie?","[array(['2WikiMultihopQA_C83_0', '2WikiMultihopQA_C83_1'], dtype=object)]",Captain Kidd And The Slave Girl
-2WikiMultihopQA_Q84,"Which song was released more recently, Go Ahead And Break My Heart or Knee Deep In My Heart?","[array(['2WikiMultihopQA_C84_0', '2WikiMultihopQA_C84_1',
-        '2WikiMultihopQA_C84_2'], dtype=object)          ]",Go Ahead And Break My Heart
-2WikiMultihopQA_Q85,"Which film has the director who died later, The Fatal Mistake or The Devil'S Hairpin?","[array(['2WikiMultihopQA_C85_0', '2WikiMultihopQA_C85_1'], dtype=object)]",The Devil'S Hairpin
-2WikiMultihopQA_Q86,Who is Maria Luisa Of Savoy's father-in-law?,"[array(['2WikiMultihopQA_C86_0', '2WikiMultihopQA_C86_1'], dtype=object)]","Louis, Grand Dauphin"
-2WikiMultihopQA_Q87,Who is the paternal grandfather of Kujō Yoritsugu?,"[array(['2WikiMultihopQA_C87_0', '2WikiMultihopQA_C87_1'], dtype=object)]",Kujō Michiie
-2WikiMultihopQA_Q88,What is the place of birth of the director of film Marianela (1940 Film)?,"[array(['2WikiMultihopQA_C88_0', '2WikiMultihopQA_C88_1'], dtype=object)]",Madrid
-2WikiMultihopQA_Q89,"Which film came out first, Repeated Absences or She Wore A Yellow Ribbon?","[array(['2WikiMultihopQA_C89_0', '2WikiMultihopQA_C89_1',
-        '2WikiMultihopQA_C89_2'], dtype=object)          ]",She Wore A Yellow Ribbon
-2WikiMultihopQA_Q90,"Who lived longer, Edward Dearle or Michael Doeberl?","[array(['2WikiMultihopQA_C90_0'], dtype=object)]",Edward Dearle
-2WikiMultihopQA_Q91,Where does Karin Stoltenberg's husband work at?,"[array(['2WikiMultihopQA_C91_0', '2WikiMultihopQA_C91_1'], dtype=object)]",United Nations
-2WikiMultihopQA_Q92,Where was the director of film Lettre Ouverte born?,"[array(['2WikiMultihopQA_C92_0', '2WikiMultihopQA_C92_1'], dtype=object)]",Paris
-2WikiMultihopQA_Q93,"Who is William Ii, Count Of Flanders's paternal grandmother?","[array(['2WikiMultihopQA_C93_0', '2WikiMultihopQA_C93_1'], dtype=object)]",Mathilde of Bourbon
-2WikiMultihopQA_Q94,What is the place of birth of Clara Novello's father?,"[array(['2WikiMultihopQA_C94_0'], dtype=object)]",London
-2WikiMultihopQA_Q95,"Which film came out earlier, Emmy Of Stork'S Nest or Indira Vizha?","[array(['2WikiMultihopQA_C95_0', '2WikiMultihopQA_C95_1'], dtype=object)]",Emmy Of Stork'S Nest
-2WikiMultihopQA_Q96,"Which film came out first, Celine: Through The Eyes Of The World or Dilan 1991?","[array(['2WikiMultihopQA_C96_0', '2WikiMultihopQA_C96_1'], dtype=object)]",Celine: Through The Eyes Of The World
-2WikiMultihopQA_Q97,"Who was born earlier, Silas Hardy or Lee Mantle?","[array(['2WikiMultihopQA_C97_0', '2WikiMultihopQA_C97_1'], dtype=object)]",Lee Mantle
-2WikiMultihopQA_Q98,"Where was the place of burial of Albert Frederick, Duke Of Prussia's mother?","[array(['2WikiMultihopQA_C98_0'], dtype=object)]",Königsberg
-2WikiMultihopQA_Q99,Where was the place of death of Juan Carlos Gumucio's wife?,"[array(['2WikiMultihopQA_C99_0', '2WikiMultihopQA_C99_1',
-        '2WikiMultihopQA_C99_2'], dtype=object)          ]",Homs
+"qid","query","retrieval_gt","generation_gt"
+"NQ_Q0","what do the 3 dots mean in math","[array(['NQ_C0_0', 'NQ_C0_1'], dtype=object)]","['In logical argument and mathematical proof, the therefore sign (∴) is generally used before a logical consequence, such as the conclusion of a syllogism. The symbol consists of three dots placed in an upright triangle and is read therefore. It is encoded at    (HTML\\xa0&#8756;\\xa0· &there4;). For common use in Microsoft Office hold the ALT key and type ""8756"". While it is not generally used in formal writing, it is used in mathematics and shorthand. It is complementary to    (HTML\\xa0&#8757;).']"
+"NQ_Q1","when was the writ watch invented by who","[array(['NQ_C1_0', 'NQ_C1_1', 'NQ_C1_2', 'NQ_C1_3', 'NQ_C1_4', 'NQ_C1_5',
+        'NQ_C1_6', 'NQ_C1_7', 'NQ_C1_8'], dtype=object)                  ]","[]"
+"NQ_Q2","who wrote the song photograph by ringo starr","[array(['NQ_C2_0', 'NQ_C2_1', 'NQ_C2_2', 'NQ_C2_3', 'NQ_C2_4', 'NQ_C2_5',
+        'NQ_C2_6', 'NQ_C2_7', 'NQ_C2_8', 'NQ_C2_9'], dtype=object)       ]","[]"
+"NQ_Q3","who is playing the halftime show at super bowl 2016","[array(['NQ_C3_0', 'NQ_C3_1', 'NQ_C3_2', 'NQ_C3_3'], dtype=object)]","[""The Super Bowl 50 Halftime Show took place on February 7, 2016, at Levi's Stadium in Santa Clara, California as part of Super Bowl 50. It was headlined by the British rock group Coldplay with special guest performers Beyoncé and Bruno Mars, who previously had headlined the Super Bowl XLVII and Super Bowl XLVIII halftime shows, respectively.""]"
+"NQ_Q4","star wars the clone wars anakin voice actor","[array(['NQ_C4_0', 'NQ_C4_1', 'NQ_C4_2'], dtype=object)]","[""In December 2006, he was announced to voice the role of Anakin Skywalker for the animated film Star Wars: The Clone Wars which was released on August 15, 2008. The film had box office success earning worldwide $69,182,844. He continued in the role in the television series Star Wars: The Clone Wars which premiered on October 3, 2008 on the Cartoon Network. He has also reprised his role in various video games based on the franchise. The series' fourth season premiered in September, 2011. Season five premiered on Cartoon Network on September 29, 2012. The Red Carpet Premier for the fifth Season was in Orlando, Florida during Celebration VI on Friday August 24, 2012 where Lanter along with some of his co-stars Samuel Witwer, James Arnold Taylor, Dee Bradley Baker, Tom Kane, Daniel Logan and Stephen Stanton as well as Supervising Director Dave Filoni attended this special event.""]"
+"NQ_Q5","meaning behind the song whiter shade of pale","[array(['NQ_C5_0', 'NQ_C5_1', 'NQ_C5_2', 'NQ_C5_3', 'NQ_C5_4', 'NQ_C5_5',
+        'NQ_C5_6'], dtype=object)                                        ]","[]"
+"NQ_Q6","where is most distortion found on a globe","[array(['NQ_C6_0', 'NQ_C6_1', 'NQ_C6_2', 'NQ_C6_3'], dtype=object)]","['Flat maps are created using a map projection that inevitably introduces an increasing amount of distortion the larger the area that the map shows. A globe is the only representation of the Earth that does not distort either the shape or the size of large features\\xa0– land masses, bodies of water, etc.']"
+"NQ_Q7","to aru kagaku no railgun s episode 3","[array(['NQ_C7_0', 'NQ_C7_1', 'NQ_C7_2'], dtype=object)]","[]"
+"NQ_Q8","when do new chapters of owari no seraph come out","[array(['NQ_C8_0'], dtype=object)]","[]"
+"NQ_Q9","where does the last name painter come from","[array(['NQ_C9_0', 'NQ_C9_1', 'NQ_C9_2', 'NQ_C9_3', 'NQ_C9_4', 'NQ_C9_5',
+        'NQ_C9_6', 'NQ_C9_7', 'NQ_C9_8', 'NQ_C9_9', 'NQ_C9_10', 'NQ_C9_11',
+        'NQ_C9_12', 'NQ_C9_13', 'NQ_C9_14', 'NQ_C9_15', 'NQ_C9_16',
+        'NQ_C9_17', 'NQ_C9_18', 'NQ_C9_19', 'NQ_C9_20', 'NQ_C9_21',
+        'NQ_C9_22', 'NQ_C9_23', 'NQ_C9_24', 'NQ_C9_25', 'NQ_C9_26',
+        'NQ_C9_27', 'NQ_C9_28', 'NQ_C9_29', 'NQ_C9_30'], dtype=object)     ]","[]"
+"NQ_Q10","dominant alleles are always the most common allele in a population","[array(['NQ_C10_0', 'NQ_C10_1', 'NQ_C10_2', 'NQ_C10_3', 'NQ_C10_4',
+        'NQ_C10_5', 'NQ_C10_6', 'NQ_C10_7', 'NQ_C10_8', 'NQ_C10_9',
+        'NQ_C10_10', 'NQ_C10_11', 'NQ_C10_12', 'NQ_C10_13', 'NQ_C10_14'],
+       dtype=object)                                                     ]","[]"
+"NQ_Q11","an eastern red cedar is a hardwood or softwood","[array(['NQ_C11_0'], dtype=object)]","[]"
+"NQ_Q12","what are the challenges faced by the cotton textile industry of ahmedabad","[array(['NQ_C12_0'], dtype=object)]","[]"
+"NQ_Q13","who won the 2017 sports personality of the year","[array(['NQ_C13_0', 'NQ_C13_1'], dtype=object)]","[]"
+"NQ_Q14","i got the joy joy joy down in my heart lyrics","[array(['NQ_C14_0', 'NQ_C14_1', 'NQ_C14_2'], dtype=object)]","[]"
+"NQ_Q15","is there a basketball team in las vegas","[array(['NQ_C15_0', 'NQ_C15_1', 'NQ_C15_2', 'NQ_C15_3', 'NQ_C15_4',
+        'NQ_C15_5', 'NQ_C15_6', 'NQ_C15_7', 'NQ_C15_8', 'NQ_C15_9',
+        'NQ_C15_10', 'NQ_C15_11', 'NQ_C15_12'], dtype=object)      ]","[]"
+"NQ_Q16","who lives in the grounds of windsor castle","[array(['NQ_C16_0', 'NQ_C16_1', 'NQ_C16_2', 'NQ_C16_3', 'NQ_C16_4',
+        'NQ_C16_5', 'NQ_C16_6', 'NQ_C16_7', 'NQ_C16_8', 'NQ_C16_9',
+        'NQ_C16_10', 'NQ_C16_11', 'NQ_C16_12', 'NQ_C16_13', 'NQ_C16_14',
+        'NQ_C16_15', 'NQ_C16_16', 'NQ_C16_17', 'NQ_C16_18', 'NQ_C16_19',
+        'NQ_C16_20', 'NQ_C16_21', 'NQ_C16_22', 'NQ_C16_23', 'NQ_C16_24',
+        'NQ_C16_25', 'NQ_C16_26', 'NQ_C16_27', 'NQ_C16_28', 'NQ_C16_29',
+        'NQ_C16_30', 'NQ_C16_31', 'NQ_C16_32'], dtype=object)           ]","[""Windsor Castle, part of the Occupied Royal Palaces Estate, is owned by Queen Elizabeth\\xa0II in right of the Crown, and day-to-day management is by the Royal Household. In terms of population, Windsor Castle is the largest inhabited castle in the world and the longest-occupied palace in Europe, but it also remains a functioning royal home. As of 2006, around 500 people were living and working in the castle. The Queen has increasingly used the castle as a royal palace as well as her weekend home and it is now as often used for state banquets and official entertaining as Buckingham Palace. In recent years, Windsor Castle has hosted visits from President Mbeki of South Africa, King Abdullah II of Jordan and President Obama of the United States. The castle remains an important ceremonial location. The Waterloo ceremony is carried out in the presence of the Queen each year, and the annual ceremony of the Order of the Garter takes place in St George's Chapel. While the Queen is in residence, the Guard Mounting ceremony occurs on a daily basis. The Royal Ascot procession leaves the castle each year during the annual meeting.""]"
+"NQ_Q17","list of environmentally critical areas in the philippines","[array(['NQ_C17_0', 'NQ_C17_1', 'NQ_C17_2', 'NQ_C17_3'], dtype=object)]","[]"
+"NQ_Q18","after the bath woman drying herself elements of design","[array(['NQ_C18_0', 'NQ_C18_1'], dtype=object)]","[]"
+"NQ_Q19","what’s the difference between downhill and super g","[array(['NQ_C19_0', 'NQ_C19_1', 'NQ_C19_2', 'NQ_C19_3'], dtype=object)]","['Much like downhill, the other of the two ""speed"" events in alpine skiing, a super-G course consists of widely set gates that racers must pass through. The course is set so that skiers must turn more than in downhill, though the speeds are still much higher than in giant slalom (hence the name). Each athlete only has one run to clock the best time. In the Olympics, super-G courses are usually set on the same slopes as the downhill, but with a lower starting point.']"
+"NQ_Q20","where was the world economic forum held this year","[array(['NQ_C20_0', 'NQ_C20_1', 'NQ_C20_2', 'NQ_C20_3', 'NQ_C20_4',
+        'NQ_C20_5', 'NQ_C20_6', 'NQ_C20_7', 'NQ_C20_8', 'NQ_C20_9',
+        'NQ_C20_10', 'NQ_C20_11', 'NQ_C20_12', 'NQ_C20_13', 'NQ_C20_14'],
+       dtype=object)                                                     ]","['The forum is best known for its annual meeting at the end of January in Davos, a mountain resort in Graubünden, in the eastern Alps region of Switzerland. The meeting brings together some 2,500 top business leaders, international political leaders, economists, celebrities and journalists for up to four days to discuss the most pressing issues facing the world. Often this location alone is used to identify meetings, participation, and participants, with such phrases as ""a Davos panel"" and ""Davos man"" being used.']"
+"NQ_Q21","where are the giant redwoods located in california","[array(['NQ_C21_0', 'NQ_C21_1', 'NQ_C21_2', 'NQ_C21_3', 'NQ_C21_4',
+        'NQ_C21_5', 'NQ_C21_6', 'NQ_C21_7', 'NQ_C21_8', 'NQ_C21_9',
+        'NQ_C21_10', 'NQ_C21_11', 'NQ_C21_12'], dtype=object)      ]","[]"
+"NQ_Q22","who has made the most premier league appearances","[array(['NQ_C22_0'], dtype=object)]","[]"
+"NQ_Q23","who was the first chief minister of west bengal","[array(['NQ_C23_0', 'NQ_C23_1'], dtype=object)]","[""Since 1947, there have been eight Chief Ministers of West Bengal. The first was Prafulla Chandra Ghosh of the Indian National Congress, who was succeeded by his party-mates Dr Bidhan Chandra Roy and Prafulla Chandra Sen. A decade of instability followed, marred by fractious coalition governments and frequent impositions of President's rule. The instability ended with 1977 election victory of the Communist Party of India (Marxist) (CPM). Headed by Jyoti Basu, the CPM-led Left Front government was in office for over 23 years (1977–2000). Left rule in West Bengal continued for another 10 years under Buddhadeb Bhattacharya, before its defeat in the 2011 election by the Trinamool Congress. Appointed on 20 May 2011, Trinamool leader Mamata Banerjee is the current incumbent, the state's first woman chief minister.""]"
+"NQ_Q24","who sings got my mind set on you","[array(['NQ_C24_0', 'NQ_C24_1'], dtype=object)]","[]"
+"NQ_Q25","two main types of research methods used in psychology","[array(['NQ_C25_0'], dtype=object)]","[]"
+"NQ_Q26","i only have eyes for you buffy episode","[array(['NQ_C26_0', 'NQ_C26_1', 'NQ_C26_2'], dtype=object)]","[]"
+"NQ_Q27","who plays peter in what we do in the shadows","[array(['NQ_C27_0', 'NQ_C27_1', 'NQ_C27_2', 'NQ_C27_3', 'NQ_C27_4'],
+       dtype=object)                                                ]","['Ben Fransham as Petyr, aged 8,000 – a Nosferatu-like vampire who lives on the bottom floor of the flat in a stone coffin and generally keeps to himself.']"
+"NQ_Q28","who was the chief guest of india on independence day 2017","[array(['NQ_C28_0', 'NQ_C28_1', 'NQ_C28_2', 'NQ_C28_3'], dtype=object)]","[]"
+"NQ_Q29","when does the 14th season of grey's anatomy come out","[array(['NQ_C29_0', 'NQ_C29_1', 'NQ_C29_2', 'NQ_C29_3'], dtype=object)]","[""The fourteenth season of the American television medical drama Grey's Anatomy was ordered on February 10, 2017, by American Broadcasting Company (ABC), and premiered on September 28, 2017 with a special two-hour premiere. The season will consist of 24 episodes, with the season's seventh episode marking the 300th episode for the series overall. The season is produced by ABC Studios, in association with ShondaLand Production Company and The Mark Gordon Company; the showrunner being Shonda Rhimes.""]"
+"NQ_Q30","when was the first hunger games book published","[array(['NQ_C30_0', 'NQ_C30_1', 'NQ_C30_2', 'NQ_C30_3', 'NQ_C30_4',
+        'NQ_C30_5', 'NQ_C30_6', 'NQ_C30_7', 'NQ_C30_8', 'NQ_C30_9',
+        'NQ_C30_10'], dtype=object)                                ]","['The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is written in the voice of 16-year-old Katniss Everdeen, who lives in the future, post-apocalyptic nation of Panem in North America. The Capitol, a highly advanced metropolis, exercises political control over the rest of the nation. The Hunger Games is an annual event in which one boy and one girl aged\\xa012–18 from each of the twelve districts surrounding the Capitol are selected by lottery to compete in a televised battle to the death.']"
+"NQ_Q31","the ocen at the end of the lane","[array(['NQ_C31_0', 'NQ_C31_1', 'NQ_C31_2', 'NQ_C31_3'], dtype=object)]","[]"
+"NQ_Q32","sherlock holmes hound of the baskervilles movie 2002","[array(['NQ_C32_0', 'NQ_C32_1'], dtype=object)]","[]"
+"NQ_Q33","which of the below feature makes the ram not suitable for the persistent storage","[array(['NQ_C33_0', 'NQ_C33_1', 'NQ_C33_2', 'NQ_C33_3', 'NQ_C33_4'],
+       dtype=object)                                                ]","[]"
+"NQ_Q34","keith jarrett's long as you know you're living yours","[array(['NQ_C34_0'], dtype=object)]","[]"
+"NQ_Q35","mandatory elements in the definition of an adverse event (ae)","[array(['NQ_C35_0', 'NQ_C35_1', 'NQ_C35_2'], dtype=object)]","[]"
+"NQ_Q36","how much is the united states in debt to china","[array(['NQ_C36_0', 'NQ_C36_1', 'NQ_C36_2', 'NQ_C36_3', 'NQ_C36_4',
+        'NQ_C36_5', 'NQ_C36_6', 'NQ_C36_7', 'NQ_C36_8', 'NQ_C36_9',
+        'NQ_C36_10', 'NQ_C36_11', 'NQ_C36_12', 'NQ_C36_13', 'NQ_C36_14',
+        'NQ_C36_15', 'NQ_C36_16', 'NQ_C36_17', 'NQ_C36_18', 'NQ_C36_19'],
+       dtype=object)                                                     ]","[]"
+"NQ_Q37","where did the race in grease take place","[array(['NQ_C37_0', 'NQ_C37_1', 'NQ_C37_2', 'NQ_C37_3', 'NQ_C37_4',
+        'NQ_C37_5', 'NQ_C37_6', 'NQ_C37_7', 'NQ_C37_8', 'NQ_C37_9',
+        'NQ_C37_10'], dtype=object)                                ]","['When Sandy finally tells everyone it was Danny Zuko, Rizzo arranges a surprise reunion for the two at a pep rally, where Sandy is cheering along with high-achiever and resident swot, Patty Simcox (Susan Buckner). At the rally, Sandy catches the eye of a muscly member of the football team (Lorenzo Lamas). When Sandy and Danny are reunited, they are initially elated, but Danny soon slips back into his greaser attitude, which offends Sandy. At the same rally, Kenickie reveals his new car, a dilapidated used jalopy, and announces he has entered it into a ""pinks"" street race at Thunder Road.']"
+"NQ_Q38","what is the maximum data rate for the 802.11a standard select one","[array(['NQ_C38_0', 'NQ_C38_1', 'NQ_C38_2', 'NQ_C38_3', 'NQ_C38_4',
+        'NQ_C38_5', 'NQ_C38_6', 'NQ_C38_7', 'NQ_C38_8', 'NQ_C38_9',
+        'NQ_C38_10', 'NQ_C38_11', 'NQ_C38_12', 'NQ_C38_13', 'NQ_C38_14',
+        'NQ_C38_15'], dtype=object)                                     ]","['The 802.11a standard uses the same data link layer protocol and frame format as the original standard, but an OFDM based air interface (physical layer). It operates in the 5\\xa0GHz band with a maximum net data rate of 54\\xa0Mbit/s, plus error correction code, which yields realistic net achievable throughput in the mid-20 Mbit/s.']"
+"NQ_Q39","use partial charges to indicate all polar bonds in the following molecules","[array(['NQ_C39_0', 'NQ_C39_1', 'NQ_C39_2'], dtype=object)]","[]"
+"NQ_Q40","what is the life cycle of a centipede","[array(['NQ_C40_0', 'NQ_C40_1', 'NQ_C40_2', 'NQ_C40_3', 'NQ_C40_4',
+        'NQ_C40_5', 'NQ_C40_6', 'NQ_C40_7', 'NQ_C40_8', 'NQ_C40_9',
+        'NQ_C40_10'], dtype=object)                                ]","[]"
+"NQ_Q41","where are the summer olympics held this year","[array(['NQ_C41_0', 'NQ_C41_1', 'NQ_C41_2'], dtype=object)]","[]"
+"NQ_Q42","which is the nearest country north of egypt","[array(['NQ_C42_0', 'NQ_C42_1'], dtype=object)]","[]"
+"NQ_Q43","a good that can be used in place of another good","[array(['NQ_C43_0', 'NQ_C43_1', 'NQ_C43_2', 'NQ_C43_3', 'NQ_C43_4'],
+       dtype=object)                                                ]","[]"
+"NQ_Q44","where in the bible can i find the lord's prayer","[array(['NQ_C44_0', 'NQ_C44_1', 'NQ_C44_2', 'NQ_C44_3', 'NQ_C44_4',
+        'NQ_C44_5', 'NQ_C44_6', 'NQ_C44_7', 'NQ_C44_8', 'NQ_C44_9',
+        'NQ_C44_10', 'NQ_C44_11'], dtype=object)                   ]","[]"
+"NQ_Q45","what is the un declaration on the rights of indigenous peoples","[array(['NQ_C45_0', 'NQ_C45_1', 'NQ_C45_2', 'NQ_C45_3', 'NQ_C45_4',
+        'NQ_C45_5', 'NQ_C45_6', 'NQ_C45_7', 'NQ_C45_8', 'NQ_C45_9',
+        'NQ_C45_10', 'NQ_C45_11', 'NQ_C45_12', 'NQ_C45_13'], dtype=object)]","[]"
+"NQ_Q46","when was the last time nebraska voted democrat","[array(['NQ_C46_0'], dtype=object)]","[]"
+"NQ_Q47","what is selena gomez most popular tv show","[array(['NQ_C47_0', 'NQ_C47_1', 'NQ_C47_2', 'NQ_C47_3', 'NQ_C47_4',
+        'NQ_C47_5', 'NQ_C47_6', 'NQ_C47_7', 'NQ_C47_8', 'NQ_C47_9',
+        'NQ_C47_10', 'NQ_C47_11', 'NQ_C47_12', 'NQ_C47_13', 'NQ_C47_14',
+        'NQ_C47_15', 'NQ_C47_16'], dtype=object)                        ]","[]"
+"NQ_Q48","who become the ceo of it wipro company in 2016","[array(['NQ_C48_0', 'NQ_C48_1', 'NQ_C48_2', 'NQ_C48_3', 'NQ_C48_4'],
+       dtype=object)                                                ]","[""At the end of December 31, 2015, its employee strength was 170,664. Abid Ali Neemuchwala was appointed as Wipro's CEO after T. K. stepped down in early 2016.""]"
+"NQ_Q49","4 types of brain wave classifications as recognized by an eeg machine","[array(['NQ_C49_0', 'NQ_C49_1', 'NQ_C49_2', 'NQ_C49_3', 'NQ_C49_4',
+        'NQ_C49_5', 'NQ_C49_6', 'NQ_C49_7', 'NQ_C49_8', 'NQ_C49_9',
+        'NQ_C49_10', 'NQ_C49_11', 'NQ_C49_12', 'NQ_C49_13', 'NQ_C49_14',
+        'NQ_C49_15', 'NQ_C49_16', 'NQ_C49_17', 'NQ_C49_18', 'NQ_C49_19'],
+       dtype=object)                                                     ]","[]"
+"NQ_Q50","when do they announce the next winter olympics","[array(['NQ_C50_0', 'NQ_C50_1', 'NQ_C50_2', 'NQ_C50_3', 'NQ_C50_4',
+        'NQ_C50_5', 'NQ_C50_6', 'NQ_C50_7', 'NQ_C50_8', 'NQ_C50_9',
+        'NQ_C50_10', 'NQ_C50_11', 'NQ_C50_12', 'NQ_C50_13'], dtype=object)]","[]"
+"NQ_Q51","when was each region added to the united states","[array(['NQ_C51_0', 'NQ_C51_1', 'NQ_C51_2', 'NQ_C51_3'], dtype=object)]","[]"
+"NQ_Q52","who does eric end up with in gossip girl","[array(['NQ_C52_0', 'NQ_C52_1', 'NQ_C52_2', 'NQ_C52_3', 'NQ_C52_4',
+        'NQ_C52_5'], dtype=object)                                 ]","[]"
+"NQ_Q53","who plays unis in she's the man","[array(['NQ_C53_0', 'NQ_C53_1', 'NQ_C53_2'], dtype=object)]","[]"
+"NQ_Q54","saint etienne you need a mess of help to stand alone","[array(['NQ_C54_0'], dtype=object)]","[]"
+"NQ_Q55","who played booster in jingle all the way","[array(['NQ_C55_0', 'NQ_C55_1', 'NQ_C55_2', 'NQ_C55_3', 'NQ_C55_4',
+        'NQ_C55_5', 'NQ_C55_6', 'NQ_C55_7', 'NQ_C55_8', 'NQ_C55_9',
+        'NQ_C55_10'], dtype=object)                                ]","[]"
+"NQ_Q56","what does left and right mean in nz politics","[array(['NQ_C56_0', 'NQ_C56_1', 'NQ_C56_2', 'NQ_C56_3', 'NQ_C56_4',
+        'NQ_C56_5', 'NQ_C56_6', 'NQ_C56_7', 'NQ_C56_8', 'NQ_C56_9',
+        'NQ_C56_10'], dtype=object)                                ]","[]"
+"NQ_Q57","season 10 of comedians in cars getting coffee","[array(['NQ_C57_0', 'NQ_C57_1', 'NQ_C57_2'], dtype=object)]","[]"
+"NQ_Q58","where does the term dog and pony show come from","[array(['NQ_C58_0'], dtype=object)]","[""The term was originally used in the United States in the late-19th and early-20th centuries to refer to small traveling circuses that toured through small towns and rural areas. The name derives from the common use of performing dogs and ponies as the main attractions of the events. Performances were generally held in open-air arenas, such as race tracks or public spaces in localities that were too small or remote to attract larger, more elaborate performers or performances. The most notorious was “Prof. Gentry's Famous Dog & Pony Show,” started when teenager Henry Gentry and his brothers started touring in 1886 with their act, originally entitled “Gentry’s Equine and Canine Paradox.” It started small, but evolved into a full circus show. Other early dog and pony shows included Morris’ Equine and Canine Paradoxes (1883) and Hurlburt’s Dog and Pony Show (late 1880s).""]"
+"NQ_Q59","who is recognized as the founder of islam","[array(['NQ_C59_0', 'NQ_C59_1', 'NQ_C59_2', 'NQ_C59_3', 'NQ_C59_4',
+        'NQ_C59_5', 'NQ_C59_6', 'NQ_C59_7', 'NQ_C59_8', 'NQ_C59_9',
+        'NQ_C59_10', 'NQ_C59_11', 'NQ_C59_12', 'NQ_C59_13', 'NQ_C59_14',
+        'NQ_C59_15', 'NQ_C59_16', 'NQ_C59_17', 'NQ_C59_18', 'NQ_C59_19',
+        'NQ_C59_20', 'NQ_C59_21', 'NQ_C59_22', 'NQ_C59_23', 'NQ_C59_24',
+        'NQ_C59_25', 'NQ_C59_26', 'NQ_C59_27', 'NQ_C59_28', 'NQ_C59_29',
+        'NQ_C59_30', 'NQ_C59_31', 'NQ_C59_32', 'NQ_C59_33', 'NQ_C59_34',
+        'NQ_C59_35', 'NQ_C59_36', 'NQ_C59_37', 'NQ_C59_38', 'NQ_C59_39',
+        'NQ_C59_40', 'NQ_C59_41', 'NQ_C59_42', 'NQ_C59_43', 'NQ_C59_44',
+        'NQ_C59_45', 'NQ_C59_46', 'NQ_C59_47', 'NQ_C59_48', 'NQ_C59_49',
+        'NQ_C59_50'], dtype=object)                                     ]","[""According to tradition, the Islamic prophet Muhammad was born in Mecca around the year 570. His family belonged to the Quraysh. When he was about forty years old, he began receiving what Muslims consider to be divine revelations delivered through the angel Gabriel, which would later form the Quran, enjoining him to proclaim a strict monotheistic faith, warn his compatriots of the impending Judgement Day, and castigate social injustices of his city. Muhammad's message won over a handful of followers and was met with increasing opposition from notables of Mecca. In 618, after he lost protection with the death of his influential uncle Abu Talib, Muhammad took flight to the city of Yathrib (subsequently called Medina) where he was joined by his followers. Later generations would count this event, known as the hijra, as the start of the Islamic era.""]"
+"NQ_Q60","where is cars 3 supposed to take place","[array(['NQ_C60_0', 'NQ_C60_1', 'NQ_C60_2', 'NQ_C60_3', 'NQ_C60_4',
+        'NQ_C60_5', 'NQ_C60_6'], dtype=object)                     ]","[]"
+"NQ_Q61","each dot that makes up a satellite image is called a pixel. true or false","[array(['NQ_C61_0', 'NQ_C61_1', 'NQ_C61_2', 'NQ_C61_3', 'NQ_C61_4',
+        'NQ_C61_5', 'NQ_C61_6', 'NQ_C61_7'], dtype=object)         ]","[]"
+"NQ_Q62","who plays emma in air bud world pup","[array(['NQ_C62_0', 'NQ_C62_1'], dtype=object)]","[]"
+"NQ_Q63","why do tokyo and kyoto have the same letters","[array(['NQ_C63_0', 'NQ_C63_1', 'NQ_C63_2', 'NQ_C63_3', 'NQ_C63_4',
+        'NQ_C63_5', 'NQ_C63_6', 'NQ_C63_7', 'NQ_C63_8', 'NQ_C63_9',
+        'NQ_C63_10', 'NQ_C63_11', 'NQ_C63_12'], dtype=object)      ]","[]"
+"NQ_Q64","how old was sasuke when his clan died","[array(['NQ_C64_0', 'NQ_C64_1', 'NQ_C64_2', 'NQ_C64_3', 'NQ_C64_4',
+        'NQ_C64_5', 'NQ_C64_6', 'NQ_C64_7', 'NQ_C64_8', 'NQ_C64_9',
+        'NQ_C64_10', 'NQ_C64_11', 'NQ_C64_12', 'NQ_C64_13'], dtype=object)]","[""Sasuke is introduced in the third chapter of Narutos manga as a young ninja assigned to become a member of Team\\xa07 alongside Naruto Uzumaki and Sakura Haruno. The trio are trained under the guidance of Kakashi Hatake. Although Sasuke is antisocial, he starts caring about Naruto and Sakura. During a mission, Sasuke awakens his Sharingan — his clan's inherited ability to see through illusions — which allows him to learn imperceptible movements at a superhuman rate. It is revealed later that Sasuke is the sole survivor of the once-powerful Uchiha clan of Konohagakure. He, at the age of seven, survived the massacre of his clan perpetrated by his brother, Itachi, who spared Sasuke's life because he did not consider him worth killing. Sasuke seeks strong fighting opponents to reassure himself his power is growing.""]"
+"NQ_Q65","how long is training camp for nfl players","[array(['NQ_C65_0', 'NQ_C65_1', 'NQ_C65_2', 'NQ_C65_3'], dtype=object)]","[""In the National Football League, training camp refers to the time before the season commences. During this time, teams will sometimes congregate at an outside location, usually a university, to conduct training camp for at least the first few weeks. This is similar to baseball's spring training.""]"
+"NQ_Q66","the last speaker of the national assembly during ayub’s government was","[array(['NQ_C66_0', 'NQ_C66_1'], dtype=object)]","[]"
+"NQ_Q67","where do some of the natural air pollutants come from","[array(['NQ_C67_0', 'NQ_C67_1', 'NQ_C67_2', 'NQ_C67_3', 'NQ_C67_4',
+        'NQ_C67_5', 'NQ_C67_6', 'NQ_C67_7', 'NQ_C67_8', 'NQ_C67_9',
+        'NQ_C67_10', 'NQ_C67_11', 'NQ_C67_12', 'NQ_C67_13', 'NQ_C67_14',
+        'NQ_C67_15', 'NQ_C67_16', 'NQ_C67_17', 'NQ_C67_18', 'NQ_C67_19'],
+       dtype=object)                                                     ]","[]"
+"NQ_Q68","who is the pastor of new birth missionary baptist church now","[array(['NQ_C68_0', 'NQ_C68_1'], dtype=object)]","[""On January 15, 2017, Bishop Eddie Long died from an aggressive form of cancer according to a statement released by the church. The church then announced Stephen A. Davis, pastor of New Birth Birmingham in Birmingham, Alabama would be Long's successor at New Birth Missionary Baptist Church in Lithonia while remaining pastor of the Birmingham church.""]"
+"NQ_Q69","what's the difference between commonwealth and territory","[array(['NQ_C69_0', 'NQ_C69_1', 'NQ_C69_2', 'NQ_C69_3'], dtype=object)]","[]"
+"NQ_Q70","what are the different types of mountain biking","[array(['NQ_C70_0', 'NQ_C70_1', 'NQ_C70_2', 'NQ_C70_3', 'NQ_C70_4',
+        'NQ_C70_5', 'NQ_C70_6', 'NQ_C70_7', 'NQ_C70_8', 'NQ_C70_9',
+        'NQ_C70_10', 'NQ_C70_11', 'NQ_C70_12', 'NQ_C70_13'], dtype=object)]","['Mountain biking is the sport of riding bicycles off-road, often over rough terrain, using specially designed mountain bikes. Mountain bikes share similarities with other bikes but incorporate features designed to enhance durability and performance in rough terrain. Mountain biking can generally be broken down into multiple categories: cross country, trail riding, all mountain (also referred to as ""Enduro""), downhill, freeride and dirt jumping. However, the majority of mountain biking falls into the categories of Trail and Cross Country riding styles.']"
+"NQ_Q71","how much canadian tire money do you get","[array(['NQ_C71_0', 'NQ_C71_1', 'NQ_C71_2'], dtype=object)]","[]"
+"NQ_Q72","what is the origin of the name dara","[array(['NQ_C72_0'], dtype=object)]","[]"
+"NQ_Q73","who is doing 2018 super bowl half time show","[array(['NQ_C73_0', 'NQ_C73_1', 'NQ_C73_2', 'NQ_C73_3', 'NQ_C73_4',
+        'NQ_C73_5', 'NQ_C73_6'], dtype=object)                     ]","['The Super Bowl LII Halftime Show (officially known as the Pepsi Super Bowl LII Halftime Show) took place on February 4, 2018 at U.S. Bank Stadium in Minneapolis, Minnesota, as part of Super Bowl LII. Justin Timberlake was the featured performer, as confirmed by the National Football League (NFL) on October 22, 2017. It was televised nationally by NBC.']"
+"NQ_Q74","who is playing the halftime show for the superbowl","[array(['NQ_C74_0', 'NQ_C74_1', 'NQ_C74_2', 'NQ_C74_3', 'NQ_C74_4',
+        'NQ_C74_5', 'NQ_C74_6'], dtype=object)                     ]","[]"
+"NQ_Q75","collection of all types of documents used in the banks and office definition","[array(['NQ_C75_0', 'NQ_C75_1', 'NQ_C75_2'], dtype=object)]","[]"
+"NQ_Q76","who is the national artist for visual who was conferred and died of the same year 1999","[array(['NQ_C76_0', 'NQ_C76_1', 'NQ_C76_2', 'NQ_C76_3', 'NQ_C76_4',
+        'NQ_C76_5', 'NQ_C76_6', 'NQ_C76_7', 'NQ_C76_8', 'NQ_C76_9'],
+       dtype=object)                                                ]","[]"
+"NQ_Q77","who hosted they think it's all over","[array(['NQ_C77_0', 'NQ_C77_1'], dtype=object)]","['The show was originally presented by comedian Nick Hancock. Ex-England football team captain Gary Lineker and ex-England cricket team captain David Gower were team captains from 1995 until they announced their retirement from the show in 2003. They were replaced as team captains by ex-England football goalkeeper David Seaman and ex-England cricketer Phil Tufnell. Former footballer Ian Wright took over from David Seaman in autumn 2004. From October 2005, Boris Becker replaced Tufnell and Lee Mack took over from Hancock as host.']"
+"NQ_Q78","where does the movie proof of life take place","[array(['NQ_C78_0', 'NQ_C78_1', 'NQ_C78_2', 'NQ_C78_3', 'NQ_C78_4'],
+       dtype=object)                                                ]","[""The Republic of Tecala, where most of Proof of Life is set, is a fictional South American country. Tecala has long been the scene of an internal conflict between its government forces and the Liberation Army of Tecala (ELT). The ELT was originally a Marxist guerrilla group supported by the Soviet Union, but after the Soviet Union's dissolution in 1991, the ELT's primary source of funding fell through, and they began kidnapping people for ransom to fund their operations. A map seen in the film is that of Ecuador. The country's capital Quito was chosen along with the eastern jungle and the nearby city of Baños de Agua Santa in the Ecuadorian Andes.""]"
+"NQ_Q79","where did the saying monkey's uncle come from","[array(['NQ_C79_0'], dtype=object)]","['The term monkey\\'s uncle, most notably seen in the idiom ""(well) I\\'ll be a monkey\\'s uncle"", is used to express complete surprise, amazement or disbelief. It can also be used to acknowledge the impossibility of a situation, in the same way that ""pigs might fly"" is used. An example is if one says: ""I may agree that if two plus two equals five, then I am a monkey\\'s uncle"". ""I\\'ll be a monkey\\'s uncle"" has been said to date from after 1925, the date of the widely publicized Scopes Trial in the United States, where the term first appears. The Oxford English Dictionary\\'s earliest example is the phrase If that\\'s a joke I\\'m a monkey\\'s uncle, from an Ohio newspaper on 8 February 1925. It was originally a sarcastic remark made by creationists. The notion ""that [people] were descended from apes was considered blasphemous...by Darwin\\'s contemporaries"", and it was for this reason that the sarcastic phrase came into use.']"
+"NQ_Q80","who breaks a tie in the us senate","[array(['NQ_C80_0', 'NQ_C80_1', 'NQ_C80_2'], dtype=object)]","['The Vice President of the United States is the ex officio President of the Senate, as provided in Article I, Section 3, Clause 4, of the United States Constitution, but may only vote in order to break a tie. According to the U.S. Senate, as of February 28, 2018, a tie-breaking vote had been cast 264 times by 36 vice presidents.']"
+"NQ_Q81","robin and the 7 hoods mr booze scene","[array(['NQ_C81_0', 'NQ_C81_1', 'NQ_C81_2', 'NQ_C81_3', 'NQ_C81_4'],
+       dtype=object)                                                ]","[]"
+"NQ_Q82","derived s.i. unit of joule (j) in terms of fundamental units","[array(['NQ_C82_0', 'NQ_C82_1', 'NQ_C82_2'], dtype=object)]","[]"
+"NQ_Q83","where was the movie coming to america shot","[array(['NQ_C83_0', 'NQ_C83_1', 'NQ_C83_2', 'NQ_C83_3', 'NQ_C83_4',
+        'NQ_C83_5', 'NQ_C83_6'], dtype=object)                     ]","[]"
+"NQ_Q84","where does us highway 1 start and end","[array(['NQ_C84_0', 'NQ_C84_1', 'NQ_C84_2', 'NQ_C84_3', 'NQ_C84_4',
+        'NQ_C84_5', 'NQ_C84_6', 'NQ_C84_7', 'NQ_C84_8', 'NQ_C84_9',
+        'NQ_C84_10', 'NQ_C84_11'], dtype=object)                   ]","['U.S. Route 1 (US\\xa01) is a major north–south U.S. Highway that serves the East Coast of the United States. It runs 2,369 miles (3,813\\xa0km), from Fort Kent, Maine, at the Canada–US border, south to Key West, Florida, making it the longest north–south road in the United States. US\\xa01 is generally paralleled by Interstate 95 (I-95), though the former is significantly farther west (inland) between Jacksonville, Florida, and Petersburg, Virginia. The highway connects most of the major cities of the East Coast—including Miami, Jacksonville, Richmond, Washington, D.C., Baltimore, Philadelphia, New York City and Boston, passing from the Southeastern United States to New England.']"
+"NQ_Q85","who played in charlie's angels full throttle","[array(['NQ_C85_0', 'NQ_C85_1', 'NQ_C85_2', 'NQ_C85_3'], dtype=object)]","[]"
+"NQ_Q86","who scored the most points in a single game in the nba","[array(['NQ_C86_0', 'NQ_C86_1', 'NQ_C86_2'], dtype=object)]","[]"
+"NQ_Q87","where is natural gas found in the us","[array(['NQ_C87_0', 'NQ_C87_1', 'NQ_C87_2', 'NQ_C87_3', 'NQ_C87_4',
+        'NQ_C87_5', 'NQ_C87_6', 'NQ_C87_7', 'NQ_C87_8', 'NQ_C87_9',
+        'NQ_C87_10', 'NQ_C87_11', 'NQ_C87_12'], dtype=object)      ]","[]"
+"NQ_Q88","when were the first general elections held in independent india","[array(['NQ_C88_0', 'NQ_C88_1'], dtype=object)]","[]"
+"NQ_Q89","what was the tower of london originally used for","[array(['NQ_C89_0', 'NQ_C89_1', 'NQ_C89_2', 'NQ_C89_3', 'NQ_C89_4',
+        'NQ_C89_5', 'NQ_C89_6', 'NQ_C89_7', 'NQ_C89_8', 'NQ_C89_9',
+        'NQ_C89_10', 'NQ_C89_11', 'NQ_C89_12', 'NQ_C89_13', 'NQ_C89_14',
+        'NQ_C89_15', 'NQ_C89_16', 'NQ_C89_17', 'NQ_C89_18', 'NQ_C89_19',
+        'NQ_C89_20', 'NQ_C89_21', 'NQ_C89_22', 'NQ_C89_23', 'NQ_C89_24',
+        'NQ_C89_25', 'NQ_C89_26', 'NQ_C89_27', 'NQ_C89_28', 'NQ_C89_29',
+        'NQ_C89_30'], dtype=object)                                     ]","[""The Tower of London, officially Her Majesty's Royal Palace and Fortress of the Tower of London, is a historic castle located on the north bank of the River Thames in central London. It lies within the London Borough of Tower Hamlets, separated from the eastern edge of the square mile of the City of London by the open space known as Tower Hill. It was founded towards the end of 1066 as part of the Norman Conquest of England. The White Tower, which gives the entire castle its name, was built by William the Conqueror in 1078 and was a resented symbol of oppression, inflicted upon London by the new ruling elite. The castle was used as a prison from 1100 (Ranulf Flambard) until 1952 (Kray twins), although that was not its primary purpose. A grand palace early in its history, it served as a royal residence. As a whole, the Tower is a complex of several buildings set within two concentric rings of defensive walls and a moat. There were several phases of expansion, mainly under Kings Richard I, Henry III, and Edward I in the 12th and 13th\\xa0centuries. The general layout established by the late 13th\\xa0century remains despite later activity on the site.""]"
+"NQ_Q90","stoneman douglas high school in parkland florida demographics","[array(['NQ_C90_0'], dtype=object)]","[]"
+"NQ_Q91","what type of fuel goes in a zippo","[array(['NQ_C91_0', 'NQ_C91_1', 'NQ_C91_2', 'NQ_C91_3', 'NQ_C91_4',
+        'NQ_C91_5'], dtype=object)                                 ]","[]"
+"NQ_Q92","first jnanpith award was an autor of which language","[array(['NQ_C92_0', 'NQ_C92_1'], dtype=object)]","[""G. Sankara Kurup, (3 June 1901, Nayathode, Kingdom of Cochin (now in Ernakulam district, Kerala, India) – 2 February 1978, Vappalassery, Angamaly, Ernakulam district, Kerala), better known as Mahakavi G (The Great Poet G), was the first winner of the Jnanpith Award, India's highest literary award. He won the prize in 1965 for his collection of poems in Malayalam Odakkuzhal (The Bamboo Flute, 1950). With part of the prize money he established the literary award Odakkuzhal in 1968. He was also the recipient of the Soviet Land Nehru Award, in 1967, and the Padma Bhushan in 1968. His poetry collection Viswadarshanam won the Kerala Sahitya Akademi Award in 1961 and Kendra Sahitya Akademi Award in 1963.""]"
+"NQ_Q93","what happened to the son in war of the worlds","[array(['NQ_C93_0', 'NQ_C93_1', 'NQ_C93_2', 'NQ_C93_3', 'NQ_C93_4',
+        'NQ_C93_5', 'NQ_C93_6', 'NQ_C93_7', 'NQ_C93_8', 'NQ_C93_9',
+        'NQ_C93_10', 'NQ_C93_11', 'NQ_C93_12', 'NQ_C93_13', 'NQ_C93_14'],
+       dtype=object)                                                     ]","[]"
+"NQ_Q94","who played scotty in the new star trek movie","[array(['NQ_C94_0', 'NQ_C94_1', 'NQ_C94_2', 'NQ_C94_3'], dtype=object)]","[]"
+"NQ_Q95","who played the agent in i can only imagine","[array(['NQ_C95_0', 'NQ_C95_1', 'NQ_C95_2', 'NQ_C95_3', 'NQ_C95_4'],
+       dtype=object)                                                ]","[]"
+"NQ_Q96","who played the mad hatter in the batman tv show","[array(['NQ_C96_0'], dtype=object)]","[]"
+"NQ_Q97","hey buddy how can i get this car out of second gear","[array(['NQ_C97_0', 'NQ_C97_1'], dtype=object)]","[]"
+"NQ_Q98","how many cracker barrels in the united states","[array(['NQ_C98_0', 'NQ_C98_1', 'NQ_C98_2', 'NQ_C98_3', 'NQ_C98_4',
+        'NQ_C98_5', 'NQ_C98_6', 'NQ_C98_7', 'NQ_C98_8'], dtype=object)]","[""The number of combined restaurants and stores owned by Cracker Barrel increased between 1997 and 2000, to more than 420 locations. In 2000 and 2001, the company addressed staffing and infrastructure issues related to this rapid growth by implementing a more rigorous recruitment strategy and introducing new technology, including an order-placement system. From the late 1990s to the mid-2000s, the company focused on opening new locations in residential areas to attract local residents and workers as customers. It updated its marketing in 2006 to encourage new customers, changing the design of its highway billboard advertisements to include images of menu items. Previously the signs had featured only the company's logo. By 2011, Cracker Barrel had opened more than 600 restaurants in 42 states. On January 17, 2012, company founder Dan Evins died of bladder cancer.""]"
+"NQ_Q99","in photosynthesis the carbon in co2 is initially fixed to what molecule","[array(['NQ_C99_0', 'NQ_C99_1', 'NQ_C99_2', 'NQ_C99_3', 'NQ_C99_4',
+        'NQ_C99_5', 'NQ_C99_6'], dtype=object)                     ]","[]"
+"dcd50dfd-b395-4924-bf1c-476f3ed0af66","What is the Milky Way?","[array(['tc_3130_0', 'tc_3130_1', 'tc_3130_3', 'tc_3130_4', 'tc_3130_5',
+        'tc_3130_6', 'tc_3130_8', 'tc_3130_9', 'tc_3130_12', 'tc_3130_14',
+        'tc_3130_18', 'tc_3130_20', 'tc_3130_25', 'tc_3130_31',
+        'tc_3130_36', 'tc_3130_40'], dtype=object)                        ]","this galaxy"
+"56bc5e42-bbd4-4ccb-8a73-7f1de1d654d3","Which force is nothing more than the bending of space and time?","[array(['tc_3155_0', 'tc_3155_1', 'tc_3155_3', 'tc_3155_4', 'tc_3155_5',
+        'tc_3155_6', 'tc_3155_7', 'tc_3155_8', 'tc_3155_9', 'tc_3155_15',
+        'tc_3155_33', 'tc_3155_34'], dtype=object)                       ]","gravitational"
+"8a1b7a56-a386-4d13-9225-6b92d17b1c08","Which star is as bright as 23 Suns, and is orbited by the Pup?","[array(['tc_3156_0', 'tc_3156_1', 'tc_3156_2', 'tc_3156_3', 'tc_3156_4',
+        'tc_3156_6', 'tc_3156_8', 'tc_3156_9', 'tc_3156_11', 'tc_3156_24',
+        'tc_3156_25', 'tc_3156_29', 'tc_3156_37'], dtype=object)          ]","α canis majoris"
+"fc65e92e-5a6d-4298-9a74-a893f0091b7f","What are the three primary colours of light?","[array(['qz_2_0', 'qz_2_5', 'qz_2_6', 'qz_2_12', 'qz_2_15', 'qz_2_34',
+        'qz_2_40'], dtype=object)                                     ]","red blue and green"
+"9f3fc5d7-372b-4581-9439-591d02a29e37","Which three South American countries does the Equator cross?","[array(['qz_20_2', 'qz_20_3', 'qz_20_4', 'qz_20_6', 'qz_20_7', 'qz_20_8',
+        'qz_20_12', 'qz_20_15', 'qz_20_16', 'qz_20_21', 'qz_20_23',
+        'qz_20_25', 'qz_20_26', 'qz_20_27', 'qz_20_28'], dtype=object)   ]","brazil colombia and ecuador"
+"cdb89790-595b-4e2c-a49f-0699a906df33","In what film did Oprah Winfrey make her big screen acting debut?","[array(['qz_63_0', 'qz_63_1', 'qz_63_2', 'qz_63_3', 'qz_63_5', 'qz_63_7',
+        'qz_63_8', 'qz_63_9', 'qz_63_10', 'qz_63_13', 'qz_63_16',
+        'qz_63_29'], dtype=object)                                       ]","colour purple"
+"f453955e-d03b-4d29-a82a-6b1e117ca833","What is the second lightest chemical element?","[array(['qz_68_2', 'qz_68_6', 'qz_68_7', 'qz_68_8', 'qz_68_10', 'qz_68_11',
+        'qz_68_12', 'qz_68_13', 'qz_68_14', 'qz_68_23', 'qz_68_27',
+        'qz_68_28', 'qz_68_29', 'qz_68_30', 'qz_68_43'], dtype=object)     ]","solid helium"
+"ab8a050f-2e66-483c-9b1c-89a3cb47935c","Used in mathematics, what is the value of Pi to three decimal places?","[array(['qz_74_2', 'qz_74_3', 'qz_74_4', 'qz_74_6', 'qz_74_7', 'qz_74_8',
+        'qz_74_13', 'qz_74_19', 'qz_74_21', 'qz_74_23', 'qz_74_25',
+        'qz_74_32', 'qz_74_36'], dtype=object)                           ]","three point one four two degrees"
+"acaf09cf-4b5e-4c36-a7d7-4cbcb8febae4","What colour is the number 10 on the door of 10 Downing Street? White, Yellow or Brown?","[array(['qz_76_1', 'qz_76_2', 'qz_76_3', 'qz_76_6', 'qz_76_9', 'qz_76_16',
+        'qz_76_18', 'qz_76_19', 'qz_76_35', 'qz_76_41'], dtype=object)    ]","white finn"
+"6eeafbf4-2c7b-4f88-b65c-458e34b7e87b","What was advertised with Eva Herzagovia using the slogan hello boys?","[array(['qz_77_0', 'qz_77_1', 'qz_77_2', 'qz_77_3', 'qz_77_4', 'qz_77_5',
+        'qz_77_6', 'qz_77_7', 'qz_77_8', 'qz_77_9'], dtype=object)       ]","wonderbra women"
+"e1937e2a-a030-4f4d-8e92-ffefbedbe90d","What number in Bingo is sometimes referred to as Heinz varieties?","[array(['qz_78_0', 'qz_78_4', 'qz_78_26', 'qz_78_34'], dtype=object)]","fifty seven"
+"46453faa-8938-4bfd-9835-b45b3696e5d9","As at March 2001, who holds the record for scoring the most league goals for the soccer team Arsenal?","[array(['qz_107_0', 'qz_107_2', 'qz_107_10', 'qz_107_17', 'qz_107_24',
+        'qz_107_31'], dtype=object)                                   ]","mr wright"
+"d4bf7459-13b0-43da-9653-93363fba3436","How many verses make up the national anthem God Save The Queen?","[array(['qz_122_0', 'qz_122_4', 'qz_122_6', 'qz_122_7', 'qz_122_8',
+        'qz_122_14', 'qz_122_27', 'qz_122_28', 'qz_122_35', 'qz_122_37',
+        'qz_122_39', 'qz_122_43'], dtype=object)                        ]","3"
+"e6c59be8-d2bf-46cc-a605-ccd65f7a9ff5","What colour is the cross on the national flag of Switzerland?","[array(['qz_127_0', 'qz_127_1', 'qz_127_2', 'qz_127_3', 'qz_127_4',
+        'qz_127_6', 'qz_127_7', 'qz_127_12', 'qz_127_14', 'qz_127_17',
+        'qz_127_18', 'qz_127_25', 'qz_127_32', 'qz_127_38', 'qz_127_39',
+        'qz_127_40', 'qz_127_41', 'qz_127_44'], dtype=object)           ]","rgb 255 255 255"
+"1e11614c-2401-4190-87e9-7a7579dd5cc9","Who was the American President when the Berlin Wall was constructed?","[array(['qz_135_0', 'qz_135_1', 'qz_135_2', 'qz_135_3', 'qz_135_4',
+        'qz_135_5', 'qz_135_6', 'qz_135_7', 'qz_135_8', 'qz_135_9',
+        'qz_135_12', 'qz_135_13', 'qz_135_16', 'qz_135_18', 'qz_135_20',
+        'qz_135_35', 'qz_135_38'], dtype=object)                        ]","jfk"
+"3ce4cb8c-a2c3-4916-a15f-e3100696ca53","What is the minimum number of darts a person needs to throw to complete a leg from 501?","[array(['qz_147_1', 'qz_147_2', 'qz_147_3', 'qz_147_4', 'qz_147_5',
+        'qz_147_8', 'qz_147_9', 'qz_147_13', 'qz_147_15', 'qz_147_23',
+        'qz_147_34', 'qz_147_37', 'qz_147_41'], dtype=object)         ]","9"
+"de8fcc6b-82e9-4c91-85ff-9c73230e26fb","What was the first British football team to win the European Cup?","[array(['qz_148_0', 'qz_148_1', 'qz_148_2', 'qz_148_3', 'qz_148_4',
+        'qz_148_5', 'qz_148_7', 'qz_148_8', 'qz_148_9', 'qz_148_10',
+        'qz_148_14', 'qz_148_15', 'qz_148_16', 'qz_148_18', 'qz_148_19',
+        'qz_148_22', 'qz_148_23', 'qz_148_25', 'qz_148_30', 'qz_148_32',
+        'qz_148_34', 'qz_148_36', 'qz_148_37', 'qz_148_38', 'qz_148_39'],
+       dtype=object)                                                     ]","celtic"
+"f4ac1eb1-43ae-4b04-8aac-70fc83dac921","What is the most popular natural attraction in Alaska?","[array(['qz_186_0', 'qz_186_1', 'qz_186_4', 'qz_186_5', 'qz_186_7',
+        'qz_186_9', 'qz_186_20'], dtype=object)                    ]","denali south buttress"
+"0893810e-61d0-4e5e-99ca-a74b025d0aa5","What type of acid is extracted from the juice of lemons, oranges, limes, and grapefruit?","[array(['qz_188_1', 'qz_188_4', 'qz_188_5', 'qz_188_8', 'qz_188_23',
+        'qz_188_30', 'qz_188_32'], dtype=object)                    ]","atc code a09ab04"
+"d3b16a77-23ef-4140-86dc-8b62bf1ab521","How many pieces are there in a standard set of dominoes?","[array(['qz_196_0', 'qz_196_1', 'qz_196_3', 'qz_196_4', 'qz_196_5',
+        'qz_196_7', 'qz_196_9', 'qz_196_11', 'qz_196_12', 'qz_196_27'],
+       dtype=object)                                                   ]","28"
+"9dc577e2-1454-4f85-bc72-ec25062f2ef6","What is the acronym for the agency which provides co-operation between police forces worldwide?","[array(['qz_204_1', 'qz_204_2', 'qz_204_21', 'qz_204_28'], dtype=object)]","icpo interpol"
+"c380b608-e2ad-4274-8a50-69f47c386fd5","As at the year 2001, what are the only two films to receive 14 Oscar nominations?","[array(['qz_233_0', 'qz_233_3', 'qz_233_4', 'qz_233_7', 'qz_233_8',
+        'qz_233_17', 'qz_233_30', 'qz_233_36'], dtype=object)      ]","all about eve and titanic"
+"4ad563db-0a71-4095-8bc7-9b5fc9eb8fd7","What were Benjy and Laska, which were sent into space in 1958?","[array(['qz_250_2', 'qz_250_3', 'qz_250_4', 'qz_250_5', 'qz_250_6',
+        'qz_250_7', 'qz_250_12', 'qz_250_14'], dtype=object)       ]","mice"
+"c6fe4e74-894c-42d8-b130-3ab337dfee9a","In what year in the 20th century was the Miss World contest held for the first time?","[array(['qz_256_2', 'qz_256_5', 'qz_256_6', 'qz_256_7', 'qz_256_8',
+        'qz_256_10', 'qz_256_12', 'qz_256_16', 'qz_256_18', 'qz_256_22',
+        'qz_256_26', 'qz_256_27', 'qz_256_31', 'qz_256_37', 'qz_256_39',
+        'qz_256_40', 'qz_256_47'], dtype=object)                        ]","1951"
+"ef044db8-fea0-4b5a-9823-add8c322ffc7","In which year was the Encyclopedia Britannica first published?","[array(['qz_267_1', 'qz_267_2', 'qz_267_6', 'qz_267_7', 'qz_267_8',
+        'qz_267_9', 'qz_267_46'], dtype=object)                    ]","1768"
+"cbfbdf3a-73ca-4ff7-8bc3-65d9179df101","On the London Underground, which is the only line to connect at some point with every other line on the system?","[array(['qz_298_0', 'qz_298_1', 'qz_298_4', 'qz_298_6', 'qz_298_9',
+        'qz_298_10', 'qz_298_12', 'qz_298_15', 'qz_298_17', 'qz_298_24',
+        'qz_298_28', 'qz_298_31', 'qz_298_42'], dtype=object)           ]","jubilee line"
+"2647872e-58e2-4257-844d-fb1bf8917d8f","In 1981, what became the first ever music video to be shown on MTV?","[array(['qz_322_30'], dtype=object)]","video killed radio star by buggles"
+"b14b7470-3133-453b-a681-e700320a8929","Who wrote The Importance Of Being Earnest?","[array(['qz_340_1', 'qz_340_2', 'qz_340_3', 'qz_340_5', 'qz_340_6',
+        'qz_340_8', 'qz_340_10', 'qz_340_11', 'qz_340_12', 'qz_340_29',
+        'qz_340_48'], dtype=object)                                    ]","oscar o flahertie wills wilde"
+"b0d453bc-446c-4b2b-b90c-0f504c847540","Thomas Edison, who invented the lightbulb, was afraid of the dark?","[array(['qz_347_0', 'qz_347_1', 'qz_347_7', 'qz_347_9', 'qz_347_10',
+        'qz_347_11', 'qz_347_21', 'qz_347_30', 'qz_347_31', 'qz_347_37'],
+       dtype=object)                                                     ]","true disambiguation"
+"95df6b84-7d43-4d01-b5c2-13ff6d23facb","Taphephobia is the fear of losing your teeth?","[array(['qz_349_0', 'qz_349_2', 'qz_349_5', 'qz_349_38'], dtype=object)]","falsehood"
+"4a048230-e254-46c0-a060-f5a94721746a","The letter t is the second most common letter used in the English language?","[array(['qz_351_0', 'qz_351_1', 'qz_351_2', 'qz_351_5', 'qz_351_8',
+        'qz_351_9', 'qz_351_10', 'qz_351_11', 'qz_351_12', 'qz_351_14',
+        'qz_351_17', 'qz_351_18', 'qz_351_20', 'qz_351_22', 'qz_351_24',
+        'qz_351_27', 'qz_351_33', 'qz_351_34'], dtype=object)           ]","true song"
+"ab3c7b96-ce6d-4818-b601-bfc13def7283","The invention of what in 1867, made Alfred Nobel famous?","[array(['qz_374_0', 'qz_374_1', 'qz_374_3', 'qz_374_4', 'qz_374_5',
+        'qz_374_6', 'qz_374_7', 'qz_374_8', 'qz_374_9', 'qz_374_10',
+        'qz_374_11', 'qz_374_12', 'qz_374_13', 'qz_374_14', 'qz_374_16',
+        'qz_374_20', 'qz_374_33', 'qz_374_34', 'qz_374_36'], dtype=object)]","dynamite"
+"9e9147b9-88f1-48b7-8b53-899a00ad0124","What is the most populated city in America?","[array(['qz_385_0', 'qz_385_2', 'qz_385_4', 'qz_385_5', 'qz_385_6',
+        'qz_385_7', 'qz_385_8', 'qz_385_9', 'qz_385_12', 'qz_385_17',
+        'qz_385_26', 'qz_385_30', 'qz_385_33', 'qz_385_34', 'qz_385_45'],
+       dtype=object)                                                     ]","new york usa state"
+"7d3a3cbf-3dc3-499e-a41a-a01b0305a764","What is the only letter of the alphabet which does not appear in any of the names of the 50 American states?","[array(['qz_418_1', 'qz_418_2', 'qz_418_3', 'qz_418_4', 'qz_418_6',
+        'qz_418_14', 'qz_418_17', 'qz_418_18', 'qz_418_20', 'qz_418_23',
+        'qz_418_38'], dtype=object)                                     ]","🅀"
+"44f9d10a-c6b4-48d5-95cd-7dd52d3ebe05","In 1931, what became the first ever televised sports event?","[array(['qz_419_1', 'qz_419_2', 'qz_419_4', 'qz_419_7', 'qz_419_11',
+        'qz_419_13', 'qz_419_14', 'qz_419_18', 'qz_419_19', 'qz_419_20',
+        'qz_419_26', 'qz_419_28', 'qz_419_29', 'qz_419_32', 'qz_419_34',
+        'qz_419_39', 'qz_419_42'], dtype=object)                        ]","derby stakes"
+"166c8f44-65e0-4f43-a0ad-c0124226f273","What was the Spice Girls' debut single called?","[array(['qz_429_0', 'qz_429_1', 'qz_429_2', 'qz_429_3', 'qz_429_4',
+        'qz_429_5', 'qz_429_6', 'qz_429_7', 'qz_429_8', 'qz_429_9',
+        'qz_429_11', 'qz_429_14', 'qz_429_16', 'qz_429_23', 'qz_429_28',
+        'qz_429_33', 'qz_429_35', 'qz_429_38', 'qz_429_40'], dtype=object)]","wanna be"
+"4536509d-fa63-4797-bd79-ae579d91a514","What are the only two musical notes which have no flats?","[array(['qz_430_1', 'qz_430_2', 'qz_430_4', 'qz_430_12', 'qz_430_14',
+        'qz_430_16', 'qz_430_19', 'qz_430_20', 'qz_430_24', 'qz_430_34',
+        'qz_430_41', 'qz_430_42'], dtype=object)                        ]","c and f"
+"2dbe2373-e75f-4dbe-8a54-0b4cb030565c","From which country do French fries originate? France, Belgium or Switzerland?","[array(['qz_438_2', 'qz_438_5', 'qz_438_7', 'qz_438_12', 'qz_438_22',
+        'qz_438_26', 'qz_438_29', 'qz_438_43', 'qz_438_44'], dtype=object)]","confederatio helvetica"
+"f41bd12e-15e3-4bf8-a125-38695b22f094","For what novel did J. K. Rowling win the 1999 Whitbread Children's book of the year award?","[array(['qz_453_1', 'qz_453_2', 'qz_453_4', 'qz_453_5', 'qz_453_9',
+        'qz_453_32'], dtype=object)                                ]","harry potter and prisoner of azkaban book"
+"d666cab9-236a-4621-8824-ab1152ce3e48","Mary has a large bedroom and the only light switch is on the wall approximately 20 feet away from her bed. How can she turn off the light, but still get into bed before it is dark?","[array(['qz_544_16', 'qz_544_20', 'qz_544_31'], dtype=object)]","by going to bed when it is still daylight"
+"59d9d95a-4bcf-49f2-bbdc-1bac37acc2ce","What is the longest word can be typed using only the top row of letters on a typewriter?","[array(['qz_547_0', 'qz_547_1', 'qz_547_3', 'qz_547_6', 'qz_547_8',
+        'qz_547_9', 'qz_547_10', 'qz_547_12', 'qz_547_22', 'qz_547_23',
+        'qz_547_30'], dtype=object)                                    ]","typewriterly"
+"d9c297f1-c410-4ce3-a5c0-b5ac4e62f503","A man lives on the 20th floor of a block of flats. If it is a rainy day, he gets into the elevator in the morning, goes down to the ground floor and goes off to work. In the afternoon when he comes home, he gets into the elevator and goes straight to the 20th floor. However, if it is a sunny day he goes down to the ground floor in the morning, but when he comes home he only goes up to the 10th floor and then walks up 10 flights of stairs. Why?","[array(['qz_548_0'], dtype=object)]","man is short and can only reach elevator button 20 when he has his umbrella"
+"02ff905f-b25c-4358-8461-56fc8dc0e929","What is the only football league team in Britain which doesn't have any of the letters from the word football in its name?","[array(['qz_578_21', 'qz_578_25', 'qz_578_29', 'qz_578_33', 'qz_578_37'],
+       dtype=object)                                                     ]","ancrum road primary school"
+"3b2e8c01-2fb2-4fc1-9161-0f574f6a5045","In which city would you find O'Hare International Airport?","[array(['qz_603_0', 'qz_603_1', 'qz_603_2', 'qz_603_4', 'qz_603_5',
+        'qz_603_7', 'qz_603_14', 'qz_603_17', 'qz_603_19', 'qz_603_20',
+        'qz_603_22', 'qz_603_25', 'qz_603_34'], dtype=object)          ]","chicago finance committee"
+"125b7ff9-ef85-4480-8b1b-eac842e8759f","Which Asian country was once called Siam?","[array(['qz_608_0', 'qz_608_1', 'qz_608_2', 'qz_608_3', 'qz_608_4',
+        'qz_608_5', 'qz_608_6', 'qz_608_7', 'qz_608_8', 'qz_608_9',
+        'qz_608_10', 'qz_608_11', 'qz_608_14', 'qz_608_17', 'qz_608_18',
+        'qz_608_19', 'qz_608_21', 'qz_608_22', 'qz_608_36', 'qz_608_37',
+        'qz_608_41'], dtype=object)                                     ]","prathet thai"
+"87c9569f-d929-4ada-8459-a66a26aeb8b5","Which three countries does Luxembourg border?","[array(['qz_609_0', 'qz_609_2', 'qz_609_3', 'qz_609_12', 'qz_609_14',
+        'qz_609_20', 'qz_609_25', 'qz_609_27', 'qz_609_31', 'qz_609_34',
+        'qz_609_37', 'qz_609_44'], dtype=object)                        ]","france germany and belgium"
+"c708ae1a-2f9d-4ad6-a1c0-5eef00401e52","What are the names of Donald Duck's three nephews?","[array(['qz_611_1', 'qz_611_2', 'qz_611_3', 'qz_611_5', 'qz_611_6',
+        'qz_611_9', 'qz_611_12', 'qz_611_18'], dtype=object)       ]","huey dewey"
+"d84b00dc-e3f4-4941-9458-c8944323a2c9","In which 1993 film does a boy called Jonah write to a woman called Annie, asking her to meet his father at the Empire State building on St. Valentine's Day?","[array(['qz_620_0', 'qz_620_14', 'qz_620_19', 'qz_620_20', 'qz_620_24',
+        'qz_620_29', 'qz_620_42', 'qz_620_43'], dtype=object)          ]","sleepless in seattle film"
+"f2689302-b42a-4544-897c-b452556590be","Who had a top ten hit in 1988 with Valentine?","[array(['qz_621_1', 'qz_621_2', 'qz_621_6', 'qz_621_8', 'qz_621_18',
+        'qz_621_21', 'qz_621_36'], dtype=object)                    ]","t pau"
+"2d27f92e-defa-41f1-b109-192087bd16ea","What is the second most common word in written English?","[array(['qz_644_1', 'qz_644_2', 'qz_644_3', 'qz_644_4', 'qz_644_5',
+        'qz_644_6', 'qz_644_7', 'qz_644_11', 'qz_644_18', 'qz_644_19',
+        'qz_644_20', 'qz_644_21', 'qz_644_22', 'qz_644_28', 'qz_644_30',
+        'qz_644_35', 'qz_644_39', 'qz_644_40', 'qz_644_47', 'qz_644_48'],
+       dtype=object)                                                     ]","of"
+"90577639-c511-480a-bd2d-3d1281770272","In which arcade game, would you find ghosts called Inky, Pinky, Blinky and Clyde?","[array(['qz_647_0', 'qz_647_2', 'qz_647_3', 'qz_647_4', 'qz_647_7',
+        'qz_647_8', 'qz_647_9', 'qz_647_34', 'qz_647_36'], dtype=object)]","inky ghost"
+"720d3c47-e195-4f5b-b63b-12ae90e67697","More commonly known as the thigh bone, what is the medical name for the longest bone in the human body?","[array(['qz_664_0', 'qz_664_2', 'qz_664_3', 'qz_664_4', 'qz_664_6',
+        'qz_664_7', 'qz_664_8', 'qz_664_13', 'qz_664_14', 'qz_664_20',
+        'qz_664_23', 'qz_664_24', 'qz_664_30', 'qz_664_32', 'qz_664_34'],
+       dtype=object)                                                     ]","fuemur"
+"05d76620-a57b-4d0a-ba3d-adb7ed3f183e","What word is used to describe someone who is neither left or right handed, but can use both hands with equal ease?","[array(['qz_666_1', 'qz_666_2', 'qz_666_3', 'qz_666_5', 'qz_666_7',
+        'qz_666_8', 'qz_666_16', 'qz_666_23', 'qz_666_27', 'qz_666_38'],
+       dtype=object)                                                    ]","ambidexterity"
+"d0245d99-cb3e-425b-af3b-59afbf657454","Which cult film, starring Harrison Ford, was based on the story Do Androids Dream of Electric Sheep?","[array(['qz_685_0', 'qz_685_1', 'qz_685_2', 'qz_685_3', 'qz_685_4',
+        'qz_685_5', 'qz_685_6', 'qz_685_7', 'qz_685_8', 'qz_685_20',
+        'qz_685_23'], dtype=object)                                 ]","leon kowalski"
+"5aa0ccb0-9a29-454e-addf-c969442980a6","Which ITV magazine style show ran from 1968 to 1980 and featured presenters including Jenny Hanley, Mick Robertson and Tommy Boyd?","[array(['qz_688_0', 'qz_688_1', 'qz_688_2', 'qz_688_5', 'qz_688_6',
+        'qz_688_8', 'qz_688_16', 'qz_688_33', 'qz_688_34', 'qz_688_37'],
+       dtype=object)                                                    ]","magpies"
+"8dbc6d65-1c4a-4167-bbed-d9fa5aaa7df2","Which type of animal was Robin Hood in the Disney cartoon film 'Robin Hood'?","[array(['qz_690_1', 'qz_690_2', 'qz_690_8', 'qz_690_9', 'qz_690_15',
+        'qz_690_36'], dtype=object)                                 ]","river fox"
+"bcbac61a-2830-46ae-a1a4-1223b37f5bf7","Who provided the voice for Bob The Builder on his number one hit Can We Fix It?","[array(['qz_726_0', 'qz_726_1', 'qz_726_2', 'qz_726_3', 'qz_726_4',
+        'qz_726_5', 'qz_726_6', 'qz_726_8', 'qz_726_18', 'qz_726_20',
+        'qz_726_37'], dtype=object)                                  ]","neil morrissey"
+"f76280dd-4c61-431c-be1e-845747728bf9","Which actor received 4 million dollars for his 10 minutes on screen in the film Superman?","[array(['qz_735_4', 'qz_735_16', 'qz_735_18', 'qz_735_32'], dtype=object)]","brandoesque"
+"c8e79569-2c6c-4497-b23b-8ba541b584d0","Who directed the films Thelma and Louise, Hannibal and Black Hawk Down?","[array(['qz_737_0', 'qz_737_4', 'qz_737_5', 'qz_737_7', 'qz_737_8',
+        'qz_737_9', 'qz_737_13', 'qz_737_32'], dtype=object)       ]","gertrude bell film"
+"73caacea-c18d-4af4-b796-e5b68effd3aa","Which serial killer is the subject of the films A Study In Terror, Murder By Decree and From Hell?","[array(['qz_755_0', 'qz_755_1', 'qz_755_2', 'qz_755_3', 'qz_755_5',
+        'qz_755_6', 'qz_755_7', 'qz_755_8', 'qz_755_9'], dtype=object)]","leatherapron"
+"149b6866-58df-4457-b944-79d7e568048d","In cricket, what is the score of 111 known as?","[array(['qz_757_0', 'qz_757_2', 'qz_757_3', 'qz_757_4', 'qz_757_6',
+        'qz_757_10', 'qz_757_11', 'qz_757_14', 'qz_757_22', 'qz_757_30',
+        'qz_757_41'], dtype=object)                                     ]","nelson"
+"11ebf558-dd3a-4203-b684-f409191fe0f5","Yuppy Love, Danger UXD, The Frog's Legacy, Diamonds Are For Trevor?","[array(['qz_778_0', 'qz_778_1'], dtype=object)]","diamonds are for trevor others are episodes of only fools and horses"
+"0dd8b50e-3fac-4faa-acd1-42f3738ecf71","Batman Returns, Practical Magic, Dead Calm, The Peacemaker?","[array(['qz_781_0', 'qz_781_7', 'qz_781_8'], dtype=object)]","batman returns others starred nicole kidman"
+"d632ef7b-cb55-44ea-851f-86d593f3769e","Who wrote the novels About A Boy, How To Be Good and High Fidelity?","[array(['qz_832_0', 'qz_832_1', 'qz_832_5', 'qz_832_7', 'qz_832_8',
+        'qz_832_9', 'qz_832_17', 'qz_832_32'], dtype=object)       ]","nick hornby"
+"8a04c1d3-b2ff-45f2-bb27-7e7d396866a1","With which game would you use a squidger, a circular disc between 25mm and 51 mm?","[array(['qz_845_0', 'qz_845_1', 'qz_845_2', 'qz_845_4', 'qz_845_14',
+        'qz_845_35', 'qz_845_40'], dtype=object)                    ]","tiddlywink"
+"da863740-7bf4-4445-9369-789bd29d36f5","The melody for which famous song was written by sisters and school teachers Patty and Mildred Hill in Kentucky in 1893?","[array(['qz_847_0', 'qz_847_1', 'qz_847_2', 'qz_847_3', 'qz_847_4',
+        'qz_847_5', 'qz_847_6', 'qz_847_8', 'qz_847_9', 'qz_847_16'],
+       dtype=object)                                                 ]","happy birthday album"
+"5f23d6c5-cdb6-42ab-9234-d989d8307c6d","What is the most common pub name in the UK?","[array(['qz_848_1', 'qz_848_3', 'qz_848_10', 'qz_848_11', 'qz_848_13',
+        'qz_848_19', 'qz_848_21', 'qz_848_22', 'qz_848_24', 'qz_848_31',
+        'qz_848_32'], dtype=object)                                     ]","red lion disambiguation"
+"bd0be381-71df-46d4-b8f8-96555872cf7a","What is the name of Kevin the teenager's friend played by Kathy Burke in a series of sketches with Harry Enfield?","[array(['qz_860_0', 'qz_860_1', 'qz_860_2', 'qz_860_3', 'qz_860_5',
+        'qz_860_7', 'qz_860_8', 'qz_860_10', 'qz_860_19', 'qz_860_25',
+        'qz_860_34'], dtype=object)                                   ]","pear cider"
+"bc5299ca-54c3-43d6-a788-43d23757dd04","What seven letter word, beginning with the letters 'Ra' is a palindrome?","[array(['qz_866_0', 'qz_866_4', 'qz_866_6', 'qz_866_9', 'qz_866_14',
+        'qz_866_27'], dtype=object)                                 ]","automobile racing"
+"e05167c7-523a-44d9-af20-9ac4a5f3f836","Which fruit can go in the middle of the word aped to make a new word?","[array(['qz_871_0', 'qz_871_4', 'qz_871_8', 'qz_871_10', 'qz_871_18',
+        'qz_871_24', 'qz_871_27', 'qz_871_40'], dtype=object)        ]","pear tree"
+"e2db34dd-3df4-4b79-84fe-9a4557bc418c","How many scottish football league teams names end in United?","[array(['qz_881_1', 'qz_881_8', 'qz_881_16', 'qz_881_21', 'qz_881_23',
+        'qz_881_25', 'qz_881_28', 'qz_881_29', 'qz_881_31', 'qz_881_39'],
+       dtype=object)                                                     ]","3"
+"f658cd47-b99d-488f-a3e3-15a73460c80e","Who had a top ten hit in the UK with Cupid in 1961?","[array(['qz_921_0', 'qz_921_1', 'qz_921_6', 'qz_921_7', 'qz_921_17',
+        'qz_921_19', 'qz_921_21', 'qz_921_28', 'qz_921_32', 'qz_921_35',
+        'qz_921_37', 'qz_921_39', 'qz_921_41'], dtype=object)           ]","i thank god"
+"37a141c2-6424-47e9-afd6-a3520c9efb05","Which 1999 Oscar winning film has a title which refers to a breed of rose and features a red rose on it's poster?","[array(['qz_924_4', 'qz_924_21', 'qz_924_22', 'qz_924_29', 'qz_924_32'],
+       dtype=object)                                                    ]","american beauty novel"
+"47af5aea-8ccf-4c01-aba8-84dbe4961b95","The theme tune to which TV show starts with the line Stick a pony in me pocket?","[array(['qz_941_1', 'qz_941_4', 'qz_941_7', 'qz_941_9', 'qz_941_18',
+        'qz_941_22', 'qz_941_35'], dtype=object)                    ]","voted britain s best sitcom"
+"9501d4ca-1c31-4d6d-82f0-dbb183a8556f","What word is given to a point in tennis which has to be replayed?","[array(['qz_952_0', 'qz_952_1', 'qz_952_3', 'qz_952_5', 'qz_952_9',
+        'qz_952_14', 'qz_952_15', 'qz_952_32', 'qz_952_33', 'qz_952_42',
+        'qz_952_43'], dtype=object)                                     ]","let disambiguation"
+"22b97d14-cf82-45d3-80e6-26ceea251238","Which three colours appear on the flag of the Republic of Ireland?","[array(['qz_994_3', 'qz_994_4', 'qz_994_5', 'qz_994_16', 'qz_994_17',
+        'qz_994_20', 'qz_994_21', 'qz_994_22', 'qz_994_25', 'qz_994_28',
+        'qz_994_33', 'qz_994_35', 'qz_994_38', 'qz_994_40', 'qz_994_46'],
+       dtype=object)                                                     ]","green white orange"
+"49bd5434-282f-439e-9535-be7192f52603","How many episodes of Prisoner: Cell Block H were made?","[array(['qz_1032_1', 'qz_1032_2', 'qz_1032_8', 'qz_1032_31', 'qz_1032_42',
+        'qz_1032_44'], dtype=object)                                      ]","692"
+"83e87aa9-4357-4f09-910c-36d7d8dca248","Who is the last English-born player to win the men's singles title at Wimbledon?","[array(['qz_1046_0', 'qz_1046_1', 'qz_1046_5', 'qz_1046_6', 'qz_1046_7',
+        'qz_1046_8', 'qz_1046_9', 'qz_1046_10', 'qz_1046_11', 'qz_1046_12',
+        'qz_1046_13', 'qz_1046_14', 'qz_1046_15', 'qz_1046_17',
+        'qz_1046_19', 'qz_1046_22', 'qz_1046_31', 'qz_1046_32',
+        'qz_1046_34', 'qz_1046_36', 'qz_1046_38', 'qz_1046_39',
+        'qz_1046_42'], dtype=object)                                       ]","fred j perry"
+"7483e225-4cc8-42f0-9c80-2cf519407555","Which famous painter's surname was Harmenzoon van Rijn which translated as son of Harmen, of the Rhine?","[array(['qz_1047_0', 'qz_1047_3', 'qz_1047_4', 'qz_1047_6', 'qz_1047_7',
+        'qz_1047_8', 'qz_1047_9', 'qz_1047_10'], dtype=object)          ]","rembrandt harmenzsoon van rijn"
+"58b6dbe2-ac0b-4079-9329-2d997c00921b","In 1976, which gymnast scored 7 maximum scores of 10 as she won three gold medals, one silver and one bronze?","[array(['qz_1064_0', 'qz_1064_2', 'qz_1064_3', 'qz_1064_4', 'qz_1064_6',
+        'qz_1064_7', 'qz_1064_9', 'qz_1064_10', 'qz_1064_11', 'qz_1064_12',
+        'qz_1064_16', 'qz_1064_23', 'qz_1064_39'], dtype=object)           ]","nadia elena comăneci"
+"ba334e5b-2fe2-4934-ad15-245803e7916e","In years and days, how old was Luigina Giavotti when she won a silver medal in gymnastics in 1928, and is still the youngest medal winner today?","[array(['qz_1074_0', 'qz_1074_2', 'qz_1074_3', 'qz_1074_9'], dtype=object)]","11 years and 302 days"
+"f8900934-df02-4ecb-bd9d-93bb0e8b8f96","As at August 2004, who is Englands all time top goalscorer?","[array(['qz_1080_1', 'qz_1080_8', 'qz_1080_10', 'qz_1080_11', 'qz_1080_13',
+        'qz_1080_20', 'qz_1080_23', 'qz_1080_33', 'qz_1080_37'],
+       dtype=object)                                                       ]","robert 22bobby 22 charlton"
+"50304b80-875b-4807-86fd-a2f47b615894","Which Eastenders actor has played the policeman Nick Rowan on TV?","[array(['qz_1086_0', 'qz_1086_1', 'qz_1086_4', 'qz_1086_5', 'qz_1086_6',
+        'qz_1086_21', 'qz_1086_41'], dtype=object)                      ]","nick berry"
+"92fd43f0-768f-4387-a36d-89f71c67d1af","What type of animal was Boris, the subject of a song by The Who?","[array(['qz_1098_7', 'qz_1098_19', 'qz_1098_37', 'qz_1098_44'],
+       dtype=object)                                           ]","araneae"
+"d85d9fb6-d592-4da3-8c4e-4451bce6bc84","Which brand of beer does Homer Simpson drink regularly?","[array(['qz_1111_0', 'qz_1111_1', 'qz_1111_2', 'qz_1111_4', 'qz_1111_6',
+        'qz_1111_9', 'qz_1111_12', 'qz_1111_17', 'qz_1111_21',
+        'qz_1111_27'], dtype=object)                                    ]","duff disambiguation"
+"b4a57846-ecdd-47b7-a44b-2b1863b4e864","From which animal does Haggis come?","[array(['qz_1112_0', 'qz_1112_1', 'qz_1112_3', 'qz_1112_4', 'qz_1112_5',
+        'qz_1112_6', 'qz_1112_9', 'qz_1112_10', 'qz_1112_13', 'qz_1112_26',
+        'qz_1112_28', 'qz_1112_29', 'qz_1112_30', 'qz_1112_40'],
+       dtype=object)                                                       ]","sheep domestic"
+"3f585996-31e3-4ec4-81be-9aa18e85d4ad","In which country was Marie Curie born? Poland, Austria or Switzerland?","[array(['qz_1128_0', 'qz_1128_3', 'qz_1128_5', 'qz_1128_6', 'qz_1128_8',
+        'qz_1128_18', 'qz_1128_20', 'qz_1128_31', 'qz_1128_41'],
+       dtype=object)                                                    ]","iso 3166 1 pl"
+"30cf8ca7-bc3a-4a6e-a0e6-00eaea32e5ea","What is the most common blood type in humans? A, B or O?","[array(['qz_1130_0', 'qz_1130_1', 'qz_1130_3', 'qz_1130_4', 'qz_1130_5',
+        'qz_1130_6', 'qz_1130_7', 'qz_1130_8', 'qz_1130_9', 'qz_1130_13',
+        'qz_1130_17', 'qz_1130_18', 'qz_1130_21', 'qz_1130_22',
+        'qz_1130_28', 'qz_1130_31', 'qz_1130_40'], dtype=object)         ]","o"
+"012531f9-ea72-427d-bc42-95cccab26aaa","Which P is the correct technical term for the art of making and displaying fireworks?","[array(['qz_1139_0', 'qz_1139_3', 'qz_1139_4', 'qz_1139_7', 'qz_1139_8',
+        'qz_1139_14', 'qz_1139_24', 'qz_1139_31', 'qz_1139_32',
+        'qz_1139_40', 'qz_1139_41'], dtype=object)                      ]","pyrotechnical"
+"cd4663d3-f01f-41dc-8e8c-4127f4d6343f","Which King did Guy Fawkes attempt to kill with his gunpowder plot?","[array(['qz_1141_1', 'qz_1141_2', 'qz_1141_4', 'qz_1141_5', 'qz_1141_6',
+        'qz_1141_8', 'qz_1141_9', 'qz_1141_10', 'qz_1141_14', 'qz_1141_15',
+        'qz_1141_17', 'qz_1141_23', 'qz_1141_24', 'qz_1141_27',
+        'qz_1141_29', 'qz_1141_32'], dtype=object)                         ]","james vi of scotland james i of england"
+"ccc2b55a-f4aa-4401-a34e-bcee50b09c31","Behind Band Aid's Do They Know It's Christmas which 1978 single is the second biggest selling Christmas single of all time in the UK?","[array(['qz_1172_2', 'qz_1172_3', 'qz_1172_4', 'qz_1172_5', 'qz_1172_6',
+        'qz_1172_8', 'qz_1172_9', 'qz_1172_10', 'qz_1172_11', 'qz_1172_12',
+        'qz_1172_13', 'qz_1172_14', 'qz_1172_15', 'qz_1172_19',
+        'qz_1172_21', 'qz_1172_22', 'qz_1172_38'], dtype=object)           ]","mary s boy child by boney m"
+"64bc18e5-69b9-4f2d-a315-4ebe8bb456de","In which film was the song White Christmas first sung?","[array(['qz_1173_0', 'qz_1173_2', 'qz_1173_4', 'qz_1173_5', 'qz_1173_6',
+        'qz_1173_7', 'qz_1173_9', 'qz_1173_10', 'qz_1173_11', 'qz_1173_20',
+        'qz_1173_26', 'qz_1173_27', 'qz_1173_28', 'qz_1173_31',
+        'qz_1173_36', 'qz_1173_39', 'qz_1173_40', 'qz_1173_41'],
+       dtype=object)                                                       ]","holiday inns inc"
+"24b92c3c-720a-4e6a-aa24-c1d9b6ac957b","Which Pop Idol had a number one hit in 2004 called All This Time?","[array(['qz_1178_0', 'qz_1178_1', 'qz_1178_2', 'qz_1178_6', 'qz_1178_8',
+        'qz_1178_11', 'qz_1178_14', 'qz_1178_15', 'qz_1178_16',
+        'qz_1178_22', 'qz_1178_31', 'qz_1178_34', 'qz_1178_46'],
+       dtype=object)                                                    ]","different beat michelle mcmanus album"
+"5143d388-dd1a-46b6-ace6-f50e6e66c4e7","Why did Jason Alexander from Louisiana hit the headlines in January 2004?","[array(['qz_1184_10'], dtype=object)]","he married britney spears"
+"048163a5-d126-4b84-a501-26e3ade57376","Which Channel 4 TV show's presenters included Mark Lamarr, Amanda De Cadenet and Terry Christian?","[array(['qz_1189_0', 'qz_1189_1', 'qz_1189_3', 'qz_1189_4', 'qz_1189_7',
+        'qz_1189_9'], dtype=object)                                     ]","word"
+"32f79934-9c6a-4866-b9da-36833f196dab","What is the name of the device made of wood and horsehair that is used to play a violin?","[array(['qz_1191_0', 'qz_1191_1', 'qz_1191_2', 'qz_1191_4', 'qz_1191_5',
+        'qz_1191_6', 'qz_1191_7', 'qz_1191_8', 'qz_1191_9', 'qz_1191_26'],
+       dtype=object)                                                      ]","bow disambiguation"
+"934c62ec-7cc2-41a5-b00e-023327841888","What colour is the bottom stripe on the U.S. flag?","[array(['qz_1197_1', 'qz_1197_2', 'qz_1197_3', 'qz_1197_5', 'qz_1197_6',
+        'qz_1197_9', 'qz_1197_13', 'qz_1197_19', 'qz_1197_21',
+        'qz_1197_23', 'qz_1197_25', 'qz_1197_29', 'qz_1197_30',
+        'qz_1197_34'], dtype=object)                                    ]","reddeners"
+"df8a4651-4355-4f84-9a54-3b7c3aeca42a","What is the name given to the largest bee in a hive?","[array(['qz_1221_1', 'qz_1221_2', 'qz_1221_3', 'qz_1221_4', 'qz_1221_8',
+        'qz_1221_9', 'qz_1221_12', 'qz_1221_13', 'qz_1221_19',
+        'qz_1221_21', 'qz_1221_25', 'qz_1221_47'], dtype=object)        ]","queene"
+"1be19378-eaa6-4371-99f8-b2001d9ac7bc","Who won the Ladies singles title at Wimbledon in 2004?","[array(['qz_1230_0', 'qz_1230_1', 'qz_1230_2', 'qz_1230_3', 'qz_1230_6',
+        'qz_1230_7', 'qz_1230_8', 'qz_1230_9', 'qz_1230_10', 'qz_1230_11',
+        'qz_1230_12', 'qz_1230_13', 'qz_1230_14', 'qz_1230_15',
+        'qz_1230_17', 'qz_1230_18', 'qz_1230_25', 'qz_1230_26',
+        'qz_1230_27', 'qz_1230_38', 'qz_1230_39'], dtype=object)          ]","masha sharapova"
+"bc2a5b2b-37ec-49be-ab0b-785a8ff48f15","Which famous female character of TV and films was played by a male when she was first introduced to our screens in 1943?","[array(['qz_1247_3', 'qz_1247_10', 'qz_1247_13', 'qz_1247_17',
+        'qz_1247_18', 'qz_1247_19', 'qz_1247_20', 'qz_1247_26',
+        'qz_1247_28', 'qz_1247_34', 'qz_1247_35', 'qz_1247_39',
+        'qz_1247_40', 'qz_1247_41'], dtype=object)             ]","lassie 1997"

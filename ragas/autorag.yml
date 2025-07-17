@@ -1,4 +1,4 @@
-name: ragas
+name: autorag
 channels:
   - pytorch
   - nvidia
@@ -549,4 +549,4 @@ dependencies:
       - yarl==1.18.3
       - zipp==3.21.0
       - zlib-state==0.1.9
-prefix: /home/lyb/.conda/envs/autorag
+prefix: /home/cz/.conda/envs/autorag

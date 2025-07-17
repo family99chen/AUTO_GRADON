@@ -3,8 +3,8 @@ import numpy as np
 import os
 
 # 文件路径
-qa_path = "/home/xwh/AutoRAG/data/5dataset_100/qa.parquet"
-corpus_path = "/home/xwh/AutoRAG/data/5dataset_100/corpus.parquet"
+qa_path = "/home/cz/AUTO_GRADON/data/5dataset_100/qa.parquet"
+corpus_path = "/home/cz/AUTO_GRADON/data/5dataset_100/corpus.parquet"
 
 # 加载数据
 print("加载原始数据...")
@@ -14,9 +14,9 @@ corpus_df = pd.read_parquet(corpus_path)
 print(f"原始QA数据: {len(qa_df)}条")
 print(f"原始语料库数据: {len(corpus_df)}条")
 
-# 获取前100条QA数据
-qa_subset = qa_df.head(100)
-print(f"已选择前100条QA数据")
+# 获取第100-300条QA数据（索引99-299）
+qa_subset = qa_df.iloc[99:299]
+print(f"已选择第100-300条QA数据（共{len(qa_subset)}条）")
 
 # 收集所有需要的文档ID
 all_doc_ids = set()
@@ -72,17 +72,17 @@ if missing_ids:
 corpus_subset = corpus_df[corpus_df['doc_id'].isin(found_ids)]
 
 # 创建输出目录
-output_dir = "/home/xwh/AutoRAG/data/5dataset_100"
+output_dir = "/home/cz/AUTO_GRADON/data/5dataset_100"
 os.makedirs(output_dir, exist_ok=True)
 
 # 保存结果
-qa_output = os.path.join(output_dir, "qa100.parquet")
-corpus_output = os.path.join(output_dir, "corpus_relate.parquet")
+qa_output = os.path.join(output_dir, "qa_middle100_300.parquet")
+corpus_output = os.path.join(output_dir, "corpus_relate_middle100_300.parquet")
 
 qa_subset.to_parquet(qa_output)
 corpus_subset.to_parquet(corpus_output)
 
-print(f"\n已保存QA数据集前100条到: {qa_output}")
+print(f"\n已保存QA数据集第100-300条到: {qa_output}")
 print(f"已保存相关语料库数据({len(corpus_subset)}条)到: {corpus_output}")
 print("\n完成！")
 
@@ -92,4 +92,4 @@ if len(corpus_subset) < len(found_ids):
 
 if missing_ids:
     print("\n注意：如果在运行时仍然遇到文档ID找不到的问题，建议修改AutoRAG代码中的fetch_one_content函数，")
-    print("让它在找不到精确ID时尝试查找前缀匹配的ID。这可能位于/home/xwh/AutoRAG/autorag/utils/util.py文件中。")
+    print("让它在找不到精确ID时尝试查找前缀匹配的ID。这可能位于/home/cz/AutoRAG/autorag/utils/util.py文件中。")

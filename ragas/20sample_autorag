@@ -1,0 +1,181 @@
+[06/28/25 17:30:58] INFO     [config.py:58] >> PyTorch version 2.8.0.dev20250523+cu128           config.py:58
+                             available.                                                                      
+[06/28/25 17:31:00] ERROR    [__init__.py:60] >> Unexpected exception                          __init__.py:60
+                             ╭────────────── Traceback (most recent call last) ──────────────╮               
+                             │ /home/cz/.local/bin/autorag:5 in <module>                     │               
+                             │                                                               │               
+                             │   2 # -*- coding: utf-8 -*-                                   │               
+                             │   3 import re                                                 │               
+                             │   4 import sys                                                │               
+                             │ ❱ 5 from autorag.cli import cli                               │               
+                             │   6 if __name__ == '__main__':                                │               
+                             │   7 │   sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', s │               
+                             │   8 │   sys.exit(cli())                                       │               
+                             │                                                               │               
+                             │ /home/cz/AUTO_GRADON/autorag/cli.py:13 in <module>            │               
+                             │                                                               │               
+                             │    10 import nest_asyncio                                     │               
+                             │    11                                                         │               
+                             │    12 from autorag import dashboard                           │               
+                             │ ❱  13 from autorag.deploy import extract_best_config as origi │               
+                             │    14 from autorag.deploy.api import ApiRunner                │               
+                             │    15 from autorag.evaluator import Evaluator                 │               
+                             │    16 from autorag.validator import Validator                 │               
+                             │                                                               │               
+                             │ /home/cz/AUTO_GRADON/autorag/deploy/__init__.py:9 in <module> │               
+                             │                                                               │               
+                             │    6 │   Runner,                                              │               
+                             │    7 )                                                        │               
+                             │    8 from .api import ApiRunner                               │               
+                             │ ❱  9 from .gradio import GradioRunner                         │               
+                             │   10                                                          │               
+                             │                                                               │               
+                             │ /home/cz/AUTO_GRADON/autorag/deploy/gradio.py:8 in <module>   │               
+                             │                                                               │               
+                             │    5                                                          │               
+                             │    6 from autorag.deploy.base import BaseRunner               │               
+                             │    7                                                          │               
+                             │ ❱  8 import gradio as gr                                      │               
+                             │    9                                                          │               
+                             │   10                                                          │               
+                             │   11 logger = logging.getLogger("AutoRAG")                    │               
+                             │                                                               │               
+                             │ /home/cz/.local/lib/python3.12/site-packages/gradio/__init__. │               
+                             │ py:3 in <module>                                              │               
+                             │                                                               │               
+                             │     1 import json                                             │               
+                             │     2                                                         │               
+                             │ ❱   3 import gradio._simple_templates                         │               
+                             │     4 import gradio.image_utils                               │               
+                             │     5 import gradio.processing_utils                          │               
+                             │     6 import gradio.templates                                 │               
+                             │                                                               │               
+                             │ /home/cz/.local/lib/python3.12/site-packages/gradio/_simple_t │               
+                             │ emplates/__init__.py:1 in <module>                            │               
+                             │                                                               │               
+                             │ ❱ 1 from .simpledropdown import SimpleDropdown                │               
+                             │   2 from .simpleimage import SimpleImage                      │               
+                             │   3 from .simpletextbox import SimpleTextbox                  │               
+                             │   4                                                           │               
+                             │                                                               │               
+                             │ /home/cz/.local/lib/python3.12/site-packages/gradio/_simple_t │               
+                             │ emplates/simpledropdown.py:6 in <module>                      │               
+                             │                                                               │               
+                             │     3 import warnings                                         │               
+                             │     4 from typing import TYPE_CHECKING, Any, Callable, Sequen │               
+                             │     5                                                         │               
+                             │ ❱   6 from gradio.components.base import Component, FormCompo │               
+                             │     7 from gradio.events import Events                        │               
+                             │     8                                                         │               
+                             │     9 if TYPE_CHECKING:                                       │               
+                             │                                                               │               
+                             │ /home/cz/.local/lib/python3.12/site-packages/gradio/component │               
+                             │ s/__init__.py:1 in <module>                                   │               
+                             │                                                               │               
+                             │ ❱   1 from gradio.components.annotated_image import Annotated │               
+                             │     2 from gradio.components.audio import Audio               │               
+                             │     3 from gradio.components.base import (                    │               
+                             │     4 │   Component,                                          │               
+                             │                                                               │               
+                             │ /home/cz/.local/lib/python3.12/site-packages/gradio/component │               
+                             │ s/annotated_image.py:13 in <module>                           │               
+                             │                                                               │               
+                             │    10 from gradio_client import handle_file                   │               
+                             │    11 from gradio_client.documentation import document        │               
+                             │    12                                                         │               
+                             │ ❱  13 from gradio import processing_utils, utils              │               
+                             │    14 from gradio.components.base import Component            │               
+                             │    15 from gradio.data_classes import FileData, GradioModel   │               
+                             │    16 from gradio.events import Events                        │               
+                             │                                                               │               
+                             │ /home/cz/.local/lib/python3.12/site-packages/gradio/processin │               
+                             │ g_utils.py:99 in <module>                                     │               
+                             │                                                               │               
+                             │    96 │   sync_transport = None                               │               
+                             │    97 │   async_transport = None                              │               
+                             │    98                                                         │               
+                             │ ❱  99 sync_client = httpx.Client(transport=sync_transport)    │               
+                             │   100 async_client = httpx.AsyncClient(transport=async_transp │               
+                             │   101                                                         │               
+                             │   102 log = logging.getLogger(__name__)                       │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_client.py: │               
+                             │ 685 in __init__                                               │               
+                             │                                                               │               
+                             │    682 │   │   allow_env_proxies = trust_env and app is None  │               
+                             │    683 │   │   proxy_map = self._get_proxy_map(proxies or pro │               
+                             │    684 │   │                                                  │               
+                             │ ❱  685 │   │   self._transport = self._init_transport(        │               
+                             │    686 │   │   │   verify=verify,                             │               
+                             │    687 │   │   │   cert=cert,                                 │               
+                             │    688 │   │   │   http1=http1,                               │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_client.py: │               
+                             │ 733 in _init_transport                                        │               
+                             │                                                               │               
+                             │    730 │   │   if app is not None:                            │               
+                             │    731 │   │   │   return WSGITransport(app=app)              │               
+                             │    732 │   │                                                  │               
+                             │ ❱  733 │   │   return HTTPTransport(                          │               
+                             │    734 │   │   │   verify=verify,                             │               
+                             │    735 │   │   │   cert=cert,                                 │               
+                             │    736 │   │   │   http1=http1,                               │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_transports │               
+                             │ /default.py:136 in __init__                                   │               
+                             │                                                               │               
+                             │   133 │   │   retries: int = 0,                               │               
+                             │   134 │   │   socket_options: typing.Iterable[SOCKET_OPTION]  │               
+                             │   135 │   ) -> None:                                          │               
+                             │ ❱ 136 │   │   ssl_context = create_ssl_context(verify=verify, │               
+                             │   137 │   │   proxy = Proxy(url=proxy) if isinstance(proxy, ( │               
+                             │   138 │   │                                                   │               
+                             │   139 │   │   if proxy is None:                               │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_config.py: │               
+                             │ 53 in create_ssl_context                                      │               
+                             │                                                               │               
+                             │    50 │   trust_env: bool = True,                             │               
+                             │    51 │   http2: bool = False,                                │               
+                             │    52 ) -> ssl.SSLContext:                                    │               
+                             │ ❱  53 │   return SSLConfig(                                   │               
+                             │    54 │   │   cert=cert, verify=verify, trust_env=trust_env,  │               
+                             │    55 │   ).ssl_context                                       │               
+                             │    56                                                         │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_config.py: │               
+                             │ 77 in __init__                                                │               
+                             │                                                               │               
+                             │    74 │   │   self.verify = verify                            │               
+                             │    75 │   │   self.trust_env = trust_env                      │               
+                             │    76 │   │   self.http2 = http2                              │               
+                             │ ❱  77 │   │   self.ssl_context = self.load_ssl_context()      │               
+                             │    78 │                                                       │               
+                             │    79 │   def load_ssl_context(self) -> ssl.SSLContext:       │               
+                             │    80 │   │   logger.debug(                                   │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_config.py: │               
+                             │ 89 in load_ssl_context                                        │               
+                             │                                                               │               
+                             │    86 │   │   )                                               │               
+                             │    87 │   │                                                   │               
+                             │    88 │   │   if self.verify:                                 │               
+                             │ ❱  89 │   │   │   return self.load_ssl_context_verify()       │               
+                             │    90 │   │   return self.load_ssl_context_no_verify()        │               
+                             │    91 │                                                       │               
+                             │    92 │   def load_ssl_context_no_verify(self) -> ssl.SSLCont │               
+                             │                                                               │               
+                             │ /opt/anaconda3/lib/python3.12/site-packages/httpx/_config.py: │               
+                             │ 147 in load_ssl_context_verify                                │               
+                             │                                                               │               
+                             │   144 │   │   if ca_bundle_path.is_file():                    │               
+                             │   145 │   │   │   cafile = str(ca_bundle_path)                │               
+                             │   146 │   │   │   logger.debug("load_verify_locations cafile= │               
+                             │ ❱ 147 │   │   │   context.load_verify_locations(cafile=cafile │               
+                             │   148 │   │   elif ca_bundle_path.is_dir():                   │               
+                             │   149 │   │   │   capath = str(ca_bundle_path)                │               
+                             │   150 │   │   │   logger.debug("load_verify_locations capath= │               
+                             ╰───────────────────────────────────────────────────────────────╯               
+                             KeyboardInterrupt                                                               
+[06/28/25 17:31:01] INFO     [_client.py:1026] >> HTTP Request: GET                           _client.py:1026
+                             https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"                    

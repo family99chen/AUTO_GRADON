@@ -13,15 +13,63 @@ from contextlib import contextmanager
 import concurrent.futures
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import json
+import inspect
 
-# Set tokenizers parallelism to false to avoid warnings
+# 设置CUDA环境变量
+os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
+os.environ["TORCH_USE_CUDA_DSA"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2"  # 明确指定GPU
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+# 修改CUDA架构设置
+os.environ["TORCH_CUDA_ARCH_LIST"] = "8.0;8.6;9.0"  # 使用兼容的架构
+os.environ["CUDA_MODULE_LOADING"] = "EAGER"  # 改为EAGER加载
+os.environ["TORCH_SHOW_CPP_STACKTRACES"] = "1"
+
+# 修改检查CUDA环境的函数
+def check_cuda_setup():
+    if torch.cuda.is_available():
+        # 打印CUDA信息
+        print(f"CUDA 是否可用: {torch.cuda.is_available()}")
+        print(f"当前CUDA版本: {torch.version.cuda}")
+        print(f"当前设备数量: {torch.cuda.device_count()}")
+        print(f"PyTorch版本: {torch.__version__}")
+        
+        for i in range(torch.cuda.device_count()):
+            props = torch.cuda.get_device_properties(i)
+            print(f"设备 {i}: {torch.cuda.get_device_name(i)}")
+            print(f"设备 {i} 计算能力: {props.major}.{props.minor}")
+            print(f"设备 {i} 内存: {props.total_memory/1e9:.2f}GB")
+        
+        # 测试CUDA功能
+        try:
+            # 使用CPU创建张量然后移动到GPU
+            x = torch.randn(10)
+            if torch.cuda.is_available():
+                device = torch.device("cuda:0")
+                x = x.to(device)
+                y = x + x
+                # 确保计算完成
+                torch.cuda.synchronize()
+            print("CUDA 基本运算测试通过")
+            return True
+        except Exception as e:
+            print(f"CUDA 测试失败: {str(e)}")
+            print(f"详细错误信息: {torch.cuda.get_device_properties(0)}")
+            return False
+    return False
+
+# 在程序开始时检查CUDA设置，但不立即退出
+if not check_cuda_setup():
+    print("警告：CUDA 环境检查失败，将尝试使用CPU运行")
+    # 不抛出异常，而是继续运行
 
 # 导入自定义模块
 from configuration.promptmaker import PromptMakerConfiguration
 from create_config import create_config, load_and_generate_nodes
 from evaluator import TestEvaluator
-from grpo import GRPOTrainer
+from AUTO_GRADON.ragas.grpo_policy_based_on_env import GRPOTrainer
 
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
@@ -29,6 +77,28 @@ import multiprocessing
 # 设置Python标准多进程为spawn
 multiprocessing.set_start_method('spawn', force=True)
 
+# 添加新的CUDA设置函数
+def setup_cuda_device(gpu_id: int):
+    """设置CUDA设备并进行必要的初始化"""
+    if torch.cuda.is_available():
+        try:
+            device_id = gpu_id % torch.cuda.device_count()
+            torch.cuda.set_device(device_id)
+            
+            # 清理GPU缓存
+            torch.cuda.empty_cache()
+            
+            # 设置CUDA性能优化
+            torch.backends.cudnn.benchmark = False  # 关闭自动优化
+            torch.backends.cudnn.deterministic = True  # 确保结果可重现
+            torch.backends.cuda.matmul.allow_tf32 = False  # 禁用TF32
+            torch.backends.cudnn.allow_tf32 = False  # 禁用TF32
+            
+            return device_id
+        except Exception as e:
+            print(f"CUDA设备{gpu_id}初始化失败: {str(e)}")
+            return None
+    return None
 
 class RAGOptimizer:
     """使用GRPO优化RAG系统的多组件配置"""
@@ -57,7 +127,7 @@ class RAGOptimizer:
                  qa_data_path: str, 
                  corpus_data_path: str, 
                  project_dir: str,
-                 config_path: str = "/home/xwh/AutoRAG/ragas/configuration/config.yaml",
+                 config_path: str = "/home/cz/AUTO_GRADON/ragas/configuration/config204.yaml",
                  trial_name: str = "rag_optimization",
                  num_gpus: int = 1,
                  target_components: Optional[List[str]] = None,
@@ -199,7 +269,8 @@ class RAGOptimizer:
         operations = [self.method_counts[f"node{i+1}"] for i in range(len(self.components))]
         
         # 取最大操作数量作为通用操作数
-        max_operation = max(operations)
+        #max_operation = max(operations)
+        max_operation = 4
         
         self.logger.info(f"设置GRPO训练器，共{len(self.components)}个节点，操作维度: {operations}")
         self.logger.info(f"使用最大操作数 {max_operation} 作为统一操作数")
@@ -230,23 +301,73 @@ class RAGOptimizer:
         Returns:
             配置文件路径
         """
+        # 🔧 调试：打印 create_config 函数的签名
+        sig = inspect.signature(create_config)
+        self.logger.info(f"[DEBUG] create_config 函数签名: {sig}")
+        
+        # 🔧 添加详细调试信息
+        self.logger.info(f"[DEBUG generate_config] 开始生成配置")
+        self.logger.info(f"[DEBUG generate_config] 输入actions: {actions}")
+        self.logger.info(f"[DEBUG generate_config] actions类型: {type(actions)}")
+        self.logger.info(f"[DEBUG generate_config] actions长度: {len(actions)}")
+        self.logger.info(f"[DEBUG generate_config] 组件列表: {self.components}")
+        self.logger.info(f"[DEBUG generate_config] 组件数量: {len(self.components)}")
+        
         # 创建一个唯一的配置文件名
         config_id = "_".join([str(a) for a in actions])
         config_file = os.path.join(self.trial_dir, "configs", f"config_{config_id}.yaml")
         
+        self.logger.info(f"[DEBUG generate_config] 配置文件路径: {config_file}")
+        
         # 获取每个节点选择的方法
         selected_methods = {}
-        for i, component in enumerate(self.components):
+        
+        # 🔧 只遍历前len(actions)个组件，跳过最后一个（generator）
+        components_to_process = self.components[:len(actions)]
+        self.logger.info(f"[DEBUG generate_config] 实际处理的组件: {components_to_process}")
+        
+        for i, component in enumerate(components_to_process):
+            # 🔧 添加详细调试信息
+            self.logger.info(f"[DEBUG generate_config] 处理组件 {i}: {component}")
+            
+            if i >= len(actions):
+                self.logger.error(f"[DEBUG generate_config] 动作索引 {i} 超出范围，actions长度: {len(actions)}")
+                return None
+            
+            action_idx = actions[i]
+            self.logger.info(f"[DEBUG generate_config] 组件 {component} 的动作索引: {action_idx}")
+            
             node_key = f"node{i+1}"
-            action_idx = str(actions[i])
-            if action_idx in self.nodes_config[node_key]:
-                selected_methods[component] = self.nodes_config[node_key][action_idx]
+            self.logger.info(f"[DEBUG generate_config] 节点键: {node_key}")
+            
+            # 🔧 检查节点配置是否存在
+            if node_key not in self.nodes_config:
+                self.logger.error(f"[DEBUG generate_config] 节点 {node_key} 不在 nodes_config 中")
+                self.logger.error(f"[DEBUG generate_config] 可用节点: {list(self.nodes_config.keys())}")
+                return None
+            
+            node_config = self.nodes_config[node_key]
+            self.logger.info(f"[DEBUG generate_config] 节点 {node_key} 的配置: {node_config}")
+            
+            action_str = str(action_idx)
+            self.logger.info(f"[DEBUG generate_config] 查找动作字符串: '{action_str}'")
+            
+            # 🔧 检查动作索引是否在节点配置中
+            if action_str not in node_config:
+                self.logger.error(f"[DEBUG generate_config] 动作 '{action_str}' 不在节点 {node_key} 的配置中")
+                self.logger.error(f"[DEBUG generate_config] 可用动作: {list(node_config.keys())}")
+                return None
+            
+            selected_method = node_config[action_str]
+            selected_methods[component] = selected_method
+            self.logger.info(f"[DEBUG generate_config] 组件 {component} 选择方法: {selected_method}")
         
         # 添加固定组件配置
         for component, method in self.fixed_components.items():
             selected_methods[component] = method
-            
-        self.logger.info(f"选择的方法: {selected_methods}")
+            self.logger.info(f"[DEBUG generate_config] 添加固定组件 {component}: {method}")
+        
+        self.logger.info(f"[DEBUG generate_config] 最终选择的方法: {selected_methods}")
         
         # 准备生成配置所需的node_lines
         node_lines_list = []
@@ -255,6 +376,7 @@ class RAGOptimizer:
         
         # 首先处理vectordb，因为它需要作为create_config的第一个参数
         try:
+            self.logger.info(f"[DEBUG generate_config] 开始生成vectordb配置")
             vectordb_lines, _ = load_and_generate_nodes(
                 self.config_path, 
                 "vectordb", 
@@ -262,8 +384,9 @@ class RAGOptimizer:
                 exhaustive=False
             )
             vectordb_line = vectordb_lines[0]  # 使用第一个vectordb配置
+            self.logger.info(f"[DEBUG generate_config] vectordb配置生成成功")
         except Exception as e:
-            self.logger.error(f"生成vectordb配置失败: {str(e)}")
+            self.logger.error(f"[DEBUG generate_config] 生成vectordb配置失败: {str(e)}")
             return None  # 如果vectordb配置失败，无法继续
         
         # 为每个组件生成配置
@@ -272,13 +395,16 @@ class RAGOptimizer:
                 continue
             
             if component not in self.base_config:
+                self.logger.info(f"[DEBUG generate_config] 组件 {component} 不在基础配置中，跳过")
                 continue
             
             # 获取该组件选择的方法
             method = selected_methods.get(component)
+            self.logger.info(f"[DEBUG generate_config] 处理组件 {component}，选择的方法: {method}")
             
             try:
                 # 生成多个配置以增加找到匹配方法的机会
+                self.logger.info(f"[DEBUG generate_config] 为组件 {component} 生成配置")
                 lines, cfg = load_and_generate_nodes(
                     self.config_path,
                     component,
@@ -294,11 +420,13 @@ class RAGOptimizer:
                 if not isinstance(lines, list):
                     lines = [lines]
                 
+                self.logger.info(f"[DEBUG generate_config] 组件 {component} 生成了 {len(lines)} 个配置")
+                
                 # 如果指定了方法，尝试找到匹配的配置行
                 if method:
                     matched_line = None
                     
-                    for line in lines:
+                    for idx, line in enumerate(lines):
                         # 尝试将line转为字符串以进行匹配检查
                         line_str = str(line)
                         
@@ -307,7 +435,7 @@ class RAGOptimizer:
                            f"\"{method}\"" in line_str or \
                            f"'{method}'" in line_str:
                             matched_line = line
-                            self.logger.info(f"为组件 {component} 找到匹配方法 {method} 的配置")
+                            self.logger.info(f"[DEBUG generate_config] 为组件 {component} 找到匹配方法 {method} 的配置 (索引 {idx})")
                             break
                     
                     # 如果找到匹配，使用它；否则使用第一个配置
@@ -315,13 +443,14 @@ class RAGOptimizer:
                         node_lines_list.append(matched_line)
                     else:
                         node_lines_list.append(lines[0])
-                        self.logger.warning(f"无法为组件 {component} 找到匹配方法 {method} 的配置，使用默认配置")
+                        self.logger.warning(f"[DEBUG generate_config] 无法为组件 {component} 找到匹配方法 {method} 的配置，使用默认配置")
                 else:
                     # 如果没有指定方法，使用第一个配置
                     node_lines_list.append(lines[0])
+                    self.logger.info(f"[DEBUG generate_config] 组件 {component} 没有指定方法，使用第一个配置")
                 
             except Exception as e:
-                self.logger.error(f"为组件 {component} 生成配置失败: {str(e)}")
+                self.logger.error(f"[DEBUG generate_config] 为组件 {component} 生成配置失败: {str(e)}")
                 # 尝试获取一个基本配置
                 try:
                     basic_lines, _ = load_and_generate_nodes(
@@ -334,36 +463,48 @@ class RAGOptimizer:
                         node_lines_list.append(basic_lines[0])
                     elif basic_lines:
                         node_lines_list.append(basic_lines)
+                    self.logger.info(f"[DEBUG generate_config] 为组件 {component} 使用基本配置")
                 except Exception as inner_e:
-                    self.logger.error(f"无法为组件 {component} 获取基本配置: {str(inner_e)}")
+                    self.logger.error(f"[DEBUG generate_config] 无法为组件 {component} 获取基本配置: {str(inner_e)}")
+                    return None
+        
+        self.logger.info(f"[DEBUG generate_config] 总共生成了 {len(node_lines_list)} 个组件配置")
         
         # 准备额外参数
-        extra_params = {'strategies': {'metrics': ['meteor', 'rouge', 'bert_score']}}
+        extra_params = {
+            'strategies': {'metrics': ['meteor', 'rouge', 'bert_score']},
+            'bm25_tokenizer_list': ['porter_stemmer', 'space']
+        }
         
         # 处理bm25_tokenizer特殊情况
         if retriever_cfg and "bm25" in selected_methods.get("retrieval", ""):
             if hasattr(retriever_cfg, 'cs') and '[bm25]bm25_tokenizer' in retriever_cfg.cs:
                 extra_params['bm25_tokenizer_list'] = retriever_cfg.cs.get('[bm25]bm25_tokenizer').choices
             else:
-                extra_params['bm25_tokenizer_list'] = ['porter_stemmer', 'space']
+                self.logger.warning(f"[DEBUG generate_config] 无法获取bm25_tokenizer配置")
         
-        # 创建配置文件
         try:
-            # 记录将要使用的配置
-            self.logger.info(f"生成配置文件，使用了 {len(node_lines_list)} 个组件配置")
+            self.logger.info(f"[DEBUG generate_config] 开始调用create_config")
+            self.logger.info(f"[DEBUG generate_config] vectordb_line类型: {type(vectordb_line)}")
+            self.logger.info(f"[DEBUG generate_config] node_lines_list长度: {len(node_lines_list)}")
             
-            # 使用create_config函数生成配置文件
-            # 注意vectordb_line需要作为第一个参数
-            create_config(vectordb_line, *node_lines_list, extra_params=extra_params, save_path=config_file)
+            # 生成最终配置
+            create_config(
+                vectordb_line,
+                *node_lines_list,
+                extra_params=extra_params,
+                save_path=config_file
+            )
             
-            # 验证生成的配置文件是否包含期望的方法
-            self._verify_config_file(config_file, selected_methods)
+            self.logger.info(f"[DEBUG generate_config] 配置文件生成成功: {config_file}")
+            return config_file
             
         except Exception as e:
-            self.logger.error(f"创建配置文件失败: {str(e)}")
-            raise
-        
-        return config_file
+            self.logger.error(f"[DEBUG generate_config] 调用create_config失败: {str(e)}")
+            self.logger.error(f"[DEBUG generate_config] 错误详情: {type(e).__name__}: {str(e)}")
+            import traceback
+            self.logger.error(f"[DEBUG generate_config] 完整错误堆栈:\n{traceback.format_exc()}")
+            return None
     
     def _verify_config_file(self, config_file, selected_methods):
         """验证生成的配置文件是否包含预期的方法"""
@@ -385,57 +526,91 @@ class RAGOptimizer:
             self.logger.error(f"验证配置文件时出错: {str(e)}")
     
     def _evaluate_batch(self, actions_batch, gpu_id: int) -> List[float]:
-        """
-        在特定GPU上评估一批配置
-        
-        Args:
-            actions_batch: 一批动作
-            gpu_id: GPU ID
-            
-        Returns:
-            奖励值列表
-        """
-        # 设置使用特定GPU
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
-        
+        """在特定GPU上评估一批配置"""
         rewards = []
         
+        # 🔧 添加调试信息
+        self.logger.info(f"[DEBUG] actions_batch 形状: {np.array(actions_batch).shape}")
+        self.logger.info(f"[DEBUG] actions_batch 内容: {actions_batch}")
+        
+        try:
+            # 设置CUDA设备
+            if torch.cuda.is_available():
+                device_id = gpu_id % torch.cuda.device_count()
+                torch.cuda.set_device(device_id)
+                
+                # 测试CUDA设备
+                test_tensor = torch.zeros(1, device=f'cuda:{device_id}')
+                del test_tensor
+                
+                self.logger.info(f"[GPU {gpu_id}] 成功初始化 CUDA:{device_id}")
+        except Exception as e:
+            self.logger.error(f"[GPU {gpu_id}] 设备初始化失败: {str(e)}")
+            return [0.0] * len(actions_batch)
+
         for i, actions in enumerate(actions_batch):
-            start_time = time.time()
-            
             try:
+                # 🔧 添加调试信息
+                self.logger.info(f"[DEBUG] 处理第 {i+1} 个配置")
+                self.logger.info(f"[DEBUG] 当前actions: {actions}, 类型: {type(actions)}")
+                
+                # 🔧 动作映射逻辑
+                mapped_actions = actions
+                
+                if mapped_actions is None:
+                    self.logger.error(f"[GPU {gpu_id}] 配置 {i+1} 映射失败")
+                    rewards.append(0.0)
+                    continue
+                
                 # 生成配置文件
-                config_file = self.generate_config(actions)
+                config_file = self.generate_config(mapped_actions)
+                self.logger.info(f"[DEBUG] 生成的配置文件: {config_file}")
                 
-                # 初始化runner
-                self.evaluator.init_runner_from_yaml(config_file)
+                # 确保GPU内存清理
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                    torch.cuda.reset_peak_memory_stats(device_id)
                 
-                # 评估配置
-                yaml_name = f"config_{'_'.join([str(a) for a in actions])}.yaml"
-                summary_df = self.evaluator.run_with_qa_eval(yaml_name=yaml_name)
-                
-                # 计算原始奖励
-                rouge_score = summary_df["rouge"].values[0]
-                meteor_score = summary_df["meteor"].values[0]
-                bert_score = summary_df.get("bert_score", pd.Series([0])).values[0]
-                
-                raw_reward = 0.4 * rouge_score + 0.4 * meteor_score + 0.2 * bert_score
-                
-                # 应用非线性变换来放大小差异
-                # 使用指数变换强化小差异
-                transformed_reward = np.exp(20 * raw_reward)
-                
-                rewards.append(transformed_reward)
-                
-                self.logger.info(f"[GPU {gpu_id}] 配置 {i+1} 评估完成: ROUGE={rouge_score:.4f}, METEOR={meteor_score:.4f}, BERT={bert_score:.4f}")
-                self.logger.info(f"[GPU {gpu_id}] 奖励转换: 原始={raw_reward:.4f}, 变换后={transformed_reward:.4f}")
+                # 使用try-except包装每个可能使用CUDA的操作
+                try:
+                    # 初始化评估器
+                    self.evaluator.init_runner_from_yaml(config_file)
+                    
+                    # 评估配置
+                    yaml_name = f"config_{'_'.join([str(a) for a in mapped_actions])}.yaml"
+                    with torch.cuda.amp.autocast(enabled=False):
+                        summary_df = self.evaluator.run_with_qa_eval(yaml_name=yaml_name)
+                    
+                    # 计算奖励
+                    rouge_score = summary_df["rouge"].values[0]
+                    meteor_score = summary_df["meteor"].values[0]
+                    bert_score = summary_df.get("bert_score", pd.Series([0])).values[0]
+                    
+                    raw_reward = 0.4 * rouge_score + 0.4 * meteor_score + 0.2 * bert_score
+                    transformed_reward = np.exp(20 * raw_reward)
+                    rewards.append(transformed_reward)
+                    
+                except RuntimeError as cuda_e:
+                    if "CUDA error" in str(cuda_e):
+                        self.logger.error(f"[GPU {gpu_id}] CUDA运行时错误: {str(cuda_e)}")
+                        # 尝试重置设备
+                        torch.cuda.empty_cache()
+                        torch.cuda.reset_peak_memory_stats(device_id)
+                        torch.cuda.set_device(device_id)
+                    rewards.append(0.0)
                 
             except Exception as e:
                 self.logger.error(f"[GPU {gpu_id}] 评估配置 {i+1} 时出错: {str(e)}")
                 rewards.append(0.0)
-            
-            eval_time = time.time() - start_time
-            self.logger.info(f"[GPU {gpu_id}] 配置 {i+1} 评估耗时: {eval_time:.2f} 秒")
+                
+                # 尝试恢复GPU状态
+                if torch.cuda.is_available():
+                    try:
+                        torch.cuda.empty_cache()
+                        torch.cuda.reset_peak_memory_stats(device_id)
+                        torch.cuda.set_device(device_id)
+                    except:
+                        pass
         
         return rewards
     
@@ -490,15 +665,7 @@ class RAGOptimizer:
             self.logger.error(f"保存缓存失败: {str(e)}")
 
     def evaluate_configs(self, actions_batch) -> List[float]:
-        """
-        评估多个配置，支持多GPU并行，使用缓存优化
-        
-        Args:
-            actions_batch: 动作批次
-            
-        Returns:
-            奖励值列表
-        """
+        """评估多个配置，支持多GPU并行"""
         total_start = time.time()
         
         # 将动作转换为可哈希的格式用于缓存查找
@@ -547,31 +714,24 @@ class RAGOptimizer:
             need_evaluate_actions = np.array(need_evaluate_actions)
             
             if self.num_gpus <= 1:
-                # 单GPU评估
                 new_rewards = self._evaluate_batch(need_evaluate_actions, 0)
             else:
-                # 多GPU并行评估
+                # 减小每个GPU的批次大小
+                batch_size = max(1, len(need_evaluate_actions) // (self.num_gpus * 2))
+                batches = [need_evaluate_actions[i:i + batch_size] 
+                          for i in range(0, len(need_evaluate_actions), batch_size)]
+                
                 new_rewards = []
-                
-                # 将样本分成多个批次
-                batches = np.array_split(need_evaluate_actions, min(self.num_gpus, len(need_evaluate_actions)))
-                
-                # 多进程并行处理
-                with ProcessPoolExecutor(max_workers=self.num_gpus) as executor:
-                    futures = []
-                    for i, batch in enumerate(batches):
-                        # 提交任务到进程池
-                        futures.append(executor.submit(self._evaluate_batch, batch, i % self.num_gpus))
+                # 串行处理每个GPU的批次
+                for i, batch in enumerate(batches):
+                    gpu_id = i % self.num_gpus
+                    batch_rewards = self._evaluate_batch(batch, gpu_id)
+                    new_rewards.extend(batch_rewards)
                     
-                    # 收集结果
-                    for future in as_completed(futures):
-                        try:
-                            batch_rewards = future.result()
-                            new_rewards.extend(batch_rewards)
-                        except Exception as e:
-                            self.logger.error(f"处理评估结果时出错: {str(e)}")
-                            # 对于失败的批次，添加相应数量的0奖励
-                            new_rewards.extend([0.0] * len(batches[len(new_rewards) % len(batches)]))
+                    # 每个批次后强制同步和清理
+                    if torch.cuda.is_available():
+                        torch.cuda.synchronize()
+                        torch.cuda.empty_cache()
             
             # 将新评估的结果添加到缓存
             for i, idx in enumerate(need_evaluate_indices):
@@ -794,13 +954,75 @@ class RAGOptimizer:
         
         return best_config, best_reward
 
+    def _map_actions_to_components(self, actions):
+        """
+        将动作映射到组件配置
+        actions: 动作向量
+        return: 映射后的组件动作
+        """
+        # 🔧 添加调试信息
+        self.logger.info(f"[DEBUG] 输入动作形状: {np.array(actions).shape}")
+        self.logger.info(f"[DEBUG] 输入动作内容: {actions}")
+        self.logger.info(f"[DEBUG] 组件数量: {len(self.components)}")
+        self.logger.info(f"[DEBUG] 组件列表: {self.components}")
+        
+        try:
+            # 确保actions是列表或数组
+            if hasattr(actions, 'tolist'):
+                actions = actions.tolist()
+            elif not isinstance(actions, list):
+                actions = list(actions)
+            
+            # 🔧 确保只使用前8维（如果有的话）
+            if len(actions) >= 8:
+                actions = actions[:8]
+            else:
+                self.logger.error(f"[DEBUG] 动作长度不足: {len(actions)}, 期望至少8")
+                return None
+            
+            mapped_actions = []
+            
+            # 前两个位置直接映射 (retrieval, query_expansion)
+            mapped_actions.append(actions[0])  # retrieval: 4个选项 (0-3)
+            mapped_actions.append(actions[1])  # query_expansion: 4个选项 (0-3)
+            
+            # 🔧 第三个位置：组合两列表示8个选项 (passage_reranker)
+            third_component = actions[2] + (actions[3] + 1)
+            third_component = min(third_component, 7)  # 确保不超过范围
+            mapped_actions.append(third_component)  # passage_reranker: 8个选项 (0-7)
+            
+            # 第四个位置直接映射 (passage_filter)
+            mapped_actions.append(actions[4])  # passage_filter: 4个选项 (0-3)
+            
+            # 第五个位置直接映射 (passage_compressor)
+            mapped_actions.append(actions[5])  # passage_compressor: 4个选项 (0-3)
+            
+            # 🔧 第六个位置：3个选项，但用4维表示 (prompt_maker)
+            sixth_component = actions[6]
+            if sixth_component >= 3:  # 2和3都映射到2
+                sixth_component = 2
+            mapped_actions.append(sixth_component)  # prompt_maker: 3个选项 (0-2)
+            
+            # 🔧 第七个位置：2个选项，但用4维表示 (passage_augmenter)
+            seventh_component = actions[7]
+            if seventh_component >= 2:  # 2和3都映射到1
+                seventh_component = 1
+            mapped_actions.append(seventh_component)  # passage_augmenter: 2个选项 (0-1)
+            
+            self.logger.info(f"[DEBUG] 映射后动作: {mapped_actions}")
+            return mapped_actions
+            
+        except Exception as e:
+            self.logger.error(f"[DEBUG] 映射过程出错: {str(e)}")
+            self.logger.error(f"[DEBUG] 错误位置的actions: {actions}")
+            return None
 
 # 使用示例
 if __name__ == "__main__":
     # 配置路径
     qa_data_path = "../data/5dataset_100/qa100.parquet"
-    corpus_data_path = "../data/5dataset_100/corpus_relate.parquet"
-    project_dir = "../experiments/4-100-0504"
+    corpus_data_path = "../data/5dataset_100/corpus.parquet"
+    project_dir = "../experiments/204-re-qe_new"
     
     # 示例1: 优化所有组件
     # optimizer = RAGOptimizer(
@@ -827,8 +1049,8 @@ if __name__ == "__main__":
         corpus_data_path=corpus_data_path,
         project_dir=project_dir,
         trial_name="strategy_opt",
-        num_gpus=4,
-        target_components=["retrieval", "query_expansion", "passage_reranker", "passage_filter", "passage_compressor"],
+        num_gpus=3,
+        target_components=["retrieval", "query_expansion"],
         fixed_components={
             # 如果有些组件你想固定为特定方法，在这里指定
             # 例如: "vectordb": "chroma"

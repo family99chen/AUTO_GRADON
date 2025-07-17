@@ -1,15 +1,15 @@
 vectordb:
 - api_key: null
   client_type: persistent
-  collection_name: huggingface_all_mpnet_base_v2
+  collection_name: test_collection_v3
   database: default_database
   db_type: chroma
-  embedding_batch: 100
+  embedding_batch: 200
   embedding_model: huggingface_all_mpnet_base_v2
   headers: null
   host: localhost
-  name: chroma_large
-  path: /home/lyb/RAG/experiments/baseline
+  name: default_vectordb
+  path: /home/cz/AUTO_GRADON/experiments/db_resources/db_20250523
   port: 8000
   similarity_metric: cosine
   ssl: false

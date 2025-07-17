@@ -16,7 +16,7 @@ class QueryExpansionConfiguration(BaseConfiguration):
             hp_config_dict = parse_hyperparameters_samples(dict(hp_config))
             module_type = hp_config_dict["module_type"]
             static_params = self.load_static_params(module_type)
-            hp_config_dict.update(static_params)
+            hp_config_dict.update(static_params) 
 
             node_line = {
                 "node_line_name": "pre_retrieve_node_line",

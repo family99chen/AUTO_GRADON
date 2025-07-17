@@ -1,0 +1,204 @@
+vectordb:
+- name: default_vectordb
+  collection_name: test_collection_v4
+  db_type: chroma
+  embedding_batch: 200
+  embedding_model: huggingface_all_mpnet_base_v2
+  similarity_metric: cosine
+  client_type: persistent
+  path: '/home/cz/AUTO_GRADON/experiments/db_resources/db_20250524'
+node_lines:
+- node_line_name: pre_retrieve_node_line
+  nodes:
+  - node_type: query_expansion
+    strategy:
+      metrics:
+      - retrieval_precision
+      - retrieval_recall
+      - retrieval_f1
+    modules:
+    - batch: 2
+      generator_module_type: LlamaIndexLLM
+      is_chat_model: true
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      module_type: HyDE
+      temperature: 0.1
+      prompt: Please write a passage to answer the question
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-e46fb251c74d4c64a4c2835333e994a3
+      timeout: 1200.0
+    - batch: 2
+      generator_module_type: LlamaIndexLLM
+      is_chat_model: true
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      module_type: QueryDecompose
+      temperature: 0.1
+      prompt: "Decompose a question in self-contained sub-questions. Use \"The question needs no decomposition\" when no decomposition is needed.\n\nExample 1:\n\nQuestion: Is Hamlet more common on IMDB than Comedy of Errors?\nDecompositions:\n1: How many listings of Hamlet are there on IMDB?\n2: How many listing of Comedy of Errors is there on IMDB?\n\nExample 2:\n\nQuestion: Are birds important to badminton?\n\nDecompositions:\nThe question needs no decomposition\n\nExample 3:\n\nQuestion: Is it legal for a licensed child driving Mercedes-Benz to be employed in US?\n\nDecompositions:\n1: What is the minimum driving age in the US?\n2: What is the minimum age for someone to be employed in the US?\n\nExample 4:\n\nQuestion: Are all cucumbers the same texture?\n\nDecompositions:\nThe question needs no decomposition\n\nExample 5:\n\nQuestion: Hydrogen's atomic number squared exceeds number of Spice Girls?\n\nDecompositions:\n1: What is the atomic number of hydrogen?\n2: How many Spice Girls are there?\n\nExample 6:\n\nQuestion: {question}\n\nDecompositions:"
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-e46fb251c74d4c64a4c2835333e994a3
+      timeout: 1200.0
+    - batch: 2
+      generator_module_type: LlamaIndexLLM
+      is_chat_model: true
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      module_type: multi_query_expansion
+      temperature: 0.1
+      prompt: "You are an AI language model assistant.\nYour task is to generate 3 different versions of the given user\nquestion to retrieve relevant documents from a vector database.\nBy generating multiple perspectives on the user question,\nyour goal is to help the user overcome some of the limitations\nof distance-based similarity search. Provide these alternative\nquestions separated by newlines. Original question: {query}"
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-e46fb251c74d4c64a4c2835333e994a3
+      timeout: 1200.0
+    - batch: 2
+      generator_module_type: LlamaIndexLLM
+      is_chat_model: true
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      module_type: pass_query_expansion
+      temperature: 0.1
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-e46fb251c74d4c64a4c2835333e994a3
+      timeout: 1200.0
+- node_line_name: retrieve_node_line
+  nodes:
+  - strategy:
+      metrics:
+      - retrieval_f1
+      - retrieval_recall
+      - retrieval_precision
+    node_type: retrieval
+    modules:
+    - module_type: vectordb
+      top_k: 5
+      embedding_batch: 256
+      vectordb: default_vectordb
+    - module_type: bm25
+      top_k: 5
+      bm25_tokenizer: porter_stemmer
+    - module_type: hybrid_rrf
+      top_k: 5
+      target_modules: ('bm25', 'vectordb')
+      weight_range: (4, 80)
+    - module_type: hybrid_cc
+      top_k: 5
+      target_modules: ('bm25', 'vectordb')
+      weight_range: (0.0, 1.0)
+      normalize_method: tmm
+      lexical_theoretical_min_value: 0  # This value used by tmm normalization method.
+      semantic_theoretical_min_value: -1 # This value used by tmm normalization method.
+- node_line_name: passage_aug_node_line
+  nodes:
+  - node_type: passage_augmenter
+    strategy:
+      metrics:
+      - retrieval_f1
+      - retrieval_recall
+      - retrieval_precision
+    modules:
+    - module_type: pass_passage_augmenter
+      top_k: 5
+- node_line_name: passage_reranker_node_line
+  nodes:
+  - node_type: passage_reranker
+    strategy:
+      metrics:
+      - retrieval_f1
+      - retrieval_recall
+      - retrieval_precision
+    modules:
+    - module_type: pass_reranker
+      top_k: 5
+    - module_type: upr
+      top_k: 5
+    - module_type: tart
+      top_k: 5
+    - module_type: colbert_reranker
+      top_k: 5
+- node_line_name: passage_filter_node_line
+  nodes:
+  - node_type: passage_filter
+    strategy:
+      metrics:
+      - retrieval_f1
+      - retrieval_recall
+      - retrieval_precision
+    modules:
+    - module_type: pass_passage_filter
+    - module_type: similarity_threshold_cutoff
+      threshold: 0.5
+      embedding_model: huggingface_all_mpnet_base_v2
+      batch: 64
+    - module_type: similarity_percentile_cutoff
+      percentile: 0.5
+      embedding_model: huggingface_all_mpnet_base_v2
+      batch: 64
+    - module_type: threshold_cutoff
+      threshold: 0.5
+- node_line_name: prompt_maker_node_line
+  nodes:
+  - node_type: prompt_maker
+    strategy:
+      metrics:
+      - meteor
+      - rouge
+      - bert_score
+    modules:
+    - module_type: fstring
+      prompt: "Tell me something about the question: {query} \n {retrieved_contents}"
+- node_line_name: passage_compressor_node_line
+  nodes:
+  - node_type: passage_compressor
+    strategy:
+      metrics:
+      - retrieval_token_recall
+      - retrieval_token_precision
+      - retrieval_token_f1
+    modules:
+    - module_type: pass_compressor
+    - module_type: tree_summarize
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      is_chat_model: true
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-e46fb251c74d4c64a4c2835333e994a3
+    - module_type: refine
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      is_chat_model: true
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-e46fb251c74d4c64a4c2835333e994a3
+    - module_type: longllmlingua
+      model_name: "NousResearch/Llama-2-7b-hf"
+      target_token: 300
+- node_line_name: generator_node_line
+  nodes:
+  - node_type: generator
+    strategy:
+      metrics:
+      - meteor
+      - rouge
+      - bert_score
+      - bleu
+      - sem_score
+    modules:
+    - batch: 2
+      max_token: 512
+      module_type: LlamaIndexLLM
+      temperature: 0.1
+      is_chat_model: true
+      llm: openailike
+      model: qwen2.5-7b-instruct-1m
+      api_base: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+      api_key: sk-32f1d9d1f55441b195ddcf990f59dd11
+      timeout: 1200.0
+bm25_tokenizer_list:
+- porter_stemmer
+- space
+strategies:
+  metrics:
+  - meteor
+  - rouge
+  - bert_score
+  - bleu
+  - sem_score

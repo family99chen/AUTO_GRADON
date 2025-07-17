@@ -3,12 +3,179 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 import matplotlib.pyplot as plt
+from sentence_transformers import SentenceTransformer
+import pandas as pd
+import os
+
+
+# 特征提取函数
+def extract_diverse_qa_features(qa_data_path: str, num_process: int = 10) -> torch.Tensor:
+    """
+    从问答数据提取多样化特征向量，确保每个进程都有不同的输入
+    
+    Args:
+        qa_data_path: 问答数据路径
+        num_process: 进程数量（对应不同RAG组件）
+        
+    Returns:
+        torch.Tensor: 形状为 [1, num_process, 10] 的特征张量，每行都不同
+    """
+    try:
+        # 🔧 强制在CPU环境下运行
+        original_cuda_visible = os.environ.get("CUDA_VISIBLE_DEVICES", "")
+        os.environ["CUDA_VISIBLE_DEVICES"] = ""
+        
+        # 读取数据
+        if qa_data_path.endswith('.parquet'):
+            df = pd.read_parquet(qa_data_path)
+        else:
+            encodings_to_try = ['utf-8', 'gbk', 'gb2312', 'gb18030', 'utf-8-sig', 'latin1']
+            df = None
+            for encoding in encodings_to_try:
+                try:
+                    df = pd.read_csv(qa_data_path, encoding=encoding)
+                    print(f"✅ 成功使用 {encoding} 编码读取文件")
+                    break
+                except:
+                    continue
+            
+            if df is None:
+                raise Exception("无法用常见编码格式读取文件")
+        
+        print(f"📊 数据列名: {df.columns.tolist()}")
+        print(f"📊 数据形状: {df.shape}")
+        
+        # 获取问题数据
+        if 'query' in df.columns:
+            questions = df['query'].tolist()
+        elif 'question' in df.columns:
+            questions = df['question'].tolist()
+        else:
+            print(f"❌ 找不到问题列，使用随机特征")
+            torch.manual_seed(42)
+            return torch.rand(1, num_process, 10)
+        
+        # 处理空值
+        questions = [str(q) for q in questions if q is not None and str(q).strip()]
+        
+        if not questions:
+            print(f"❌ 没有有效的问题，使用随机特征")
+            torch.manual_seed(42)
+            return torch.rand(1, num_process, 10)
+        
+        print(f"📝 提取了 {len(questions)} 个问题")
+        print(f"📝 问题示例: {questions[:3]}")
+        
+        # 🔧 获取embedding
+        encoder = SentenceTransformer('all-MiniLM-L6-v2')
+        with torch.no_grad():
+            embeddings = encoder.encode(questions, convert_to_tensor=True, device='cpu')
+        
+        # 获取平均embedding
+        mean_embedding = embeddings.mean(dim=0).cpu()  # [384]
+        embedding_dim = mean_embedding.size(0)
+        
+        print(f"📊 原始embedding维度: {embedding_dim}")
+        
+        # 🚀 核心改进：将embedding智能分割成 num_process × 10 段
+        total_params = num_process * 10  # 目标总参数数
+        segment_size = embedding_dim // total_params  # 每段的大小
+        
+        print(f"📊 目标参数数: {total_params}")
+        print(f"📊 每段大小: {segment_size} (约{segment_size}个embedding参数求平均)")
+        
+        # 创建结果张量
+        result = torch.zeros(1, num_process, 10)
+        
+        param_idx = 0
+        for process_idx in range(num_process):
+            for feature_idx in range(10):
+                # 计算当前参数对应的embedding段
+                start_idx = param_idx * segment_size
+                end_idx = min((param_idx + 1) * segment_size, embedding_dim)
+                
+                if start_idx < embedding_dim:
+                    # 对该段求平均
+                    segment_mean = mean_embedding[start_idx:end_idx].mean()
+                    result[0, process_idx, feature_idx] = segment_mean
+                else:
+                    # 如果超出范围，使用循环索引
+                    cycle_idx = start_idx % embedding_dim
+                    result[0, process_idx, feature_idx] = mean_embedding[cycle_idx]
+                
+                param_idx += 1
+        
+        # 🎯 验证每个进程的特征确实不同
+        print(f"\n🔍 验证进程间差异:")
+        for i in range(min(num_process, 5)):  # 最多显示5个进程
+            for j in range(i+1, min(num_process, 5)):
+                diff = torch.norm(result[0, i, :] - result[0, j, :])
+                print(f"  进程{i} vs 进程{j}: L2差异={diff.item():.6f}")
+        
+        # 🎯 标准化到合理范围 [0, 1]
+        min_val = result.min()
+        max_val = result.max()
+        if max_val > min_val:
+            result = (result - min_val) / (max_val - min_val)
+        else:
+            result = torch.ones_like(result) * 0.5
+        
+        print(f"✅ 多样化QA特征形状: {result.shape}")
+        print(f"✅ 特征范围: [{result.min():.4f}, {result.max():.4f}]")
+        print(f"✅ 特征均值: {result.mean():.4f}, 标准差: {result.std():.4f}")
+        
+        # 🔧 恢复原始CUDA设置
+        os.environ["CUDA_VISIBLE_DEVICES"] = original_cuda_visible
+        
+        return result
+        
+    except Exception as e:
+        print(f"提取多样化特征失败: {e}")
+        # 备用方案：生成有差异的随机特征
+        torch.manual_seed(42)
+        result = torch.zeros(1, num_process, 10)
+        for i in range(num_process):
+            torch.manual_seed(42 + i)  # 每个进程不同的随机种子
+            result[0, i, :] = torch.rand(10)
+        return result
+
+
+def debug_feature_diversity(qa_features):
+    """调试函数：分析特征的多样性"""
+    print(f"\n🔍 特征多样性分析:")
+    print(f"形状: {qa_features.shape}")
+    
+    # 显示每个进程的特征
+    num_process = qa_features.shape[1]
+    for i in range(min(num_process, 3)):  # 只显示前3个进程
+        print(f"进程{i}: {qa_features[0, i, :].numpy()}")
+    
+    # 计算进程间相关性
+    print(f"\n📊 进程间相关性矩阵:")
+    correlations = torch.zeros(num_process, num_process)
+    for i in range(num_process):
+        for j in range(num_process):
+            corr = torch.corrcoef(torch.stack([qa_features[0, i, :], qa_features[0, j, :]]))[0, 1]
+            correlations[i, j] = corr if not torch.isnan(corr) else 0.0
+    
+    print(correlations[:min(5, num_process), :min(5, num_process)])  # 显示5x5子矩阵
+    
+    # 计算平均相关性（排除对角线）
+    mask = ~torch.eye(num_process, dtype=torch.bool)
+    avg_correlation = correlations[mask].mean()
+    print(f"📊 平均进程间相关性: {avg_correlation:.4f} (越小越好，理想<0.5)")
 
 
 class DirectPolicyNetwork(nn.Module):
-    def __init__(self, num_process=10, d_model=128, nhead=8, num_layers=10, operation_dim=4):
+    def __init__(self, num_process=10, d_model=128, nhead=8, num_layers=10, operation_dim=4, default_state=None):
         super().__init__()
         self.num_process = num_process
+        
+        # 🔧 修复：将default_state注册为buffer，PyTorch会自动管理其设备
+        if default_state is not None:
+            self.register_buffer('default_state', default_state)
+        else:
+            self.register_buffer('default_state', None)
 
         # 初始嵌入层
         self.process_embedding = nn.Linear(10, d_model)
@@ -29,25 +196,33 @@ class DirectPolicyNetwork(nn.Module):
 
     def forward(self, state=None):
         if state is None:
-            torch.manual_seed(42)  # 使用固定种子
-            state = torch.rand(1, self.num_process, 10)
-        # state = torch.rand(1, self.num_process, 10)
-        # 生成初始嵌入 [batch_size, num_process, d_model]
-        src = self.process_embedding(state)  # [1, self.num_process, 10] -> [1, self.num_process, 128]
-
-        # 通过Transformer编码器
-        encoded = self.transformer_encoder(src)  # [1, self.num_process, 128]
-        # 生成最终输出
-        logits = self.output_layer(encoded)  # [1, self.num_process, 4]
+            if self.default_state is not None:
+                # 🔧 让PyTorch自动处理设备转换
+                # default_state在CPU上，process_embedding会自动转换
+                state = self.default_state
+            else:
+                torch.manual_seed(42)
+                state = torch.rand(1, self.num_process, 10)
+        
+        # PyTorch会自动将CPU的state转换到模型参数所在设备
+        src = self.process_embedding(state)  # 自动设备转换
+        encoded = self.transformer_encoder(src)
+        logits = self.output_layer(encoded)
         return logits
 
 
 class GRPOTrainer:
     def __init__(self, num_process=10, d_model=128, nhead=4, num_layers=3, operation=4, normalize_advantages=True, 
-                kl_coeff=0.01, clip_eps=0.2, adv_lambda=0.95):
-        # 初始化当前策略和旧策略网络
-        self.policy = DirectPolicyNetwork(num_process, d_model, nhead, num_layers, operation)
-        self.old_policy = DirectPolicyNetwork(num_process, d_model, nhead, num_layers, operation)
+                kl_coeff=0.01, clip_eps=0.2, adv_lambda=0.95, qa_features=None):  # 🔧 直接接收特征张量
+        print(f"初始化GRPO训练器，共{num_process}个节点，操作维度max_operation: {operation}")
+        
+        # 🔧 简化：直接使用传入的特征张量，不再重复提取
+        if qa_features is not None:
+            print("✅ 使用传入的QA特征作为默认输入状态")
+        
+        # 初始化策略网络，传入QA特征作为默认状态
+        self.policy = DirectPolicyNetwork(num_process, d_model, nhead, num_layers, operation, qa_features)
+        self.old_policy = DirectPolicyNetwork(num_process, d_model, nhead, num_layers, operation, qa_features)
         self.old_policy.load_state_dict(self.policy.state_dict())  # 参数同步
 
         # 优化器和超参数
@@ -59,7 +234,7 @@ class GRPOTrainer:
         
         # 高级优势估计选项
         self.normalize_advantages = normalize_advantages
-        self.adv_lambda = adv_lambda  # GAE-lambda系数，用于平衡bias和variance
+        self.adv_lambda = adv_lambda
         
         # 追踪最佳结果
         self.best_reward = float('-inf')
@@ -68,8 +243,11 @@ class GRPOTrainer:
     def generate_actions(self, num_samples, epsilon):
         """使用旧策略生成动作样本（带Epsilon-Greedy探索）"""
         with torch.no_grad():
-            logits = self.policy()  # [1,10,4]
+            logits = self.policy()  # 现在会自动使用QA特征
             probs = F.softmax(logits, dim=-1)
+
+            # 删除调试信息，减少输出
+            # print(f"[DEBUG GRPO] logits形状: {logits.shape}")
 
             # 获取最优动作 [1,10]
             best_actions = probs.argmax(dim=-1).squeeze(0)  # [10]
